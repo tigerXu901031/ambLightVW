@@ -1,0 +1,727 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+\\Mac\Home\Documents\work\personal\Github\ambLightVW\controller\prj\ambLight.uvproj
+Project File Date:  08/04/2019
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling ledCtrl.c...
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(339): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(343): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(344): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(345): error C42: 'Scs_InitTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(348): error C42: 'Scs_RestoreTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(379): warning C34: 'inline': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(379): error C42: 'inline': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(379): error C25: syntax error near 'void'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(385): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(391): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(418): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(418): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C25: syntax error near 'const'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): warning C34: 'SrcPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C42: 'SrcPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C25: syntax error near 'unsigned'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(424): error C142: illegal initialization
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C25: syntax error near '++'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\INC/INTRINS.H(28): warning C34: 'adr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\INC/INTRINS.H(28): error C42: 'adr': not in formal parameter list
+..\SRC\APP\LEDCTRL.H(90): warning C34: 'canSigObj': missing declaration specifiers
+..\SRC\APP\LEDCTRL.H(90): error C42: 'canSigObj': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(59): warning C34: 'darknessLevel': missing declaration specifiers
+..\SRC\APP\LEDCTRL.C(59): error C42: 'darknessLevel': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(60): warning C34: 'darknessLevel': missing declaration specifiers
+..\SRC\APP\LEDCTRL.C(60): error C42: 'darknessLevel': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(61): warning C34: 'darknessLevel': missing declaration specifiers
+..\SRC\APP\LEDCTRL.C(61): error C42: 'darknessLevel': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(603): warning C34: 'canSigObj': missing declaration specifiers
+..\SRC\APP\LEDCTRL.C(603): error C42: 'canSigObj': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(668): error C7: compilation aborted
+compiling main.c...
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(339): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(343): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(344): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(345): error C42: 'Scs_InitTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(348): error C42: 'Scs_RestoreTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(379): warning C34: 'inline': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(379): error C42: 'inline': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(379): error C25: syntax error near 'void'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(385): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(391): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(418): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(418): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C25: syntax error near 'const'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): warning C34: 'SrcPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C42: 'SrcPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C25: syntax error near 'unsigned'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(424): error C142: illegal initialization
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C25: syntax error near '++'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\INC/INTRINS.H(28): warning C34: 'adr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\INC/INTRINS.H(28): error C42: 'adr': not in formal parameter list
+..\SRC\APP\LEDCTRL.H(90): warning C34: 'canSigObj': missing declaration specifiers
+..\SRC\APP\LEDCTRL.H(90): error C42: 'canSigObj': not in formal parameter list
+..\SRC\APP\MAIN.C(102): error C7: compilation aborted
+compiling task.c...
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(339): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(343): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(344): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(345): error C42: 'Scs_InitTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(348): error C42: 'Scs_RestoreTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(379): warning C34: 'inline': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(379): error C42: 'inline': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(379): error C25: syntax error near 'void'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(385): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(391): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(418): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(418): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C25: syntax error near 'const'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): warning C34: 'SrcPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C42: 'SrcPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C25: syntax error near 'unsigned'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(424): error C142: illegal initialization
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C25: syntax error near '++'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\INC/INTRINS.H(28): warning C34: 'adr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\INC/INTRINS.H(28): error C42: 'adr': not in formal parameter list
+..\SRC\APP\LEDCTRL.H(90): warning C34: 'canSigObj': missing declaration specifiers
+..\SRC\APP\LEDCTRL.H(90): error C42: 'canSigObj': not in formal parameter list
+..\SRC\APP\TASK.C(58): error C25: syntax error near 'uword'
+..\SRC\APP\TASK.C(76): error C25: syntax error near 'uword'
+..\SRC\APP\TASK.C(134): error C7: compilation aborted
+compiling io.c...
+compiling SCS.c...
+..\SRC\DRV\SCS.H(339): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+..\SRC\DRV\SCS.H(343): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+..\SRC\DRV\SCS.H(344): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+..\SRC\DRV\SCS.H(345): error C42: 'Scs_InitTimer': not in formal parameter list
+..\SRC\DRV\SCS.H(348): error C42: 'Scs_RestoreTimer': not in formal parameter list
+..\SRC\DRV\SCS.H(379): warning C34: 'inline': missing declaration specifiers
+..\SRC\DRV\SCS.H(379): error C42: 'inline': not in formal parameter list
+..\SRC\DRV\SCS.H(379): error C25: syntax error near 'void'
+..\SRC\DRV\SCS.H(385): error C25: syntax error near 'uword'
+..\SRC\DRV\SCS.H(391): error C25: syntax error near 'uword'
+..\SRC\DRV\SCS.H(418): warning C34: 'DestPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(418): error C42: 'DestPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(419): error C25: syntax error near 'const'
+..\SRC\DRV\SCS.H(419): warning C34: 'SrcPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(419): error C42: 'SrcPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(419): error C25: syntax error near 'unsigned'
+..\SRC\DRV\SCS.H(424): error C142: illegal initialization
+..\SRC\DRV\SCS.H(425): warning C34: 'DestPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(425): error C42: 'DestPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(425): error C25: syntax error near '++'
+..\SRC\DRV\SCS.C(477): error C25: syntax error near '0'
+..\SRC\DRV\SCS.C(478): error C25: syntax error near '8000000'
+..\SRC\DRV\SCS.C(478): error C25: syntax error near '66000000'
+..\SRC\DRV\SCS.C(479): error C25: syntax error near '8000000'
+..\SRC\DRV\SCS.C(479): error C25: syntax error near '66000000'
+..\SRC\DRV\SCS.C(479): error C7: compilation aborted
+assembling START_V3.A66...
+compiling u0c0.c...
+..\SRC\DRV\U0C0.C(457): error C25: syntax error near '0x50'
+..\SRC\DRV\U0C0.C(458): error C42: 'U0C0_ASC_vi0IC': not in formal parameter list
+..\SRC\DRV\U0C0.C(458): error C25: syntax error near '{'
+..\SRC\DRV\U0C0.C(464): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(471): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(474): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(482): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(485): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(492): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(533): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(540): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(543): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(543): error C7: compilation aborted
+compiling USIC0.c...
+compiling clk.c...
+..\SRC\DRV\SCS.H(339): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+..\SRC\DRV\SCS.H(343): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+..\SRC\DRV\SCS.H(344): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+..\SRC\DRV\SCS.H(345): error C42: 'Scs_InitTimer': not in formal parameter list
+..\SRC\DRV\SCS.H(348): error C42: 'Scs_RestoreTimer': not in formal parameter list
+..\SRC\DRV\SCS.H(379): warning C34: 'inline': missing declaration specifiers
+..\SRC\DRV\SCS.H(379): error C42: 'inline': not in formal parameter list
+..\SRC\DRV\SCS.H(379): error C25: syntax error near 'void'
+..\SRC\DRV\SCS.H(385): error C25: syntax error near 'uword'
+..\SRC\DRV\SCS.H(391): error C25: syntax error near 'uword'
+..\SRC\DRV\SCS.H(418): warning C34: 'DestPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(418): error C42: 'DestPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(419): error C25: syntax error near 'const'
+..\SRC\DRV\SCS.H(419): warning C34: 'SrcPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(419): error C42: 'SrcPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(419): error C25: syntax error near 'unsigned'
+..\SRC\DRV\SCS.H(424): error C142: illegal initialization
+..\SRC\DRV\SCS.H(425): warning C34: 'DestPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(425): error C42: 'DestPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(425): error C25: syntax error near '++'
+..\SRC\DRV\INC/INTRINS.H(28): warning C34: 'adr': missing declaration specifiers
+..\SRC\DRV\INC/INTRINS.H(28): error C42: 'adr': not in formal parameter list
+..\SRC\DRV\CLK.C(35): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(53): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(97): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(98): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(100): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(100): error C7: compilation aborted
+compiling led.c...
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(339): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(343): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(344): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(345): error C42: 'Scs_InitTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(348): error C42: 'Scs_RestoreTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(379): warning C34: 'inline': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(379): error C42: 'inline': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(379): error C25: syntax error near 'void'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(385): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(391): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(418): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(418): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C25: syntax error near 'const'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): warning C34: 'SrcPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C42: 'SrcPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C25: syntax error near 'unsigned'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(424): error C142: illegal initialization
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C25: syntax error near '++'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\INC/INTRINS.H(28): warning C34: 'adr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\INC/INTRINS.H(28): error C42: 'adr': not in formal parameter list
+..\SRC\SRV\LED.C(176): error C7: compilation aborted
+Target not created
+Build target 'Target 1'
+compiling ledCtrl.c...
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(340): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(344): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(345): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(346): error C42: 'Scs_InitTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(349): error C42: 'Scs_RestoreTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): warning C34: 'inline': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C42: 'inline': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C25: syntax error near 'void'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(386): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(392): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'const'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): warning C34: 'SrcPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C42: 'SrcPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'unsigned'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C142: illegal initialization
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C25: syntax error near '++'
+..\SRC\APP\LEDCTRL.H(90): warning C34: 'canSigObj': missing declaration specifiers
+..\SRC\APP\LEDCTRL.H(90): error C42: 'canSigObj': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(59): warning C34: 'darknessLevel': missing declaration specifiers
+..\SRC\APP\LEDCTRL.C(59): error C42: 'darknessLevel': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(60): warning C34: 'darknessLevel': missing declaration specifiers
+..\SRC\APP\LEDCTRL.C(60): error C42: 'darknessLevel': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(61): warning C34: 'darknessLevel': missing declaration specifiers
+..\SRC\APP\LEDCTRL.C(61): error C42: 'darknessLevel': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(603): warning C34: 'canSigObj': missing declaration specifiers
+..\SRC\APP\LEDCTRL.C(603): error C42: 'canSigObj': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(668): error C7: compilation aborted
+compiling main.c...
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(340): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(344): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(345): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(346): error C42: 'Scs_InitTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(349): error C42: 'Scs_RestoreTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): warning C34: 'inline': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C42: 'inline': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C25: syntax error near 'void'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(386): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(392): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'const'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): warning C34: 'SrcPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C42: 'SrcPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'unsigned'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C142: illegal initialization
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C25: syntax error near '++'
+..\SRC\APP\LEDCTRL.H(90): warning C34: 'canSigObj': missing declaration specifiers
+..\SRC\APP\LEDCTRL.H(90): error C42: 'canSigObj': not in formal parameter list
+..\SRC\APP\MAIN.C(102): error C7: compilation aborted
+compiling task.c...
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(340): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(344): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(345): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(346): error C42: 'Scs_InitTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(349): error C42: 'Scs_RestoreTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): warning C34: 'inline': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C42: 'inline': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C25: syntax error near 'void'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(386): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(392): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'const'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): warning C34: 'SrcPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C42: 'SrcPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'unsigned'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C142: illegal initialization
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C25: syntax error near '++'
+..\SRC\APP\LEDCTRL.H(90): warning C34: 'canSigObj': missing declaration specifiers
+..\SRC\APP\LEDCTRL.H(90): error C42: 'canSigObj': not in formal parameter list
+..\SRC\APP\TASK.C(58): error C25: syntax error near 'uword'
+..\SRC\APP\TASK.C(76): error C25: syntax error near 'uword'
+..\SRC\APP\TASK.C(134): error C7: compilation aborted
+compiling io.c...
+compiling SCS.c...
+..\SRC\DRV\SCS.H(340): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+..\SRC\DRV\SCS.H(344): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+..\SRC\DRV\SCS.H(345): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+..\SRC\DRV\SCS.H(346): error C42: 'Scs_InitTimer': not in formal parameter list
+..\SRC\DRV\SCS.H(349): error C42: 'Scs_RestoreTimer': not in formal parameter list
+..\SRC\DRV\SCS.H(380): warning C34: 'inline': missing declaration specifiers
+..\SRC\DRV\SCS.H(380): error C42: 'inline': not in formal parameter list
+..\SRC\DRV\SCS.H(380): error C25: syntax error near 'void'
+..\SRC\DRV\SCS.H(386): error C25: syntax error near 'uword'
+..\SRC\DRV\SCS.H(392): error C25: syntax error near 'uword'
+..\SRC\DRV\SCS.H(419): warning C34: 'DestPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(419): error C42: 'DestPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(420): error C25: syntax error near 'const'
+..\SRC\DRV\SCS.H(420): warning C34: 'SrcPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(420): error C42: 'SrcPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(420): error C25: syntax error near 'unsigned'
+..\SRC\DRV\SCS.H(425): error C142: illegal initialization
+..\SRC\DRV\SCS.H(426): warning C34: 'DestPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(426): error C42: 'DestPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(426): error C25: syntax error near '++'
+..\SRC\DRV\SCS.C(477): error C25: syntax error near '0'
+..\SRC\DRV\SCS.C(478): error C25: syntax error near '8000000'
+..\SRC\DRV\SCS.C(478): error C25: syntax error near '66000000'
+..\SRC\DRV\SCS.C(479): error C25: syntax error near '8000000'
+..\SRC\DRV\SCS.C(479): error C25: syntax error near '66000000'
+..\SRC\DRV\SCS.C(479): error C7: compilation aborted
+assembling START_V3.A66...
+compiling u0c0.c...
+..\SRC\DRV\U0C0.C(457): error C25: syntax error near '0x50'
+..\SRC\DRV\U0C0.C(458): error C42: 'U0C0_ASC_vi0IC': not in formal parameter list
+..\SRC\DRV\U0C0.C(458): error C25: syntax error near '{'
+..\SRC\DRV\U0C0.C(464): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(471): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(474): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(482): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(485): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(492): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(533): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(540): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(543): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(543): error C7: compilation aborted
+compiling USIC0.c...
+compiling clk.c...
+..\SRC\DRV\SCS.H(340): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+..\SRC\DRV\SCS.H(344): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+..\SRC\DRV\SCS.H(345): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+..\SRC\DRV\SCS.H(346): error C42: 'Scs_InitTimer': not in formal parameter list
+..\SRC\DRV\SCS.H(349): error C42: 'Scs_RestoreTimer': not in formal parameter list
+..\SRC\DRV\SCS.H(380): warning C34: 'inline': missing declaration specifiers
+..\SRC\DRV\SCS.H(380): error C42: 'inline': not in formal parameter list
+..\SRC\DRV\SCS.H(380): error C25: syntax error near 'void'
+..\SRC\DRV\SCS.H(386): error C25: syntax error near 'uword'
+..\SRC\DRV\SCS.H(392): error C25: syntax error near 'uword'
+..\SRC\DRV\SCS.H(419): warning C34: 'DestPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(419): error C42: 'DestPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(420): error C25: syntax error near 'const'
+..\SRC\DRV\SCS.H(420): warning C34: 'SrcPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(420): error C42: 'SrcPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(420): error C25: syntax error near 'unsigned'
+..\SRC\DRV\SCS.H(425): error C142: illegal initialization
+..\SRC\DRV\SCS.H(426): warning C34: 'DestPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(426): error C42: 'DestPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(426): error C25: syntax error near '++'
+..\SRC\DRV\CLK.C(35): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(53): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(97): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(98): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(100): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(100): error C7: compilation aborted
+compiling led.c...
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(340): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(344): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(345): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(346): error C42: 'Scs_InitTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(349): error C42: 'Scs_RestoreTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): warning C34: 'inline': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C42: 'inline': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C25: syntax error near 'void'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(386): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(392): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'const'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): warning C34: 'SrcPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C42: 'SrcPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'unsigned'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C142: illegal initialization
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C25: syntax error near '++'
+..\SRC\SRV\LED.C(176): error C7: compilation aborted
+Target not created
+Build target 'Target 1'
+compiling ledCtrl.c...
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(340): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(344): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(345): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(346): error C42: 'Scs_InitTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(349): error C42: 'Scs_RestoreTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): warning C34: 'inline': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C42: 'inline': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C25: syntax error near 'void'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(386): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(392): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'const'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): warning C34: 'SrcPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C42: 'SrcPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'unsigned'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C142: illegal initialization
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C25: syntax error near '++'
+..\SRC\APP\LEDCTRL.H(90): warning C34: 'canSigObj': missing declaration specifiers
+..\SRC\APP\LEDCTRL.H(90): error C42: 'canSigObj': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(59): warning C34: 'darknessLevel': missing declaration specifiers
+..\SRC\APP\LEDCTRL.C(59): error C42: 'darknessLevel': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(60): warning C34: 'darknessLevel': missing declaration specifiers
+..\SRC\APP\LEDCTRL.C(60): error C42: 'darknessLevel': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(61): warning C34: 'darknessLevel': missing declaration specifiers
+..\SRC\APP\LEDCTRL.C(61): error C42: 'darknessLevel': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(603): warning C34: 'canSigObj': missing declaration specifiers
+..\SRC\APP\LEDCTRL.C(603): error C42: 'canSigObj': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(668): error C7: compilation aborted
+compiling main.c...
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(340): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(344): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(345): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(346): error C42: 'Scs_InitTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(349): error C42: 'Scs_RestoreTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): warning C34: 'inline': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C42: 'inline': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C25: syntax error near 'void'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(386): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(392): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'const'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): warning C34: 'SrcPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C42: 'SrcPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'unsigned'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C142: illegal initialization
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C25: syntax error near '++'
+..\SRC\APP\LEDCTRL.H(90): warning C34: 'canSigObj': missing declaration specifiers
+..\SRC\APP\LEDCTRL.H(90): error C42: 'canSigObj': not in formal parameter list
+..\SRC\APP\MAIN.C(102): error C7: compilation aborted
+compiling task.c...
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(340): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(344): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(345): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(346): error C42: 'Scs_InitTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(349): error C42: 'Scs_RestoreTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): warning C34: 'inline': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C42: 'inline': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C25: syntax error near 'void'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(386): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(392): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'const'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): warning C34: 'SrcPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C42: 'SrcPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'unsigned'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C142: illegal initialization
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C25: syntax error near '++'
+..\SRC\APP\LEDCTRL.H(90): warning C34: 'canSigObj': missing declaration specifiers
+..\SRC\APP\LEDCTRL.H(90): error C42: 'canSigObj': not in formal parameter list
+..\SRC\APP\TASK.C(58): error C25: syntax error near 'uword'
+..\SRC\APP\TASK.C(76): error C25: syntax error near 'uword'
+..\SRC\APP\TASK.C(134): error C7: compilation aborted
+compiling io.c...
+assembling START_V3.A66...
+compiling u0c0.c...
+..\SRC\DRV\U0C0.C(457): error C25: syntax error near '0x50'
+..\SRC\DRV\U0C0.C(458): error C42: 'U0C0_ASC_vi0IC': not in formal parameter list
+..\SRC\DRV\U0C0.C(458): error C25: syntax error near '{'
+..\SRC\DRV\U0C0.C(464): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(471): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(474): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(482): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(485): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(492): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(533): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(540): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(543): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(543): error C7: compilation aborted
+compiling USIC0.c...
+compiling clk.c...
+..\SRC\DRV\SCS.H(340): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+..\SRC\DRV\SCS.H(344): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+..\SRC\DRV\SCS.H(345): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+..\SRC\DRV\SCS.H(346): error C42: 'Scs_InitTimer': not in formal parameter list
+..\SRC\DRV\SCS.H(349): error C42: 'Scs_RestoreTimer': not in formal parameter list
+..\SRC\DRV\SCS.H(380): warning C34: 'inline': missing declaration specifiers
+..\SRC\DRV\SCS.H(380): error C42: 'inline': not in formal parameter list
+..\SRC\DRV\SCS.H(380): error C25: syntax error near 'void'
+..\SRC\DRV\SCS.H(386): error C25: syntax error near 'uword'
+..\SRC\DRV\SCS.H(392): error C25: syntax error near 'uword'
+..\SRC\DRV\SCS.H(419): warning C34: 'DestPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(419): error C42: 'DestPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(420): error C25: syntax error near 'const'
+..\SRC\DRV\SCS.H(420): warning C34: 'SrcPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(420): error C42: 'SrcPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(420): error C25: syntax error near 'unsigned'
+..\SRC\DRV\SCS.H(425): error C142: illegal initialization
+..\SRC\DRV\SCS.H(426): warning C34: 'DestPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(426): error C42: 'DestPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(426): error C25: syntax error near '++'
+..\SRC\DRV\CLK.C(35): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(53): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(97): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(98): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(100): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(100): error C7: compilation aborted
+compiling scs.c...
+..\SRC\DRV\SCS.H(340): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+..\SRC\DRV\SCS.H(344): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+..\SRC\DRV\SCS.H(345): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+..\SRC\DRV\SCS.H(346): error C42: 'Scs_InitTimer': not in formal parameter list
+..\SRC\DRV\SCS.H(349): error C42: 'Scs_RestoreTimer': not in formal parameter list
+..\SRC\DRV\SCS.H(380): warning C34: 'inline': missing declaration specifiers
+..\SRC\DRV\SCS.H(380): error C42: 'inline': not in formal parameter list
+..\SRC\DRV\SCS.H(380): error C25: syntax error near 'void'
+..\SRC\DRV\SCS.H(386): error C25: syntax error near 'uword'
+..\SRC\DRV\SCS.H(392): error C25: syntax error near 'uword'
+..\SRC\DRV\SCS.H(419): warning C34: 'DestPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(419): error C42: 'DestPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(420): error C25: syntax error near 'const'
+..\SRC\DRV\SCS.H(420): warning C34: 'SrcPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(420): error C42: 'SrcPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(420): error C25: syntax error near 'unsigned'
+..\SRC\DRV\SCS.H(425): error C142: illegal initialization
+..\SRC\DRV\SCS.H(426): warning C34: 'DestPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(426): error C42: 'DestPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(426): error C25: syntax error near '++'
+..\SRC\DRV\SCS.C(477): error C25: syntax error near '0'
+..\SRC\DRV\SCS.C(478): error C25: syntax error near '8000000'
+..\SRC\DRV\SCS.C(478): error C25: syntax error near '66000000'
+..\SRC\DRV\SCS.C(479): error C25: syntax error near '8000000'
+..\SRC\DRV\SCS.C(479): error C25: syntax error near '66000000'
+..\SRC\DRV\SCS.C(479): error C7: compilation aborted
+compiling led.c...
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(340): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(344): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(345): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(346): error C42: 'Scs_InitTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(349): error C42: 'Scs_RestoreTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): warning C34: 'inline': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C42: 'inline': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C25: syntax error near 'void'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(386): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(392): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'const'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): warning C34: 'SrcPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C42: 'SrcPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'unsigned'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C142: illegal initialization
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C25: syntax error near '++'
+..\SRC\SRV\LED.C(176): error C7: compilation aborted
+Target not created
+Build target 'Target 1'
+compiling ledCtrl.c...
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(340): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(344): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(345): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(346): error C42: 'Scs_InitTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(349): error C42: 'Scs_RestoreTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): warning C34: 'inline': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C42: 'inline': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C25: syntax error near 'void'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(386): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(392): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'const'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): warning C34: 'SrcPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C42: 'SrcPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'unsigned'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C142: illegal initialization
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C25: syntax error near '++'
+..\SRC\APP\LEDCTRL.H(90): warning C34: 'canSigObj': missing declaration specifiers
+..\SRC\APP\LEDCTRL.H(90): error C42: 'canSigObj': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(59): warning C34: 'darknessLevel': missing declaration specifiers
+..\SRC\APP\LEDCTRL.C(59): error C42: 'darknessLevel': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(60): warning C34: 'darknessLevel': missing declaration specifiers
+..\SRC\APP\LEDCTRL.C(60): error C42: 'darknessLevel': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(61): warning C34: 'darknessLevel': missing declaration specifiers
+..\SRC\APP\LEDCTRL.C(61): error C42: 'darknessLevel': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(603): warning C34: 'canSigObj': missing declaration specifiers
+..\SRC\APP\LEDCTRL.C(603): error C42: 'canSigObj': not in formal parameter list
+..\SRC\APP\LEDCTRL.C(668): error C7: compilation aborted
+compiling main.c...
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(340): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(344): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(345): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(346): error C42: 'Scs_InitTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(349): error C42: 'Scs_RestoreTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): warning C34: 'inline': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C42: 'inline': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C25: syntax error near 'void'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(386): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(392): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'const'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): warning C34: 'SrcPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C42: 'SrcPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'unsigned'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C142: illegal initialization
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C25: syntax error near '++'
+..\SRC\APP\LEDCTRL.H(90): warning C34: 'canSigObj': missing declaration specifiers
+..\SRC\APP\LEDCTRL.H(90): error C42: 'canSigObj': not in formal parameter list
+..\SRC\APP\MAIN.C(102): error C7: compilation aborted
+compiling task.c...
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(340): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(344): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(345): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(346): error C42: 'Scs_InitTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(349): error C42: 'Scs_RestoreTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): warning C34: 'inline': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C42: 'inline': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C25: syntax error near 'void'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(386): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(392): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'const'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): warning C34: 'SrcPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C42: 'SrcPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'unsigned'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C142: illegal initialization
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C25: syntax error near '++'
+..\SRC\APP\LEDCTRL.H(90): warning C34: 'canSigObj': missing declaration specifiers
+..\SRC\APP\LEDCTRL.H(90): error C42: 'canSigObj': not in formal parameter list
+..\SRC\APP\TASK.C(58): error C25: syntax error near 'uword'
+..\SRC\APP\TASK.C(76): error C25: syntax error near 'uword'
+..\SRC\APP\TASK.C(134): error C7: compilation aborted
+compiling io.c...
+assembling START_V3.A66...
+compiling u0c0.c...
+..\SRC\DRV\U0C0.C(457): error C25: syntax error near '0x50'
+..\SRC\DRV\U0C0.C(458): error C42: 'U0C0_ASC_vi0IC': not in formal parameter list
+..\SRC\DRV\U0C0.C(458): error C25: syntax error near '{'
+..\SRC\DRV\U0C0.C(464): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(471): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(474): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(482): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(485): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(492): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(533): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(540): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(543): error C25: syntax error near 'uword'
+..\SRC\DRV\U0C0.C(543): error C7: compilation aborted
+compiling USIC0.c...
+compiling clk.c...
+..\SRC\DRV\SCS.H(340): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+..\SRC\DRV\SCS.H(344): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+..\SRC\DRV\SCS.H(345): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+..\SRC\DRV\SCS.H(346): error C42: 'Scs_InitTimer': not in formal parameter list
+..\SRC\DRV\SCS.H(349): error C42: 'Scs_RestoreTimer': not in formal parameter list
+..\SRC\DRV\SCS.H(380): warning C34: 'inline': missing declaration specifiers
+..\SRC\DRV\SCS.H(380): error C42: 'inline': not in formal parameter list
+..\SRC\DRV\SCS.H(380): error C25: syntax error near 'void'
+..\SRC\DRV\SCS.H(386): error C25: syntax error near 'uword'
+..\SRC\DRV\SCS.H(392): error C25: syntax error near 'uword'
+..\SRC\DRV\SCS.H(419): warning C34: 'DestPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(419): error C42: 'DestPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(420): error C25: syntax error near 'const'
+..\SRC\DRV\SCS.H(420): warning C34: 'SrcPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(420): error C42: 'SrcPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(420): error C25: syntax error near 'unsigned'
+..\SRC\DRV\SCS.H(425): error C142: illegal initialization
+..\SRC\DRV\SCS.H(426): warning C34: 'DestPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(426): error C42: 'DestPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(426): error C25: syntax error near '++'
+..\SRC\DRV\CLK.C(35): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(53): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(97): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(98): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(100): error C25: syntax error near 'uword'
+..\SRC\DRV\CLK.C(100): error C7: compilation aborted
+compiling scs.c...
+..\SRC\DRV\SCS.H(340): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+..\SRC\DRV\SCS.H(344): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+..\SRC\DRV\SCS.H(345): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+..\SRC\DRV\SCS.H(346): error C42: 'Scs_InitTimer': not in formal parameter list
+..\SRC\DRV\SCS.H(349): error C42: 'Scs_RestoreTimer': not in formal parameter list
+..\SRC\DRV\SCS.H(380): warning C34: 'inline': missing declaration specifiers
+..\SRC\DRV\SCS.H(380): error C42: 'inline': not in formal parameter list
+..\SRC\DRV\SCS.H(380): error C25: syntax error near 'void'
+..\SRC\DRV\SCS.H(386): error C25: syntax error near 'uword'
+..\SRC\DRV\SCS.H(392): error C25: syntax error near 'uword'
+..\SRC\DRV\SCS.H(419): warning C34: 'DestPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(419): error C42: 'DestPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(420): error C25: syntax error near 'const'
+..\SRC\DRV\SCS.H(420): warning C34: 'SrcPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(420): error C42: 'SrcPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(420): error C25: syntax error near 'unsigned'
+..\SRC\DRV\SCS.H(425): error C142: illegal initialization
+..\SRC\DRV\SCS.H(426): warning C34: 'DestPtr': missing declaration specifiers
+..\SRC\DRV\SCS.H(426): error C42: 'DestPtr': not in formal parameter list
+..\SRC\DRV\SCS.H(426): error C25: syntax error near '++'
+..\SRC\DRV\SCS.C(477): error C25: syntax error near '0'
+..\SRC\DRV\SCS.C(478): error C25: syntax error near '8000000'
+..\SRC\DRV\SCS.C(478): error C25: syntax error near '66000000'
+..\SRC\DRV\SCS.C(479): error C25: syntax error near '8000000'
+..\SRC\DRV\SCS.C(479): error C25: syntax error near '66000000'
+..\SRC\DRV\SCS.C(479): error C7: compilation aborted
+compiling led.c...
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(340): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(344): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(345): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(346): error C42: 'Scs_InitTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(349): error C42: 'Scs_RestoreTimer': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): warning C34: 'inline': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C42: 'inline': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(380): error C25: syntax error near 'void'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(386): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(392): error C25: syntax error near 'uword'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(419): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'const'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): warning C34: 'SrcPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C42: 'SrcPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(420): error C25: syntax error near 'unsigned'
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(425): error C142: illegal initialization
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): warning C34: 'DestPtr': missing declaration specifiers
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C42: 'DestPtr': not in formal parameter list
+\\MAC\HOME\DOCUMENTS\WORK\PERSONAL\GITHUB\AMBLIGHTVW\CONTROLLER\SRC\DRV\SCS.H(426): error C25: syntax error near '++'
+..\SRC\SRV\LED.C(176): error C7: compilation aborted
+Target not created

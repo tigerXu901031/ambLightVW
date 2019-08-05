@@ -1,0 +1,142 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+\\Mac\Home\Documents\work\personal\Github\ambLightVW\controller\utilities\ioPlusLIN.uvproj
+Project File Date:  <unknown>
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling Start_V3.A66...
+compiling MAIN.c...
+SCS.H(339): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+SCS.H(343): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+SCS.H(344): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+SCS.H(345): error C42: 'Scs_InitTimer': not in formal parameter list
+SCS.H(348): error C42: 'Scs_RestoreTimer': not in formal parameter list
+SCS.H(379): warning C34: 'inline': missing declaration specifiers
+SCS.H(379): error C42: 'inline': not in formal parameter list
+SCS.H(379): error C25: syntax error near 'void'
+SCS.H(385): error C25: syntax error near 'uword'
+SCS.H(391): error C25: syntax error near 'uword'
+SCS.H(418): warning C34: 'DestPtr': missing declaration specifiers
+SCS.H(418): error C42: 'DestPtr': not in formal parameter list
+SCS.H(419): error C25: syntax error near 'const'
+SCS.H(419): warning C34: 'SrcPtr': missing declaration specifiers
+SCS.H(419): error C42: 'SrcPtr': not in formal parameter list
+SCS.H(419): error C25: syntax error near 'unsigned'
+SCS.H(424): error C142: illegal initialization
+SCS.H(425): warning C34: 'DestPtr': missing declaration specifiers
+SCS.H(425): error C42: 'DestPtr': not in formal parameter list
+SCS.H(425): error C25: syntax error near '++'
+MAIN.C(144): error C25: syntax error near 'uword'
+MAIN.C(165): error C25: syntax error near 'uword'
+MAIN.C(205): error C25: syntax error near 'uword'
+MAIN.C(206): error C25: syntax error near 'uword'
+MAIN.C(208): error C25: syntax error near 'uword'
+MAIN.C(208): error C7: compilation aborted
+compiling SCS.c...
+SCS.H(339): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+SCS.H(343): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+SCS.H(344): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+SCS.H(345): error C42: 'Scs_InitTimer': not in formal parameter list
+SCS.H(348): error C42: 'Scs_RestoreTimer': not in formal parameter list
+SCS.H(379): warning C34: 'inline': missing declaration specifiers
+SCS.H(379): error C42: 'inline': not in formal parameter list
+SCS.H(379): error C25: syntax error near 'void'
+SCS.H(385): error C25: syntax error near 'uword'
+SCS.H(391): error C25: syntax error near 'uword'
+SCS.H(418): warning C34: 'DestPtr': missing declaration specifiers
+SCS.H(418): error C42: 'DestPtr': not in formal parameter list
+SCS.H(419): error C25: syntax error near 'const'
+SCS.H(419): warning C34: 'SrcPtr': missing declaration specifiers
+SCS.H(419): error C42: 'SrcPtr': not in formal parameter list
+SCS.H(419): error C25: syntax error near 'unsigned'
+SCS.H(424): error C142: illegal initialization
+SCS.H(425): warning C34: 'DestPtr': missing declaration specifiers
+SCS.H(425): error C42: 'DestPtr': not in formal parameter list
+SCS.H(425): error C25: syntax error near '++'
+SCS.C(477): error C25: syntax error near '0'
+SCS.C(478): error C25: syntax error near '8000000'
+SCS.C(478): error C25: syntax error near '66000000'
+SCS.C(479): error C25: syntax error near '8000000'
+SCS.C(479): error C25: syntax error near '66000000'
+SCS.C(479): error C7: compilation aborted
+compiling io.c...
+SCS.H(339): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+SCS.H(343): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+SCS.H(344): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+SCS.H(345): error C42: 'Scs_InitTimer': not in formal parameter list
+SCS.H(348): error C42: 'Scs_RestoreTimer': not in formal parameter list
+SCS.H(379): warning C34: 'inline': missing declaration specifiers
+SCS.H(379): error C42: 'inline': not in formal parameter list
+SCS.H(379): error C25: syntax error near 'void'
+SCS.H(385): error C25: syntax error near 'uword'
+SCS.H(391): error C25: syntax error near 'uword'
+SCS.H(418): warning C34: 'DestPtr': missing declaration specifiers
+SCS.H(418): error C42: 'DestPtr': not in formal parameter list
+SCS.H(419): error C25: syntax error near 'const'
+SCS.H(419): warning C34: 'SrcPtr': missing declaration specifiers
+SCS.H(419): error C42: 'SrcPtr': not in formal parameter list
+SCS.H(419): error C25: syntax error near 'unsigned'
+SCS.H(424): error C142: illegal initialization
+SCS.H(425): warning C34: 'DestPtr': missing declaration specifiers
+SCS.H(425): error C42: 'DestPtr': not in formal parameter list
+SCS.H(425): error C25: syntax error near '++'
+IO.C(183): error C25: syntax error near 'uword'
+IO.C(184): error C25: syntax error near 'uword'
+IO.C(185): error C25: syntax error near 'uword'
+IO.C(201): error C7: compilation aborted
+compiling u0c0.c...
+SCS.H(339): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+SCS.H(343): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+SCS.H(344): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+SCS.H(345): error C42: 'Scs_InitTimer': not in formal parameter list
+SCS.H(348): error C42: 'Scs_RestoreTimer': not in formal parameter list
+SCS.H(379): warning C34: 'inline': missing declaration specifiers
+SCS.H(379): error C42: 'inline': not in formal parameter list
+SCS.H(379): error C25: syntax error near 'void'
+SCS.H(385): error C25: syntax error near 'uword'
+SCS.H(391): error C25: syntax error near 'uword'
+SCS.H(418): warning C34: 'DestPtr': missing declaration specifiers
+SCS.H(418): error C42: 'DestPtr': not in formal parameter list
+SCS.H(419): error C25: syntax error near 'const'
+SCS.H(419): warning C34: 'SrcPtr': missing declaration specifiers
+SCS.H(419): error C42: 'SrcPtr': not in formal parameter list
+SCS.H(419): error C25: syntax error near 'unsigned'
+SCS.H(424): error C142: illegal initialization
+SCS.H(425): warning C34: 'DestPtr': missing declaration specifiers
+SCS.H(425): error C42: 'DestPtr': not in formal parameter list
+SCS.H(425): error C25: syntax error near '++'
+U0C0.C(137): error C25: syntax error near 'uword'
+U0C0.C(149): error C25: syntax error near 'uword'
+U0C0.C(159): error C25: syntax error near 'uword'
+U0C0.C(162): error C25: syntax error near 'uword'
+U0C0.C(170): error C25: syntax error near 'uword'
+U0C0.C(170): error C7: compilation aborted
+compiling USIC0.c...
+SCS.H(339): error C42: 'Scs_EnableHighPrecOsc': not in formal parameter list
+SCS.H(343): error C42: 'Scs_ApplyNewK2Div': not in formal parameter list
+SCS.H(344): error C42: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+SCS.H(345): error C42: 'Scs_InitTimer': not in formal parameter list
+SCS.H(348): error C42: 'Scs_RestoreTimer': not in formal parameter list
+SCS.H(379): warning C34: 'inline': missing declaration specifiers
+SCS.H(379): error C42: 'inline': not in formal parameter list
+SCS.H(379): error C25: syntax error near 'void'
+SCS.H(385): error C25: syntax error near 'uword'
+SCS.H(391): error C25: syntax error near 'uword'
+SCS.H(418): warning C34: 'DestPtr': missing declaration specifiers
+SCS.H(418): error C42: 'DestPtr': not in formal parameter list
+SCS.H(419): error C25: syntax error near 'const'
+SCS.H(419): warning C34: 'SrcPtr': missing declaration specifiers
+SCS.H(419): error C42: 'SrcPtr': not in formal parameter list
+SCS.H(419): error C25: syntax error near 'unsigned'
+SCS.H(424): error C142: illegal initialization
+SCS.H(425): warning C34: 'DestPtr': missing declaration specifiers
+SCS.H(425): error C42: 'DestPtr': not in formal parameter list
+SCS.H(425): error C25: syntax error near '++'
+USIC0.C(137): error C25: syntax error near 'uword'
+USIC0.C(140): error C25: syntax error near 'uword'
+USIC0.C(161): error C7: compilation aborted
+Target not created

@@ -1,0 +1,251 @@
+C166 COMPILER V7.00, MAIN                                                                  08/04/2019 12:21:53 PAGE 1   
+
+
+C166 COMPILER V7.00, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN MAIN.OBJ
+COMPILER INVOKED BY: C:\Program Files\Keil4Inf\C166\BIN\C166.EXE MAIN.c MODV2 BROWSE MODV2 DEBUG
+
+ stmt lvl     source
+
+    1         //****************************************************************************
+    2         // @Module        Project Settings
+    3         // @Filename      MAIN.c
+    4         // @Project       ioPlusLIN.dav
+    5         //----------------------------------------------------------------------------
+    6         // @Controller    Infineon XC2234L-20F66L
+    7         //
+    8         // @Compiler      TASKING VX-toolset
+    9         //
+   10         // @Codegenerator 1.2
+   11         //
+   12         // @Description   This file contains the project initialization function.
+   13         //
+   14         //----------------------------------------------------------------------------
+   15         // @Date          2019/8/4 11:50:46
+   16         //
+   17         //****************************************************************************
+   18         
+   19         // USER CODE BEGIN (MAIN_General,1)
+   20         
+   21         // USER CODE END
+   22         
+   23         
+   24         
+   25         //****************************************************************************
+   26         // @Project Includes
+   27         //****************************************************************************
+   28         
+   29         #include "MAIN.h"
+*** ERROR C42 IN LINE 339 OF SCS.H: 'Scs_EnableHighPrecOsc': not in formal parameter list
+*** ERROR C42 IN LINE 343 OF SCS.H: 'Scs_ApplyNewK2Div': not in formal parameter list
+*** ERROR C42 IN LINE 344 OF SCS.H: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+*** ERROR C42 IN LINE 345 OF SCS.H: 'Scs_InitTimer': not in formal parameter list
+*** ERROR C42 IN LINE 348 OF SCS.H: 'Scs_RestoreTimer': not in formal parameter list
+*** WARNING C34 IN LINE 379 OF SCS.H: 'inline': missing declaration specifiers
+*** ERROR C42 IN LINE 379 OF SCS.H: 'inline': not in formal parameter list
+*** ERROR C25 IN LINE 379 OF SCS.H: syntax error near 'void'
+*** ERROR C25 IN LINE 385 OF SCS.H: syntax error near 'uword'
+*** ERROR C25 IN LINE 391 OF SCS.H: syntax error near 'uword'
+*** WARNING C34 IN LINE 418 OF SCS.H: 'DestPtr': missing declaration specifiers
+*** ERROR C42 IN LINE 418 OF SCS.H: 'DestPtr': not in formal parameter list
+*** ERROR C25 IN LINE 419 OF SCS.H: syntax error near 'const'
+*** WARNING C34 IN LINE 419 OF SCS.H: 'SrcPtr': missing declaration specifiers
+*** ERROR C42 IN LINE 419 OF SCS.H: 'SrcPtr': not in formal parameter list
+*** ERROR C25 IN LINE 419 OF SCS.H: syntax error near 'unsigned'
+*** ERROR C142 IN LINE 424 OF SCS.H: illegal initialization
+*** WARNING C34 IN LINE 425 OF SCS.H: 'DestPtr': missing declaration specifiers
+*** ERROR C42 IN LINE 425 OF SCS.H: 'DestPtr': not in formal parameter list
+*** ERROR C25 IN LINE 425 OF SCS.H: syntax error near '++'
+   30         
+   31         // USER CODE BEGIN (MAIN_General,2)
+   32         
+   33         // USER CODE END
+   34         
+   35         
+C166 COMPILER V7.00, MAIN                                                                  08/04/2019 12:21:53 PAGE 2   
+
+   36         //****************************************************************************
+   37         // @Macros
+   38         //****************************************************************************
+   39         
+   40         // USER CODE BEGIN (MAIN_General,3)
+   41         
+   42         // USER CODE END
+   43         
+   44         
+   45         //****************************************************************************
+   46         // @Defines
+   47         //****************************************************************************
+   48         
+   49         // USER CODE BEGIN (MAIN_General,4)
+   50         
+   51         // USER CODE END
+   52         
+   53         
+   54         //****************************************************************************
+   55         // @Typedefs
+   56         //****************************************************************************
+   57         
+   58         // USER CODE BEGIN (MAIN_General,5)
+   59         
+   60         // USER CODE END
+   61         
+   62         
+   63         //****************************************************************************
+   64         // @Imported Global Variables
+   65         //****************************************************************************
+   66         
+   67         // USER CODE BEGIN (MAIN_General,6)
+   68         
+   69         // USER CODE END
+   70         
+   71         
+   72         //****************************************************************************
+   73         // @Global Variables
+   74         //****************************************************************************
+   75         
+   76         // USER CODE BEGIN (MAIN_General,7)
+   77         
+   78         // USER CODE END
+   79         
+   80         
+   81         //****************************************************************************
+   82         // @External Prototypes
+   83         //****************************************************************************
+   84         
+   85         // USER CODE BEGIN (MAIN_General,8)
+   86         
+   87         // USER CODE END
+   88         
+   89         
+   90         //****************************************************************************
+   91         // @Prototypes Of Local Functions
+   92         //****************************************************************************
+   93         
+   94         // USER CODE BEGIN (MAIN_General,9)
+   95         
+   96         // USER CODE END
+   97         
+C166 COMPILER V7.00, MAIN                                                                  08/04/2019 12:21:53 PAGE 3   
+
+   98         
+   99         //****************************************************************************
+  100         // @Function      void MAIN_vInit(void) 
+  101         //
+  102         //----------------------------------------------------------------------------
+  103         // @Description   This function initializes the microcontroller.
+  104         //
+  105         //----------------------------------------------------------------------------
+  106         // @Returnvalue   None
+  107         //
+  108         //----------------------------------------------------------------------------
+  109         // @Parameters    None
+  110         //
+  111         //----------------------------------------------------------------------------
+  112         // @Date          2019/8/4
+  113         //
+  114         //****************************************************************************
+  115         
+  116         // USER CODE BEGIN (Init,1)
+  117         
+  118         // USER CODE END
+  119         
+  120         void MAIN_vInit(void)
+  121         {
+  122           // USER CODE BEGIN (Init,2)
+  123         
+  124           // USER CODE END
+  125         
+  126           //   globally disable interrupts
+  127           PSW_IEN        =  0;          
+  128         
+  129         
+  130           ///  -----------------------------------------------------------------------
+  131           ///  Configuration of the System Clock:
+  132           ///  -----------------------------------------------------------------------
+  133           ///  - VCO clock used, input clock is connected
+  134           ///  - input frequency is 8.00 MHz
+  135           ///  - system clock is 66.00 MHz
+  136         
+  137           MAIN_vUnlockProtecReg();     // unlock write security
+  138         
+  139           MAIN_vChangeFreq();          // load PLL control register
+  140         
+  141           //   -----------------------------------------------------------------------
+  142           //   SCU Interrupt Disable configuration:
+  143           //   -----------------------------------------------------------------------
+  144           SCU_INTDIS     =  0xFFFF;      // SCU Interrupt Disable Register
+*** ERROR C25 IN LINE 144 OF MAIN.C: syntax error near 'uword'
+  145         
+  146           //   -----------------------------------------------------------------------
+  147           //   Initialization of the Peripherals:
+  148           //   -----------------------------------------------------------------------
+  149         
+  150           //   initializes the Parallel Ports
+  151           IO_vInit();
+  152         
+  153           //   initializes the USIC0 Module
+  154           USIC0_vInit();
+  155         
+  156         
+  157           //   -----------------------------------------------------------------------
+  158           //   Initialization of the Bank Select registers:
+C166 COMPILER V7.00, MAIN                                                                  08/04/2019 12:21:53 PAGE 4   
+
+  159           //   -----------------------------------------------------------------------
+  160         
+  161         
+  162           //   -----------------------------------------------------------------------
+  163           //   SCU Interrupt Source Selection configuration:
+  164           //   -----------------------------------------------------------------------
+  165           SCU_ISSR       =  0x0000;      // SCU Interrupt Source Select Register
+*** ERROR C25 IN LINE 165 OF MAIN.C: syntax error near 'uword'
+  166         
+  167           // USER CODE BEGIN (Init,3)
+  168         
+  169           // USER CODE END
+  170         
+  171           MAIN_vLockProtecReg();       // lock write security
+  172         
+  173           //   globally enable interrupts
+  174           PSW_IEN        =  1;          
+  175         
+  176         } //  End of function MAIN_vInit
+  177         
+  178         
+  179         //****************************************************************************
+  180         // @Function      void MAIN_vUnlockProtecReg(void) 
+  181         //
+  182         //----------------------------------------------------------------------------
+  183         // @Description   This function makes it possible to write one protected 
+  184         //                register.
+  185         //
+  186         //----------------------------------------------------------------------------
+  187         // @Returnvalue   None
+  188         //
+  189         //----------------------------------------------------------------------------
+  190         // @Parameters    None
+  191         //
+  192         //----------------------------------------------------------------------------
+  193         // @Date          2019/8/4
+  194         //
+  195         //****************************************************************************
+  196         
+  197         // USER CODE BEGIN (UnlockProtecReg,1)
+  198         
+  199         // USER CODE END
+  200         
+  201         void MAIN_vUnlockProtecReg(void)
+  202         {
+  203           uword uwPASSWORD;
+  204         
+  205             SCU_SLC = 0xAAAA;                   // command 0
+*** ERROR C25 IN LINE 205 OF MAIN.C: syntax error near 'uword'
+  206             SCU_SLC = 0x5554;                   // command 1
+*** ERROR C25 IN LINE 206 OF MAIN.C: syntax error near 'uword'
+  207         
+  208             uwPASSWORD = SCU_SLS & 0x00FF;
+*** ERROR C25 IN LINE 208 OF MAIN.C: syntax error near 'uword'
+*** ERROR C7 IN LINE 208 OF MAIN.C: compilation aborted
+
+C166 COMPILATION COMPLETE.  4 WARNING(S),  22 ERROR(S)

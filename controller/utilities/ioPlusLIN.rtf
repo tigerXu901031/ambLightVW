@@ -1,0 +1,714 @@
+{\rtf1\ansi\deff0\deftab720{\fonttbl{\f0\fnil MS Sans Serif;}{\f1\fnil\fcharset2 Symbol;}{\f2\fswiss\fprq2 System;}{\f3\fnil Times New Roman;}{\f4\fswiss\fprq2 Arial;}}
+{\colortbl\red0\green0\blue0;\red0\green0\blue128;\red255\green0\blue0;}
+\deflang1031\pard\plain\f4\fs28\cf0 DAvE's Project Documentation
+\par \plain\f4\fs22\cf0
+\par \plain\f4\fs22\cf0 Project: \tab\tab\b ioPlusLIN.dav
+\par 
+\par \plain\f4\fs22\cf0 Controller: \tab\tab\b XC2234L-20F66L
+\par \plain\f4\fs22\cf0 Compiler: \tab\tab\b Keil
+\par \plain\f4\fs22\cf0 Memory Model: \tab\b SMALL
+\par 
+\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 2019/8/4 14:45:19
+\par 
+\par 
+\par \plain\f4\fs22\cf2\b Please read this document carefully and note
+\par \plain\f4\fs22\cf2\b the red-colored hints.
+\par 
+\par \plain\f4\fs22\cf2\b If you miss a file in the generated files list
+\par \plain\f4\fs22\cf2\b maybe you have forgotten to select the
+\par \plain\f4\fs22\cf2\b initialisation function of the related module.
+\par 
+\par \plain\f4\fs22\cf0 Generated Files:
+\plain\f4\fs20\cf0\b
+\par \tab\tab\tab MAIN.H
+\par \tab\tab\tab MAIN.C
+\par \tab\tab\tab SCS.H
+\par \tab\tab\tab SCS.C
+\par \tab\tab\tab XC22XXLREGS.H
+\par \tab\tab\tab IO.H
+\par \tab\tab\tab IO.C
+\par \tab\tab\tab U0C0.H
+\par \tab\tab\tab U0C0.C
+\par \tab\tab\tab USIC0.H
+\par \tab\tab\tab USIC0.C
+\par 
+\par 
+\par \plain\f4\fs20\cf0
+\par \plain\f4\fs28\cf0\ul Project Settings
+\par
+\par \plain\f4\fs24\cf0 Macros:\f4\fs20\cf0
+\par \plain\f4\fs24\cf0 Functions:\f4\fs20\cf0
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void MAIN_vInit(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This function initializes the microcontroller.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void MAIN_vUnlockProtecReg(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This function makes it possible to write one protected
+
+\par \tab \tab register.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void MAIN_vLockProtecReg(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This function makes it possible to lock one protected
+
+\par \tab \tab register.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void MAIN_vChangeFreq(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This function is used to select the external crystal and
+
+\par \tab \tab configure the system frequency to 100MHz/80MHz/66MHz.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void main(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This is the main function.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs24\cf0 Initialization:
+\par \plain\f4\fs20\cf0\b
+\par
+\tab Configuration of the System Clock:\par 
+\tab - VCO clock used, input clock is connected\par 
+\tab - input frequency is 8.00 MHz\par 
+\tab - system clock is 66.00 MHz\par 
+\par 
+
+\par \plain\f4\fs20\cf0
+\par \plain\f4\fs28\cf0\ul Project Settings
+\par
+\par \plain\f4\fs24\cf0 Macros:\f4\fs20\cf0
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab INLINE void Scs_EnableHighPrecOsc(unsigned int Enable)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This use case function enables or disables the high precision
+
+\par \tab \tab oscillator for external crystal / clock at crystal input; may
+
+\par \tab \tab be called by the user to reduce waiting time.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab Enable: 0 = Disable, 1 = Enable
+
+\par \plain\f4\fs24\cf0 Functions:\f4\fs20\cf0
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab Scs_ErrorType Scs_lWaitForVcoLock(unsigned int Timeout)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This private function waits for VCO lock.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b Error code, 0 = no error\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab Scs_ErrorType Scs_lEnableVcoBypass(unsigned int Enable)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This private function enables or disables VCO bypass.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b Error code, 0 = no error\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab Enable: 0 = Disable, 1 = Enable
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab INLINE Scs_ErrorType Scs_lSelectExternalPllClock(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This private function selects the external clock source for
+
+\par \tab \tab the PLL.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b Error code, 0 = no error\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab INLINE void Scs_lStartTimer(unsigned int Cycles)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This private function starts timer T13 and waits until the
+
+\par \tab \tab specified number of clocks is counted.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab Cycles: Number of T13 clocks to count, 0...65535
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab Scs_ErrorType Scs_lApplyNewK1Div(unsigned int K1Div)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This private function applies a new K1 divider value to the
+
+\par \tab \tab PLL.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b Error code, 0 = no error\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab K1Div: K1 divider value
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab Scs_ErrorType Scs_lApplyNewNDiv(unsigned int NDiv)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This private function applies a new N divider value
+
+\par \tab \tab to the PLL.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b Error code, 0 = no error\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab NDiv: N divider value
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab Scs_ErrorType Scs_lApplyNewPDiv(unsigned int PDiv)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This private function applies a new P divider value
+
+\par \tab \tab to the PLL.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b Error code, 0 = no error\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab PDiv: P divider value
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab Scs_ErrorType Scs_lApplyNewVcoDivs\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This private function applies new P, N and K2 dividers
+
+\par \tab \tab to the VCO.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b Error code, 0 = no error\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab PDiv: P divider value
+
+\par \tab \tab NDiv: N divider value
+
+\par \tab \tab K2Div: K2 divider value
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab Scs_ErrorType Scs_lCheckFreqHighPrecOsc(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This private function checks the high precision oscillator
+
+\par \tab \tab for a valid output clock.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b Error code, 0 = no error\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab Scs_ErrorType Scs_lEnableVcoLockEmerg(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This private function enables the VCO loss-of-lock
+
+\par \tab \tab emergency handling.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b Error code, 0 = no error\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab Scs_ErrorType Scs_lRampPll(Scs_K2RampType *K2RampPtr)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This private function applies a stepwise ramp-up or ramp-down
+
+\par \tab \tab of the PLL output frequency using a set of K2 dividers
+
+\par \tab \tab and delay values.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b Error code, 0 = no error\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab Scs_ErrorType Scs_ApplyNewK2Div(unsigned int K2Div)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This global function applies a new K2 divider value
+
+\par \tab \tab to the PLL.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b Error code, 0 = no error\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab K2Div: K2 divider value
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab Scs_ErrorType Scs_GoFromBaseModeToNormalMode(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This global function performs a transition from base mode
+
+\par \tab \tab to normal mode.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b Error code, 0 = no error\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void Scs_InitTimer(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This global function CCU6 timer T13 as driver timer;
+
+\par \tab \tab previous CCU6 register contents may be saved.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void Scs_RestoreTimer(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This global function restores CCU6 register contents
+
+\par \tab \tab saved during the previous execution of Scs_InitTimer.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par \plain\f4\fs20\cf0
+\par \plain\f4\fs28\cf0\ul Parallel Ports
+\par
+\par \plain\f4\fs24\cf0 Macros:\f4\fs20\cf0
+\par \plain\f4\fs24\cf0 Functions:\f4\fs20\cf0
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void IO_vInit(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This is the initialization function of the IO function
+
+\par \tab \tab library. It is assumed that the SFRs used by this library
+
+\par \tab \tab are in reset state.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs24\cf0 Initialization:
+\par \plain\f4\fs20\cf0\b
+\par
+\tab Configuration of Port P2:\par 
+\tab P2.3 is used as alternate output for the USIC0 Channel0 Shift Data\par 
+\tab Output(DOUT)\par 
+\tab - push/pull output is selected\par 
+\tab P2.4 is used as alternate input for the USIC0 Channel0 Shift Data\par 
+\tab input(DX0F)\par 
+\par 
+\tab P2.0 - P2.3 output driver characteristic: strong driver\par 
+\tab P2.4 - P2.7 output driver characteristic: strong driver\par 
+\tab P2.8 - P2.13 output driver characteristic: strong driver\par 
+\par 
+\tab P2.0 - P2.3 output edge characteristic: sharp edge mode\par 
+\tab P2.4 - P2.7 output edge characteristic: sharp edge mode\par 
+\tab P2.8 - P2.13 output edge characteristic: sharp edge mode\par 
+\par 
+\tab Configuration of Port P5:\par 
+\tab - no pin of port P5 is used\par 
+\tab - Port5 Data register P5(Read only)\par 
+\par 
+\tab Configuration of Port P6:\par 
+\tab - no pin of port P6 is used\par 
+\par 
+\tab Configuration of Port P10:\par 
+\tab P10.4 is used as general purpose output\par 
+\tab - push/pull output is selected\par 
+\tab - the pin status is low level\par 
+\tab P10.5 is used as general purpose output\par 
+\tab - push/pull output is selected\par 
+\tab - the pin status is low level\par 
+\tab P10.7 is used as general purpose output\par 
+\tab - push/pull output is selected\par 
+\tab - the pin status is low level\par 
+\par 
+\tab P10.0 - P10.3 output driver characteristic: strong driver\par 
+\tab P10.4 - P10.7 output driver characteristic: strong driver\par 
+\tab P10.8 - P10.11 output driver characteristic: strong driver\par 
+\tab P10.12 - P10.15 output driver characteristic: strong driver\par 
+\par 
+\tab P10.0 - P10.3 output edge characteristic: sharp edge mode\par 
+\tab P10.4 - P10.7 output edge characteristic: sharp edge mode\par 
+\tab P10.8 - P10.11 output edge characteristic: sharp edge mode\par 
+\tab P10.12 - P10.15 output edge characteristic: sharp edge mode\par 
+\par 
+
+\par \plain\f4\fs20\cf0
+\par \plain\f4\fs28\cf0\ul Universal Serial Interface Channel (USIC) U0C0
+\par
+\par \plain\f4\fs24\cf0 Macros:\f4\fs20\cf0
+\par \plain\f4\fs24\cf0 Functions:\f4\fs20\cf0
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void U0C0_ASC_vInit(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This is the initialization function of the U0C0 function
+
+\par \tab \tab library. It is assumed that the SFRs used by this library
+
+\par \tab \tab are in reset state.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void U0C0_ASC_vSendData(uword uwData)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This function clears the transmit buffer Indication flag
+
+\par \tab \tab first  & then writes the send data initialization word into
+
+\par \tab \tab the transmit buffer register.
+
+\par \tab \tab Note:
+
+\par \tab \tab In a multiprocessor system the master with this function
+
+\par \tab \tab has the possibility to send data to the selected slave.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab uwData:
+
+\par \tab \tab Data to be send
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab uword U0C0_ASC_uwGetData(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This function reads out the content of the receive buffer
+
+\par \tab \tab register which contains the received data.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b Data that has been received\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab ubyte U0C0_ASC_ubTxDataReady(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This function can be used for checking up the status of the
+
+\par \tab \tab transmit shift indication flag U0C0_PSR_TSIF. This function
+
+\par \tab \tab shows when the sending of data has terminated. By
+
+\par \tab \tab continuously polling this flag after the function
+
+\par \tab \tab U0C0_ASC_vSendData has been called, it is possible to
+
+\par \tab \tab establish when U0C0 has terminated its task.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b 0 if transmitter is busy, else 1\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void U0C0_ASC_vi0IC(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This is the interrupt service routine for the Service
+
+\par \tab \tab Request Node U0C0_0IC.
+
+\par \tab \tab Please note that you have to add application specific code
+
+\par \tab \tab to this function.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void U0C0_ASC_vi1IC(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This is the interrupt service routine for the Service
+
+\par \tab \tab Request Node U0C0_1IC.
+
+\par \tab \tab Please note that you have to add application specific code
+
+\par \tab \tab to this function.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void U0C0_ASC_vi2IC(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This is the interrupt service routine for the Service
+
+\par \tab \tab Request Node U0C0_2IC.
+
+\par \tab \tab Please note that you have to add application specific code
+
+\par \tab \tab to this function.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs24\cf0 Initialization:
+\par \plain\f4\fs20\cf0\b
+\par
+\tab Configuration of the U0C0 Channel Control Register (Mode & Interrupts):\par 
+\tab - The USIC channel is disabled\par 
+\tab - The parity generation is disabled\par 
+\par 
+\tab U0C0 ASC is configured for Full-Duplex Operation Mode:\par 
+\par 
+\tab Configuration of the U0C0 Fractional Divider:\par 
+\tab - The Fractional divider is selected\par 
+\tab - The step value STEP = 953\par 
+\par 
+\tab Configuration of the U0C0 Baudrate Generator:\par 
+\tab - The selected BaudRate is 19.200 kbaud\par 
+\tab - The PreDivider for CTQ, PCTQ = 1\par 
+\tab - The Denominator for CTQ, DCTQ = 15\par 
+\tab - The Divider factor PDIV = 99\par 
+\par 
+\tab Configuration of the U0C0 Input Control Register 0:\par 
+\tab - The data input DX0F is selected for pin - P2.4\par 
+\par 
+\tab Configuration of the U0C0 Interrupt Node Pointer Register:\par 
+\tab - AINP pointer points to Interrupt node U0C0_0IC\par 
+\tab - RINP pointer points to Interrupt node U0C0_1IC\par 
+\tab - TBINP pointer points to Interrupt node U0C0_0IC\par 
+\tab - TSINP pointer points to Interrupt node U0C0_2IC\par 
+\tab - PINP pointer points to Interrupt node U0C0_1IC\par 
+\par 
+\tab Configuration of the U0C0 Shift Control:\par 
+\tab - Transmit/Receive LSB first is selected\par 
+\tab - Transmission Mode (TRM) = 1\par 
+\tab - Passive Data Level (PDL) = 1\par 
+\par 
+\tab - Word Length (WLE) = 7\par 
+\tab - Frame Length (FLE) = 7\par 
+\par 
+\tab Configuration of the U0C0 Transmit Control/Status Register:\par 
+\tab - TBUF Data Enable (TDEN) = 1\par 
+\tab - TBUF Data Single Shot Mode (TDSSM) = 1\par 
+\par 
+\tab Configuration of the U0C0 Protocol Control Register:\par 
+\tab - Sample Mode (SMD) = 1\par 
+\tab - 1 Stop bit is selected\par 
+\tab - Receiver noise detection interrupt is enabled\par 
+\tab - Format error interrupt is enabled\par 
+\tab - Frame finished interrupt is enabled\par 
+\tab - Sample Point (SP) = 7\par 
+\tab - Pulse Length (PL) = 0\par 
+\par 
+\tab Configuration of the U0C0 Protocol Status Register:\par 
+\tab - TBIF is set to simplify polling\par 
+\par 
+\tab Configuration of the used U0C0 Interrupts:\par 
+\tab U0C00IC service request node configuration:\par 
+\tab - U0C00IC interrupt priority level (ILVL) = 15\par 
+\tab - U0C00IC interrupt group level (GLVL) = 0\par 
+\tab - U0C00IC group priority extension (GPX) = 0\par 
+\par 
+\tab Use PEC channel 4 for U0C0_0IC INT:\par 
+\tab - normal interrupt\par 
+\tab - pointers are not modified\par 
+\tab - transfer a word\par 
+\tab - service End of PEC interrrupt by a EOP interrupt node is disabled\par 
+\tab - channel link mode is disabled\par 
+\par 
+\tab U0C01IC service request node configuration:\par 
+\tab - U0C01IC interrupt priority level (ILVL) = 14\par 
+\tab - U0C01IC interrupt group level (GLVL) = 1\par 
+\tab - U0C01IC group priority extension (GPX) = 0\par 
+\par 
+\tab Use PEC channel 1 for U0C0_1IC INT:\par 
+\tab - normal interrupt\par 
+\tab - pointers are not modified\par 
+\tab - transfer a word\par 
+\tab - service End of PEC interrrupt by a EOP interrupt node is disabled\par 
+\tab - channel link mode is disabled\par 
+\par 
+\tab U0C02IC service request node configuration:\par 
+\tab - U0C02IC interrupt priority level (ILVL) = 13\par 
+\tab - U0C02IC interrupt group level (GLVL) = 2\par 
+\tab - U0C02IC group priority extension (GPX) = 0\par 
+\par 
+\tab Configuration of U0C0 FIFO:\par 
+\tab Configuration of U0C0 Transmitter Buffer Conrol Register:\par 
+\tab - Transmit FIFO buffer is disabled\par 
+\tab Configuration of U0C0 Receiver Buffer Conrol Register:\par 
+\tab - Receive FIFO buffer is disabled\par 
+\par 
+\tab Configuration of the U0C0 Channel Control Register (Mode & Interrupts):\par 
+\tab - ASC (SCI, UART) Protocol is selected\par 
+\tab - The parity generation is disabled\par 
+\tab - Receiver start interrupt is enabled\par 
+\tab - Transmit shift interrupt is enabled\par 
+\tab - Transmit buffer interrupt is enabled\par 
+\tab - Receive interrupt is enabled\par 
+\tab - Alternate receive interrupt is enabled\par 
+\par 
+\tab Configuration of the used U0C0 Port Pins:\par 
+\par 
+\tab - P2.3 is used for USIC0 Channel0 Shift Data Output(DOUT)\par 
+\par 
+
+\par \plain\f4\fs20\cf0
+\par \plain\f4\fs28\cf0\ul USIC0
+\par
+\par \plain\f4\fs24\cf0 Macros:\f4\fs20\cf0
+\par \plain\f4\fs24\cf0 Functions:\f4\fs20\cf0
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void USIC0_vInit(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This function initializes USIC0 Module
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs24\cf0 Initialization:
+\par \plain\f4\fs20\cf0\b
+\par
+\tab - USIC0 module clock = 66.00 MHz\par 
+\par 
+\tab Configuration of the U0C0 Kernel State Configuration:\par 
+\par 
+
+}

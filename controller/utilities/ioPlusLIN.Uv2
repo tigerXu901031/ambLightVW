@@ -1,0 +1,144 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+Target (Target 1), 0x0002 // Tools: '166/167'
+
+Group (Dave Files)
+Group (User Files)
+
+File 1,2,<.\Start_V3.A66><Start_V3.A66>
+File 1,1,<.\MAIN.c><MAIN.c>
+File 1,1,<.\SCS.c><SCS.c>
+File 1,1,<.\io.c><io.c>
+File 1,1,<.\u0c0.c><u0c0.c>
+File 1,1,<.\USIC0.c><USIC0.c>
+
+
+Options 1,0,0  // Target 'Target 1'
+ Device (XC2267-96F)
+ Vendor (Infineon)
+ Cpu (IRAM(0xF600-0xFDFF) XRAM(0xA000-0xDFFF) XRAM2(0xE00000-0xE0FFFF) IROM(0xC00000-0xC0FFFF) IROM2(0xC10000-0xCBFFFF) CLOCK(20000000) MOD167 MODV2)
+ FlashUt ()
+ StupF ("LIB\START_V3.A66" ("XC2000 Startup Code"))
+ FlashDR (UL2OCDS(-O4399 -F15 -Q0"XC2xxx-96F" -J01 -L0C00000 -N0C0000 -M00))
+ DevID (4271)
+ Rgf (XC2267.H)
+ Mem ()
+ C ()
+ A ()
+ RL ()
+ OH ()
+ DBC_IFX ()
+ DBC_CMS ()
+ DBC_AMS ()
+ DBC_LMS ()
+ UseEnv=0
+ EnvBin ()
+ EnvInc ()
+ EnvLib ()
+ EnvReg ()
+ OrgReg ()
+ TgStat=16
+ OutDir (.\)
+ OutName (ioPlusLIN)
+ GenApp=1
+ GenLib=0
+ GenHex=0
+ Debug=1
+ Browse=1
+ LstDir (.\)
+ HexSel=1
+ MG32K=0
+ TGMORE=0
+ RunUsr 0 0 <>
+ RunUsr 1 0 <>
+ BrunUsr 0 0 <>
+ BrunUsr 1 0 <>
+ CrunUsr 0 0 <>
+ CrunUsr 1 0 <>
+ SVCSID <>
+ Model=1
+ RTOS=0
+ nHold=6
+ iHold=65535
+ sHold=65535
+ bHold=65535
+ MOD167=0
+ MODV2=1
+ UseOnChipRom=1
+ UseOnchipXCAN=1
+ UseOnchipXRAM2=1
+ NearRam=0
+ NearRom=0
+ UseOnChipIROM2=1
+ UseOnChipIROM3=0
+ UseOnChipXRAM3=0
+ ExtMem 0 0,0,0
+ ExtMem 1 0,0,0
+ ExtMem 2 0,0,0
+ ExtMem 3 0,0,0
+ ExtMem 4 0,0,0
+ ExtMem 5 0,0,0
+ Optimize=6
+ SpeedSize=1
+ RegColor=0
+ Static=0
+ WarningLev=2
+ Alias=1
+ Order=0
+ UnsignedChar=0
+ NoDppSave=1
+ Float64=0
+ SaveUsr=0
+ Reorder=0
+ cMisc (MODV2)
+ Define ()
+ Undefine ()
+ INCC6 ()
+ EC166 { 2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ECMISC ()
+ ECDEFINE ()
+ ECUNDEF ()
+ ECINC ()
+ MPL=1
+ CASE=0
+ aMisc (MODV2)
+ aSet ()
+ aReset ()
+ INCA6 ()
+ PropFld { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ IncBld=1
+ AlwaysBuild=0
+ GenAsm=0
+ AsmAsm=0
+ PublicsOnly=0
+ StopCode=3
+ CustArgs ()
+ LibMods ()
+ useLinkFile=0
+ LnkFile ()
+ LinkOnly=0
+ UseTargSet=1
+ DppUse=0
+ nDataSel=2
+ nConstSel=1
+ NearDataStr ()
+ NearConstStr ()
+ CinitTab ()
+ IntVectAddr ()
+ lWarnLev=2
+ lDisWarn ()
+ lAssign ()
+ lRegbank ()
+ lReserve ()
+ lMisc ()
+ lClasses ()
+ lSect ()
+  OPTDL (S166.DLL)(-cMODV2)(D167.DLL)(-pX2267)(S166.DLL)(-cMODV2)(T167.DLL)(-pX2267)
+  OPTDBG 48125,2,()()()()()()()()()() ()()()()
+ FLASH1 { 9,0,0,0,0,0,0,0,255,255,255,255,0,0,0,0,0,0,0,0 }
+ FLASH2 (BIN\UL2OCDS.DLL)
+ FLASH3 ()
+ FLASH4 ()
+EndOpt
+

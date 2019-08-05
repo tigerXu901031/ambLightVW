@@ -1,0 +1,200 @@
+C166 COMPILER V7.00, USIC0                                                                 08/04/2019 12:21:54 PAGE 1   
+
+
+C166 COMPILER V7.00, COMPILATION OF MODULE USIC0
+OBJECT MODULE PLACED IN USIC0.OBJ
+COMPILER INVOKED BY: C:\Program Files\Keil4Inf\C166\BIN\C166.EXE USIC0.c MODV2 BROWSE MODV2 DEBUG
+
+ stmt lvl     source
+
+    1         //****************************************************************************
+    2         // @Module        USIC0
+    3         // @Filename      USIC0.c
+    4         // @Project       ioPlusLIN.dav
+    5         //----------------------------------------------------------------------------
+    6         // @Controller    Infineon XC2234L-20F66L
+    7         //
+    8         // @Compiler      TASKING VX-toolset
+    9         //
+   10         // @Codegenerator 1.2
+   11         //
+   12         // @Description   This file contains functions that use the USIC0 module.
+   13         //
+   14         //----------------------------------------------------------------------------
+   15         // @Date          2019/8/4 11:50:49
+   16         //
+   17         //****************************************************************************
+   18         
+   19         // USER CODE BEGIN (USIC0_General,1)
+   20         
+   21         // USER CODE END
+   22         
+   23         //****************************************************************************
+   24         // @Project Includes
+   25         //****************************************************************************
+   26         
+   27         #include "MAIN.h"
+*** ERROR C42 IN LINE 339 OF SCS.H: 'Scs_EnableHighPrecOsc': not in formal parameter list
+*** ERROR C42 IN LINE 343 OF SCS.H: 'Scs_ApplyNewK2Div': not in formal parameter list
+*** ERROR C42 IN LINE 344 OF SCS.H: 'Scs_GoFromBaseModeToNormalMode': not in formal parameter list
+*** ERROR C42 IN LINE 345 OF SCS.H: 'Scs_InitTimer': not in formal parameter list
+*** ERROR C42 IN LINE 348 OF SCS.H: 'Scs_RestoreTimer': not in formal parameter list
+*** WARNING C34 IN LINE 379 OF SCS.H: 'inline': missing declaration specifiers
+*** ERROR C42 IN LINE 379 OF SCS.H: 'inline': not in formal parameter list
+*** ERROR C25 IN LINE 379 OF SCS.H: syntax error near 'void'
+*** ERROR C25 IN LINE 385 OF SCS.H: syntax error near 'uword'
+*** ERROR C25 IN LINE 391 OF SCS.H: syntax error near 'uword'
+*** WARNING C34 IN LINE 418 OF SCS.H: 'DestPtr': missing declaration specifiers
+*** ERROR C42 IN LINE 418 OF SCS.H: 'DestPtr': not in formal parameter list
+*** ERROR C25 IN LINE 419 OF SCS.H: syntax error near 'const'
+*** WARNING C34 IN LINE 419 OF SCS.H: 'SrcPtr': missing declaration specifiers
+*** ERROR C42 IN LINE 419 OF SCS.H: 'SrcPtr': not in formal parameter list
+*** ERROR C25 IN LINE 419 OF SCS.H: syntax error near 'unsigned'
+*** ERROR C142 IN LINE 424 OF SCS.H: illegal initialization
+*** WARNING C34 IN LINE 425 OF SCS.H: 'DestPtr': missing declaration specifiers
+*** ERROR C42 IN LINE 425 OF SCS.H: 'DestPtr': not in formal parameter list
+*** ERROR C25 IN LINE 425 OF SCS.H: syntax error near '++'
+   28         
+   29         // USER CODE BEGIN (USIC0_General,2)
+   30         
+   31         // USER CODE END
+   32         
+   33         
+   34         //****************************************************************************
+   35         // @Macros
+C166 COMPILER V7.00, USIC0                                                                 08/04/2019 12:21:54 PAGE 2   
+
+   36         //****************************************************************************
+   37         
+   38         // USER CODE BEGIN (USIC0_General,3)
+   39         
+   40         // USER CODE END
+   41         
+   42         
+   43         //****************************************************************************
+   44         // @Defines
+   45         //****************************************************************************
+   46         
+   47         // USER CODE BEGIN (USIC0_General,4)
+   48         
+   49         // USER CODE END
+   50         
+   51         
+   52         //****************************************************************************
+   53         // @Typedefs
+   54         //****************************************************************************
+   55         
+   56         // USER CODE BEGIN (USIC0_General,5)
+   57         
+   58         // USER CODE END
+   59         
+   60         
+   61         //****************************************************************************
+   62         // @Imported Global Variables
+   63         //****************************************************************************
+   64         
+   65         // USER CODE BEGIN (USIC0_General,6)
+   66         
+   67         // USER CODE END
+   68         
+   69         
+   70         //****************************************************************************
+   71         // @Global Variables
+   72         //****************************************************************************
+   73         
+   74         // USER CODE BEGIN (USIC0_General,7)
+   75         
+   76         // USER CODE END
+   77         
+   78         
+   79         //****************************************************************************
+   80         // @External Prototypes
+   81         //****************************************************************************
+   82         
+   83         // USER CODE BEGIN (USIC0_General,8)
+   84         
+   85         // USER CODE END
+   86         
+   87         
+   88         //****************************************************************************
+   89         // @Prototypes Of Local Functions
+   90         //****************************************************************************
+   91         
+   92         // USER CODE BEGIN (USIC0_General,9)
+   93         
+   94         // USER CODE END
+   95         
+   96         
+   97         //****************************************************************************
+C166 COMPILER V7.00, USIC0                                                                 08/04/2019 12:21:54 PAGE 3   
+
+   98         // @Function      void USIC0_vInit(void) 
+   99         //
+  100         //----------------------------------------------------------------------------
+  101         // @Description   This function initializes USIC0 Module
+  102         //
+  103         //----------------------------------------------------------------------------
+  104         // @Returnvalue   None
+  105         //
+  106         //----------------------------------------------------------------------------
+  107         // @Parameters    None
+  108         //
+  109         //----------------------------------------------------------------------------
+  110         // @Date          2019/8/4
+  111         //
+  112         //****************************************************************************
+  113         
+  114         // USER CODE BEGIN (Init,1)
+  115         
+  116         // USER CODE END
+  117         
+  118         void USIC0_vInit(void)
+  119         {
+  120         
+  121           volatile unsigned int uwTemp;
+  122         
+  123           // USER CODE BEGIN (Init,2)
+  124         
+  125           // USER CODE END
+  126         
+  127           //   -----------------------------------------------------------------------
+  128           //   Initialization of USIC Peripherals:
+  129           //   -----------------------------------------------------------------------
+  130         
+  131           ///  - USIC0 module clock = 66.00 MHz
+  132         
+  133           ///  -----------------------------------------------------------------------
+  134           ///  Configuration of the U0C0 Kernel State Configuration:
+  135           ///  -----------------------------------------------------------------------
+  136         
+  137           U0C0_KSCFG     =  0x0003;      // load U0C0 kernel state configuration 
+*** ERROR C25 IN LINE 137 OF USIC0.C: syntax error near 'uword'
+  138                                          // register
+  139         
+  140           uwTemp         =  U0C0_KSCFG;  // dummy read to avoid pipeline effects
+*** ERROR C25 IN LINE 140 OF USIC0.C: syntax error near 'uword'
+  141         
+  142         
+  143           //   initializes the Universal Serial Interface Channel (USIC) U0C0
+  144         
+  145           U0C0_ASC_vInit();
+  146         
+  147         
+  148           // USER CODE BEGIN (Init,3)
+  149         
+  150           // USER CODE END
+  151         
+  152         } //  End of function USIC0_vInit
+  153         
+  154         
+  155         
+  156         
+  157         // USER CODE BEGIN (USIC0_General,10)
+C166 COMPILER V7.00, USIC0                                                                 08/04/2019 12:21:54 PAGE 4   
+
+  158         
+  159         // USER CODE END
+  160         
+*** ERROR C7 IN LINE 161 OF USIC0.C: compilation aborted
+
+C166 COMPILATION COMPLETE.  4 WARNING(S),  19 ERROR(S)
