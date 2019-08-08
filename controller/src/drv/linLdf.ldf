@@ -1,0 +1,121 @@
+/****************************************************************************
+**        File        : LIN_LDF.ldf
+**        Description : LIN Description file for the defined LIN cluster
+*****************************************************************************/
+
+LIN_description_file;
+LIN_Protocol_Version = "2.1";
+LIN_language_version = "2.1";
+LIN_speed = 19.2 kbps;
+Channel_name = "LIN_Configuration1";
+
+Nodes {
+    Master: ledController, 5 ms, .1 ms;
+    Slaves: pcClient;
+}
+
+Signals {
+    HMI_status_light_control
+: 1,0,pcClient,ledController;
+    HMI_status_lightness: 2,0,pcClient,ledController;
+    HMI_status_light_mode: 8,0,pcClient,ledController;
+    FreeMode_LightMatrix_L: 4,0,pcClient,ledController;
+    FreeMode_LightMatrix_T: 4,0,pcClient,ledController;
+    FreeMode_LightMatrix_R: 4,0,pcClient,ledController;
+    HMI_status_light_status: 2,0,ledController,pcClient;
+    HMI_status_lightness_report: 2,0,ledController,pcClient;
+    HMI_status_light_mode_report: 8,0,ledController,pcClient;
+}
+
+Diagnostic_signals {
+    MasterReqB0:8,0;
+    MasterReqB1:8,0;
+    MasterReqB2:8,0;
+    MasterReqB3:8,0;
+    MasterReqB4:8,0;
+    MasterReqB5:8,0;
+    MasterReqB6:8,0;
+    MasterReqB7:8,0;
+    SlaveRespB0:8,0;
+    SlaveRespB1:8,0;
+    SlaveRespB2:8,0;
+    SlaveRespB3:8,0;
+    SlaveRespB4:8,0;
+    SlaveRespB5:8,0;
+    SlaveRespB6:8,0;
+    SlaveRespB7:8,0;
+}
+
+Frames {
+    HMI_status_light_control:0,pcClient,4{
+        HMI_status_light_control
+,0;
+        HMI_status_lightness,4;
+        HMI_status_light_mode,8;
+        FreeMode_LightMatrix_L,16;
+        FreeMode_LightMatrix_T,20;
+        FreeMode_LightMatrix_R,24;
+    }
+    HMI_status_light_report:1,ledController,2{
+        HMI_status_light_status,0;
+        HMI_status_lightness_report,2;
+        HMI_status_light_mode_report,8;
+    }
+}
+
+Sporadic_frames {
+}
+
+Event_triggered_frames {
+}
+
+Diagnostic_frames {
+MasterReq: 60{
+    MasterReqB0,0;
+    MasterReqB1,8;
+    MasterReqB2,16;
+    MasterReqB3,24;
+    MasterReqB4,32;
+    MasterReqB5,40;
+    MasterReqB6,48;
+    MasterReqB7,56;
+    }
+SlaveResp: 61{
+    SlaveRespB0,0;
+    SlaveRespB1,8;
+    SlaveRespB2,16;
+    SlaveRespB3,24;
+    SlaveRespB4,32;
+    SlaveRespB5,40;
+    SlaveRespB6,48;
+    SlaveRespB7,56;
+    }
+}
+
+Node_attributes {
+    pcClient {
+        LIN_protocol = 2.1;
+        configured_NAD = 2;
+        initial_NAD = 2;
+        product_id = 0,0,0;
+        /*Resonse error signal: not configured in GUI*/
+        /*fault_state_signals: not configured in GUI*/
+        P2_min = 50 ms;
+        ST_min = 0 ms;
+        N_As_timeout = 1000 ms;
+        N_Cr_timeout = 1000 ms;
+        configurable_frames {
+                 HMI_status_light_control;
+                 HMI_status_light_report;
+        }
+    }
+}
+
+Schedule_tables {
+    Schedule100ms {
+        MasterReq delay 100 ms;
+        SlaveResp delay 100 ms;
+        HMI_status_light_control delay 100 ms;
+        HMI_status_light_report delay 100 ms;
+    }
+}

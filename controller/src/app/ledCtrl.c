@@ -56,9 +56,9 @@ static void ledMode1Ctrl(ledMode_enum oldInpMode)
         }
         for (j = 0; j < color_max; j++)
         {
-            colorArr[j].blue = colorArrOrign[j].blue * (1 - (0.25 * darknessLevel));
-            colorArr[j].green = colorArrOrign[j].green * (1 - (0.25 * darknessLevel));
-            colorArr[j].red = colorArrOrign[j].red * (1 - (0.25 * darknessLevel));
+            colorArr[j].blue    = colorArrOrign[j].blue * (1 - (0.25 * darknessLevel));
+            colorArr[j].green   = colorArrOrign[j].green * (1 - (0.25 * darknessLevel));
+            colorArr[j].red     = colorArrOrign[j].red * (1 - (0.25 * darknessLevel));
         }
 
     }
@@ -69,7 +69,9 @@ static void ledMode2Ctrl()
     uint8 i = 0;
     for (i = 0; i < LED_NUM; i++)
     {
-        setSingleLed(ledStripIdx_left, i, colorArr[color_green]);
+        setSingleLed(ledStripIdx_center, i, colorArr[color_green]);
+        setSingleLed(ledStripIdx_left, i, colorArr[color_off]);
+        setSingleLed(ledStripIdx_right, i, colorArr[color_off]);
     }
 }
 
@@ -88,7 +90,9 @@ static void ledMode3Ctrl()
     case 4:
         for (j = 0; j < LED_NUM; j++)
         {
-            setSingleLed(ledStripIdx_left, j, colorArr[color_green]);
+            setSingleLed(ledStripIdx_center, j, colorArr[color_green]);
+            setSingleLed(ledStripIdx_left, i, colorArr[color_off]);
+            setSingleLed(ledStripIdx_right, i, colorArr[color_off]);
         }
         i++;
         break;
@@ -101,6 +105,8 @@ static void ledMode3Ctrl()
         for (j = 0; j < LED_NUM; j++)
         {
             setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
+            setSingleLed(ledStripIdx_left, i, colorArr[color_off]);
+            setSingleLed(ledStripIdx_right, i, colorArr[color_off]);
         }
         i++;
         if (i == 10)
@@ -125,88 +131,96 @@ static void ledMode4Ctrl(ledMode_enum oldInpMode)
     {
     }
 
-    switch (i)
+    i++;
+    if (i == 10)
     {
-        /* all green ON first 500ms */
-        case 0:
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-            for (j = 0; j < LED_NUM; j++)
-            {
-                setSingleLed(ledStripIdx_left, j, colorArr[color_green]);
-            }
-            i++;
-            break;
-        /* all OFF next 500ms */
-        case 5:
-        case 6:
-        case 7:
-        case 8:
-        case 9:
-            for (j = 0; j < LED_NUM; j++)
-            {
-                setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
-                if ((j == 5) || (j == 6))
-                    setSingleLed(ledStripIdx_left, j, colorArr[color_green]);
-                else
-                {
-                }
-                if (((j == 4) || (j == 7)) && (k >= 1))
-                {
-                    setSingleLed(ledStripIdx_left, j, colorArr[color_green]);
-                }
-                else
-                {
-                }
-                if (((j == 3) || (j == 8)) && (k >= 2))
-                {
-                    setSingleLed(ledStripIdx_left, j, colorArr[color_green]);
-                }
-                else
-                {
-                }
-                if (((j == 2) || (j == 9)) && (k >= 3))
-                {
-                    setSingleLed(ledStripIdx_left, j, colorArr[color_green]);
-                }
-                else
-                {
-                }
-                if (((j == 1) || (j == 10)) && (k >= 4))
-                {
-                    setSingleLed(ledStripIdx_left, j, colorArr[color_green]);
-                }
-                else
-                {
-                }
-                if (((j == 0) || (j == 11)) && (k >= 5))
-                {
-                    setSingleLed(ledStripIdx_left, j, colorArr[color_green]);
-                }
-                else
-                {
-                }
-            }
-            i++;
-            if (i == 10)
-            {
-                i = 0;
-                if (k <= 5)
-                {
-                    k++;
-                }
-            }
-            break;
-        default:
-            break;
+        i = 0;
+        if (k <= 5)
+        {
+            k++;
+        }
+    }
+    else
+    {
+    }
+    for(j = 0; j < LED_NUM; j ++)
+    {
+        if((j >= (5 - k)) && (j <= (6 + k)))
+        {
+            setSingleLed(ledStripIdx_left, j, colorArr[color_green]);
+            setSingleLed(ledStripIdx_center, j, colorArr[color_green]);
+            setSingleLed(ledStripIdx_right, j, colorArr[color_green]);
+        }
+        else
+        {
+            setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
+            setSingleLed(ledStripIdx_center, j, colorArr[color_off]);
+            setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
+        }
     }
 }
 
-static void ledMode5Ctrl()
+static void ledMode5Ctrl(ledMode_enum oldInpMode)
 {
+    static uint8 cycCnt = 0;
+    static rgb_type streamColorArr[24];
+    rgb_type colorTemp;
+    uint8 i = 0, j = 0, k = 0;
+    
+    if(oldInpMode != ledMode_5)
+    {
+        cycCnt = 0;
+        streamColorArr[0] = colorArr[color_red];
+        streamColorArr[1] = colorArr[color_red];
+        streamColorArr[2] = colorArr[color_red];
+        streamColorArr[3] = colorArr[color_red];
 
+        streamColorArr[4] = colorArr[color_orange];
+        streamColorArr[5] = colorArr[color_orange];
+        streamColorArr[6] = colorArr[color_orange];
+        streamColorArr[7] = colorArr[color_orange];
+
+        streamColorArr[8] = colorArr[color_yellow];
+        streamColorArr[9] = colorArr[color_yellow];
+        streamColorArr[10] = colorArr[color_yellow];
+        streamColorArr[11] = colorArr[color_yellow];
+
+        streamColorArr[12] = colorArr[color_green];
+        streamColorArr[13] = colorArr[color_green];
+        streamColorArr[14] = colorArr[color_green];
+        streamColorArr[15] = colorArr[color_green];
+
+        streamColorArr[16] = colorArr[color_blue];
+        streamColorArr[17] = colorArr[color_blue];
+        streamColorArr[18] = colorArr[color_blue];
+        streamColorArr[19] = colorArr[color_blue];
+
+        streamColorArr[20] = colorArr[color_purple];
+        streamColorArr[21] = colorArr[color_purple];
+        streamColorArr[22] = colorArr[color_purple];
+        streamColorArr[23] = colorArr[color_purple];
+    }
+    cycCnt ++;
+    /* each 0.5s update the stream arrary */
+    if(cycCnt == 5)
+    {
+        cycCnt = 0;
+        
+        colorTemp = streamColorArr[23];
+        for(i = 0; i < 23; i ++)
+        {
+            streamColorArr[23 - i] = streamColorArr[22 - i];
+        }
+        streamColorArr[0] = colorTemp;
+    }
+    
+    /* light the led according to the stream array */
+    for(j = 0; j < LED_NUM; j ++)
+    {
+        setSingleLed(ledStripIdx_left, j, streamColorArr[j]);
+        setSingleLed(ledStripIdx_right, j, streamColorArr[j]);
+        setSingleLed(ledStripIdx_center, j, streamColorArr[j + 12]);
+    }
 }
 
 static void ledMode6Ctrl()
@@ -222,7 +236,9 @@ static void ledMode6Ctrl()
     case 2:
         for (j = 0; j < LED_NUM; j++)
         {
-            setSingleLed(ledStripIdx_left, j, colorArr[color_yellow]);
+            setSingleLed(ledStripIdx_center, j, colorArr[color_yellow]);
+            setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
+            setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
         }
         i++;
         break;
@@ -232,7 +248,9 @@ static void ledMode6Ctrl()
     case 5:
         for (j = 0; j < LED_NUM; j++)
         {
+            setSingleLed(ledStripIdx_center, j, colorArr[color_off]);
             setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
+            setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
         }
         i++;
         if (i == 6)
@@ -245,48 +263,38 @@ static void ledMode6Ctrl()
 
 static void ledMode7Ctrl()
 {
-    rgb_type brightnessColor;
-    static uint8 brightnessLevel = 0;
     static uint8 i = 0;
     uint8 j = 0;
 
     switch (i)
     {
-        /* all green ON first 500ms */
+        /* all lights yellow first 300ms */
         case 0:
         case 1:
         case 2:
             for (j = 0; j < LED_NUM; j++)
             {
-                brightnessColor.blue = colorArr[color_yellow].blue / (10 - brightnessLevel);
-                brightnessColor.green = colorArr[color_yellow].green / (10 - brightnessLevel);
-                brightnessColor.red = colorArr[color_yellow].red / (10 - brightnessLevel);
-                setSingleLed(ledStripIdx_left, j, brightnessColor);
+                /* in this mode locally use the highest brightness level */
+                setSingleLed(ledStripIdx_left, j, colorArrOrign[color_yellow]);
+                setSingleLed(ledStripIdx_center, j, colorArrOrign[color_yellow]);
+                setSingleLed(ledStripIdx_right, j, colorArrOrign[color_yellow]);
             }
             i++;
             break;
-        /* all OFF next 500ms */
+        /* all lights red first 300ms */
         case 3:
         case 4:
         case 5:
             for (j = 0; j < LED_NUM; j++)
             {
-                brightnessColor.blue = colorArr[color_red].blue / (10 - brightnessLevel);
-                brightnessColor.green = colorArr[color_red].green / (10 - brightnessLevel);
-                brightnessColor.red = colorArr[color_red].red / (10 - brightnessLevel);
-                setSingleLed(ledStripIdx_left, j, brightnessColor);
+                setSingleLed(ledStripIdx_left, j, colorArrOrign[color_red]);
+                setSingleLed(ledStripIdx_center, j, colorArrOrign[color_red]);
+                setSingleLed(ledStripIdx_right, j, colorArrOrign[color_red]);
             }
             i++;
             if (i == 6)
             {
                 i = 0;
-                if (brightnessLevel < 9)
-                {
-                    brightnessLevel++;
-                }
-                else
-                {
-                }
             }
             else
             {
@@ -332,7 +340,9 @@ static void ledMode8Ctrl(ledMode_enum oldInpMode)
         case 4:
             for (j = 0; j < LED_NUM; j++)
             {
-                setSingleLed(ledStripIdx_left, j, colorArr[color_green]);
+                setSingleLed(ledStripIdx_center, j, colorArr[color_green]);
+                setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
+                setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
             }
             i++;
             break;
@@ -344,7 +354,9 @@ static void ledMode8Ctrl(ledMode_enum oldInpMode)
         case 9:
             for (j = 0; j < LED_NUM; j++)
             {
-                setSingleLed(ledStripIdx_left, j, colorArr[color_blue]);
+                setSingleLed(ledStripIdx_center, j, colorArr[color_blue]);
+                setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
+                setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
             }
             i++;
             if (i == 10)
@@ -354,12 +366,14 @@ static void ledMode8Ctrl(ledMode_enum oldInpMode)
             }
             break;
         case 0xff:
-            brightnessColor.blue = colorArr[color_blue].blue / 3;
-            brightnessColor.green = colorArr[color_blue].green / 3;
-            brightnessColor.red = colorArr[color_blue].red / 3;
+            brightnessColor.blue = colorArrOrign[color_blue].blue / 2;
+            brightnessColor.green = colorArrOrign[color_blue].green / 2;
+            brightnessColor.red = colorArrOrign[color_blue].red / 2;
             for (j = 0; j < LED_NUM; j++)
             {
-                setSingleLed(ledStripIdx_left, j, brightnessColor);
+                setSingleLed(ledStripIdx_center, j, brightnessColor);
+                setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
+                setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
             }
         default:
             break;
@@ -370,12 +384,12 @@ static void ledMode9Ctrl()
 {
     uint8 i = 0;
     rgb_type brightnessColor;
-    brightnessColor.blue = colorArr[color_blue].blue / 3;
-    brightnessColor.green = colorArr[color_blue].green / 3;
-    brightnessColor.red = colorArr[color_blue].red / 3;
+    brightnessColor.blue = colorArrOrign[color_blue].blue / 2;
+    brightnessColor.green = colorArrOrign[color_blue].green / 2;
+    brightnessColor.red = colorArrOrign[color_blue].red / 2;
     for (i = 0; i < LED_NUM; i++)
     {
-        setSingleLed(ledStripIdx_left, i, brightnessColor);
+        setSingleLed(ledStripIdx_center, i, brightnessColor);
     }
 }
 
