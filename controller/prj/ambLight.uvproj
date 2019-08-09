@@ -349,26 +349,6 @@
               <FilePath>..\src\drv\io.h</FilePath>
             </File>
             <File>
-              <FileName>u0c0.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\drv\u0c0.c</FilePath>
-            </File>
-            <File>
-              <FileName>u0c0.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\drv\u0c0.h</FilePath>
-            </File>
-            <File>
-              <FileName>USIC0.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\drv\USIC0.c</FilePath>
-            </File>
-            <File>
-              <FileName>USIC0.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\drv\USIC0.h</FilePath>
-            </File>
-            <File>
               <FileName>XC22xxLREGS.H</FileName>
               <FileType>5</FileType>
               <FilePath>..\src\drv\XC22xxLREGS.H</FilePath>
@@ -397,6 +377,31 @@
               <FileName>START_V3.A66</FileName>
               <FileType>2</FileType>
               <FilePath>..\src\drv\START_V3.A66</FilePath>
+            </File>
+            <File>
+              <FileName>linCfg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\drv\linCfg.h</FilePath>
+            </File>
+            <File>
+              <FileName>linDrv.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\drv\linDrv.c</FilePath>
+            </File>
+            <File>
+              <FileName>linDrv.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\drv\linDrv.h</FilePath>
+            </File>
+            <File>
+              <FileName>linLdf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\drv\linLdf.c</FilePath>
+            </File>
+            <File>
+              <FileName>linLdf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\drv\linLdf.h</FilePath>
             </File>
           </Files>
         </Group>

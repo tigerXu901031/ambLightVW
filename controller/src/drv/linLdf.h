@@ -11,8 +11,9 @@
 
 /*@doc API*/
 
-#include "COMPILER.h"
-#include "LIN_CFG.h"
+// #include "COMPILER.h"
+#include "LinCfg.h"
+#include "../srv/type.h"
 
 /*   @Topic LIN LDF Application Program Interface |
 **   This section defines the interface for LIN cluster. It defines the constants
@@ -589,48 +590,45 @@
      { Lin_DiagTxFifoWrIdx =  0; }
 
 
-     #define LIN_BYTE_OFFSET_HMI_status_light_control
-   0
-     #define LIN_BIT_OFFSET_HMI_status_light_control
-    0
-     #define LIN_SIGNAL_SIZE_HMI_status_light_control
-   1
+     #define LIN_BYTE_OFFSET_HMI_status_light_control  0
+     #define LIN_BIT_OFFSET_HMI_status_light_control   0
+     #define LIN_SIGNAL_SIZE_HMI_status_light_control  1
 
 /* static access macros for signalLIN_SIGNAL_HMI_status_light_control
  */
-     #define l_u8_rd_LIN_SIGNAL_HMI_status_light_control
+     #define l_u8_rd_LIN_SIGNAL_HMI_status_light_control \
 () \
-     l_u8_rd_HMI_status_light_control
+     l_u8_rd_HMI_status_light_control \
 ()
-     #define l_u8_wr_LIN_SIGNAL_HMI_status_light_control
+     #define l_u8_wr_LIN_SIGNAL_HMI_status_light_control \
 (A) \
-     l_u8_wr_HMI_status_light_control
-(A)
+     l_u8_wr_HMI_status_light_control \ 
+(A) \
 
-     #define l_u8_rd_HMI_status_light_control
+     #define l_u8_rd_HMI_status_light_control \
 ()  \
-        ((Lin_FrmData[LIN_BYTE_OFFSET_HMI_status_light_control
+        ((Lin_FrmData[LIN_BYTE_OFFSET_HMI_status_light_control \
 ] & \
-        (((1U << LIN_SIGNAL_SIZE_HMI_status_light_control
+        (((1U << LIN_SIGNAL_SIZE_HMI_status_light_control \
 ) - 1) \
-        << LIN_BIT_OFFSET_HMI_status_light_control
+        << LIN_BIT_OFFSET_HMI_status_light_control \
  )) \
-        >> LIN_BIT_OFFSET_HMI_status_light_control
+        >> LIN_BIT_OFFSET_HMI_status_light_control \
 )
 
-     #define l_u8_wr_HMI_status_light_control
+     #define l_u8_wr_HMI_status_light_control \
 (A) \
-        do {Lin_FrmData[LIN_BYTE_OFFSET_HMI_status_light_control
+        do {Lin_FrmData[LIN_BYTE_OFFSET_HMI_status_light_control \
 ] = \
-           (Lin_FrmData[LIN_BYTE_OFFSET_HMI_status_light_control
+           (Lin_FrmData[LIN_BYTE_OFFSET_HMI_status_light_control \
 ] & \
-           ((uint8) (~(((1U << LIN_SIGNAL_SIZE_HMI_status_light_control
+           ((uint8) (~(((1U << LIN_SIGNAL_SIZE_HMI_status_light_control \
 ) - 1) \
-           << LIN_BIT_OFFSET_HMI_status_light_control
+           << LIN_BIT_OFFSET_HMI_status_light_control \
 ))))  | \
-           ((((1U << LIN_SIGNAL_SIZE_HMI_status_light_control
+           ((((1U << LIN_SIGNAL_SIZE_HMI_status_light_control \
 ) - 1) & (A)) \
-           << LIN_BIT_OFFSET_HMI_status_light_control
+           << LIN_BIT_OFFSET_HMI_status_light_control \
 );\
            Lin_FrmDataUpdtFlag[0 >> 3] |= ( 1 << (0 & 0x07)); \
            } while(0)

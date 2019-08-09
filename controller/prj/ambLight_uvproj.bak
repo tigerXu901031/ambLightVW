@@ -30,7 +30,7 @@
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
           <UseEnv>0</UseEnv>
-          <BinPath></BinPath>
+          <BinPath>C:\Program Files\Keil4Inf\C166\BIN\</BinPath>
           <IncludePath></IncludePath>
           <LibPath></LibPath>
           <RegisterFilePath></RegisterFilePath>
@@ -311,6 +311,31 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>srv</GroupName>
+          <Files>
+            <File>
+              <FileName>generic.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\srv\generic.h</FilePath>
+            </File>
+            <File>
+              <FileName>led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\srv\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\srv\led.h</FilePath>
+            </File>
+            <File>
+              <FileName>type.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\srv\type.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>drv</GroupName>
           <Files>
             <File>
@@ -322,11 +347,6 @@
               <FileName>io.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\src\drv\io.h</FilePath>
-            </File>
-            <File>
-              <FileName>START_V3.A66</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\src\drv\START_V3.A66</FilePath>
             </File>
             <File>
               <FileName>u0c0.c</FileName>
@@ -373,30 +393,10 @@
               <FileType>5</FileType>
               <FilePath>..\src\drv\scs.h</FilePath>
             </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>srv</GroupName>
-          <Files>
             <File>
-              <FileName>generic.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\srv\generic.h</FilePath>
-            </File>
-            <File>
-              <FileName>led.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\srv\led.c</FilePath>
-            </File>
-            <File>
-              <FileName>led.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\srv\led.h</FilePath>
-            </File>
-            <File>
-              <FileName>type.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\srv\type.h</FilePath>
+              <FileName>START_V3.A66</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\src\drv\START_V3.A66</FilePath>
             </File>
           </Files>
         </Group>

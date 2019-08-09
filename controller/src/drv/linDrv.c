@@ -7,9 +7,9 @@
 
 void U0C0_LIN_Master_vInit(void)
 { 
-    Sys_Protection(0); 
+    // Sys_Protection(0); 
     U0C0_KSCFG = 3; 
-    Sys_Protection(1);
+    // Sys_Protection(1);
     U0C0_CCR = 0x0000; // recommanded
 
 /// ----------------------------------------------------------------------- 
@@ -33,7 +33,7 @@ void U0C0_LIN_Master_vInit(void)
 /// -----------------------------------------------------------------------
     //TRM=01b(ASC) DOCFG PDL SDIR=0(LSB first) 
     U0C0_SCTRL = (1 << 8) | (0 << 6) | (1 << 1) | (0 << 0); 
-    U0C0_SCTRH = (12 << 8) | (12 << 0);                                 //WLE=12, FLE=12;   
+    U0C0_SCTRH = (12 << 8) | (12 << 0);                                 //WLE=12, FLE=12;   ???TBD
 
 /// ----------------------------------------------------------------------- 
 /// 4. data transmission control (TBUF single shot mode)        
@@ -58,18 +58,21 @@ void U0C0_LIN_Master_vInit(void)
 /// -----------------------------------------------------------------------
     // PL SP FFIEN FFIEN RNIEN CDEN SBIEN IDM STPB SMD 
     U0C0_PCRL=(0<<13)|(7<<8)|(0<<7)|(0<<6)|(0<<5)|(1<<4)|(0<<3)|(0<<2)|(0<<1)|(0<<0);
-    U0C0_PCRH=(0<<15); // MCLK not used
+    U0C0_PCRH=(0<<15);                                  // MCLK not used
+    /* TBD: 
+        1. do FFIEN(Frame Finished Interrupt Enable) need to be set ?
+        2. do MCLK(Master Clock Enable) need to be set ? */
 
 /// ----------------------------------------------------------------------- 
 /// 6. Configuration of the interrupts point and interrupt control registers 
 /// -----------------------------------------------------------------------
     //AINP=SR0, RINP=SR0, TBINP=SR0, TSINP=SR0
     U0C0_INPRL = (0 << 12) | (0 << 8) | (0 << 4) | (0 << 0);
-    U0C0_INPRH = (1 << 0); //PINP=SR1 for collision detection and SBIR
+    U0C0_INPRH = (1 << 0);                              //PINP=SR1 for collision detection and SBIR
 
-    U0C0_0IC = (0x80 * 0 + 0x40 * 0 + ((10 << 2)|0)); //IR=0, IE=0, ILVL=10, GPX=0 
-    U0C0_1IC = (0x80 * 0 + 0x40 * 1 + ((10 << 2)|1)); //IR=0, IE=1, ILVL=10, GPX=1 
-    U0C0_2IC = (0x80 * 0 + 0x40 * 0 + ((10 << 2)|2)); //IR=0, IE=0, ILVL=10, GPX=2
+    U0C0_0IC = (0x80 * 0 + 0x40 * 0 + ((10 << 2)|0));   //IR=0, IE=0, ILVL=10, GPX=0 
+    U0C0_1IC = (0x80 * 0 + 0x40 * 1 + ((10 << 2)|1));   //IR=0, IE=1, ILVL=10, GPX=1 
+    U0C0_2IC = (0x80 * 0 + 0x40 * 0 + ((10 << 2)|2));   //IR=0, IE=0, ILVL=10, GPX=2
 
 /// -----------------------------------------------------------------------
 /// 7. Configuration of the U0C0 Channel Control Register
@@ -77,19 +80,23 @@ void U0C0_LIN_Master_vInit(void)
 // enable/disable the parity mode
 // select the protocol mode
 /// -----------------------------------------------------------------------
+    // AIEN=0, RIEN=0, TBIEN=0, TSIEN=0, DLIEN=0, RSIEN=0  
     U0C0_CCR = (0 << 15)|(0 << 14)|(0 << 13)|(0 << 12)|(0 << 11)|(0 << 10);
-    U0C0_CCR |= (0 << 8); // PM=0(no parity generation)
-    U0C0_CCR |= 0x0002; // active ASC mode
-// AIEN=0, RIEN=0, TBIEN=0, TSIEN=0, DLIEN=0, RSIEN=0  
+    U0C0_CCR |= (0 << 8);                               // PM=0(no parity generation)
+    U0C0_CCR |= 0x0002;                                 // active ASC mode
+
 
 /// -----------------------------------------------------------------------
 /// 8. input/output pins configuration
 /// ----------------------------------------------------------------------- 
-P3_IOCR01 = 0x0020; // P3.1=input(pull_up)
-P3_IOCR00 = 0x00D0; // P3.0=output(ALT1 open-drain)
+    P2_IOCR04 = 0x0020;                                 // P3.1=input(pull_up)
+    P2_IOCR03 = 0x00D0;                                 // P3.0=output(ALT1 open-drain)
 }
-//**************************************************************************** // @Function void U0C0_ASC_Protocoll(void)
-// @Date 15.11.2007 //****************************************************************************
+
+//**************************************************************************** 
+// @Function void U0C0_ASC_Protocoll(void)
+// @Date 15.11.2007 
+//****************************************************************************
 void U0C0_ASC_Protocoll(void) interrupt U0C0_SRN1
 {
     U0C0_PSCR |= 0x0008; // clear PSR_COL Collesion

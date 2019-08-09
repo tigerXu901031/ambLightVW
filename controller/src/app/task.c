@@ -68,6 +68,7 @@ void taskInit()
 #elif LED_OUTPUT_TYPE == GPIO_CTRL
     IO_vInit();
 #endif
+    U0C0_LIN_Master_vInit();
 
 /*  -----------------------------------------------------------------------
     SCU Interrupt Source Selection configuration:
