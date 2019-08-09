@@ -323,6 +323,7 @@ static void ledMode8Ctrl(ledMode_enum oldInpMode)
     }
     if (k == 6)
     {
+        /* 3s passed ... */
         i = 0xff;
     }
     else
@@ -393,8 +394,58 @@ static void ledMode9Ctrl()
     }
 }
 
-static void ledMode10Ctrl()
+static void ledMode10Ctrl(ledMode_enum oldInpMode)
 {
+    static uint8 i = 0, k = 0;
+    uint8 j = 0;
+
+    /* recover to the begining in case of stucked in the last cycle of
+       of this mode */
+    if (oldInpMode != ledMode_8)
+    {
+        i = 0;
+        k = 0;
+    }
+    else
+    {
+    }
+    switch(i)
+    {
+        /* some of the led yellow first 300ms */
+        case 0:
+        case 1:
+        case 2:
+            for (j = 0; j < LED_NUM; j++)
+            {
+                setSingleLed(ledStripIdx_center, j, colorArr[color_green]);
+                setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
+                setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
+            }
+            i++;
+            break;
+        /* all off next 500ms */
+        case 3:
+        case 4:
+        case 5:
+            for (j = 0; j < LED_NUM; j++)
+            {
+                setSingleLed(ledStripIdx_center, j, colorArr[color_off]);
+                setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
+                setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
+            }
+            i++;
+            if (i == 6)
+            {
+                i = 0;
+                if(k < 5)
+                {
+                    k++;
+                }
+            }
+            break;
+        default:
+        break;
+    }
 }
 
 static void ledMode11Ctrl()
