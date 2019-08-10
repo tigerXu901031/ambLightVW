@@ -1,0 +1,23 @@
+
+/** 
+\defgroup IfxLld_Demo_VadcQueueTransferDemo Vadc Queue Transfer Demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo show how to use Queue Source for conversion of particular channel
+Conversion for channel 0 to 3 of group0 has been carried out
+\par Hardware used
+Uses the VADC
+
+\par Tested on
+This demo application has been tested on the TC298 A step device (Triboard) with the iLLD version 0.1.0.7
+Port Connections:
+VADCG1.0-->AN8(VADCG0.0--> Group1.Channel0)
+VADCG1.1-->AN9
+VADCG1.2-->AN10
+VADCG1.3-->AN11
+It has been tested by giving say X input voltage on respective channels and printed the result value with 5% tolerence.
+
+*/
+

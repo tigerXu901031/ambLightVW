@@ -1,0 +1,18 @@
+/** 
+\defgroup IfxLld_Demo_Ccu6Icu CCU6 ICU demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo captures input signal on a capture input pin CC60In and generates an interrupt at every rising edge detection 
+- Capture input pin used is P02_0
+
+
+\par Hardware used
+none
+
+\par Tested on
+This demo application is yet to be tested
+
+
+*/

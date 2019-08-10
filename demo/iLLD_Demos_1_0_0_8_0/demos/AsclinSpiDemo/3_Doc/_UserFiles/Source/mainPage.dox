@@ -1,0 +1,18 @@
+/** 
+\defgroup IfxLld_Demo_AsclinSpi ASCLIN SPI demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo sends five words of data and receives it back using internal or external loopback through SPI interface
+- port pins used are Tx pin P15_4 and Rx pin P15_5
+- Data transfers happen through interrupts
+
+\par Hardware used
+none
+
+\par Tested on
+This demo application is tested on the TC29x device with the iLLD version 0.1.0.7 using triboard
+using internal loopback by enabling loopback option in configuration structure
+
+*/

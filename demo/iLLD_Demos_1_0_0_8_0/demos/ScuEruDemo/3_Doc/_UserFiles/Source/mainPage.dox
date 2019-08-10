@@ -1,0 +1,16 @@
+/** 
+\defgroup IfxLld_Demo_ScuEru SCU ERU demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo generates an output trigger at output channel 0 for every rising edge at input channel 6 on port pin P20_0
+
+\par Hardware used
+none
+
+\par Tested on
+This demo application is tested on TC29x device with the iLLD version 0.1.0.7 using triboard. 
+by giving a continuous signal through function generator at port pin P20_0
+
+*/

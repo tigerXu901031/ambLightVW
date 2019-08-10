@@ -1,0 +1,23 @@
+/** 
+\defgroup IfxLld_Demo_MulticanGateway MULTICAN Gateway demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+- Port pins used are Node 0  - Rx pin P20_7 and Tx pin P20_8
+                     Node 1  - Rx pin P14_1 and Tx pin P14_0
+- data transfers flow is as follows
+    source message object is a standard message object, 
+	data will be sent from source message object to gateway source message object
+	when gateway source object recieves data it stores information in gateway destination object through gateway mode.
+	from gateway destination object, the data will be sent to the destiantion message object 
+
+\par Hardware used
+none
+
+\par Tested on
+This demo application is tested on TC29x device with the iLLD version 0.1.0.7 using triboard. 
+by connecting node 0 tx and rx pins to node 1 tx and rx pins with wires externally.
+
+
+*/

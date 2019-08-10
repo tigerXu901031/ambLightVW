@@ -1,0 +1,25 @@
+/** 
+\defgroup IfxLld_Demo_MulticanGatewayFifo MULTICAN Gateway Fifo demo
+\ingroup IfxLld_Demo
+
+\par Introduction
+This application demo sends an array of data from node 0 to node 1 through Gateway mode.
+- Port pins used are Node 0  - Rx pin P20_7 and Tx pin P20_8
+                     Node 1  - Rx pin P14_1 and Tx pin P14_0
+- data transfers flow is as follows
+    source message object is a standard message object not a fifo, 
+	data will be sent in a loop through the same object to gateway source message object
+	gateway source message object is a fifo of the length specified, each of its slave object is a gateway destination object
+	when gateway source object recieves data it stores information in destination gateway objects through gateway mode.
+	from ech of the gateway destination object the data will be sent to the destiantion message object 
+	destination message object is a fifo with the specified length
+
+\par Hardware used
+none
+
+\par Tested on
+This demo application is tested on TC29x device with the iLLD version 0.1.0.7 using triboard. 
+by connecting node 0 tx and rx pins to node 1 tx and rx pins with wires externally.
+
+
+*/

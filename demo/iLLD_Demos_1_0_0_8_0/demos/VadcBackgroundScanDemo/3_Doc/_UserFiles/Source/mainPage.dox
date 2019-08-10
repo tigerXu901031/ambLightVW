@@ -1,0 +1,20 @@
+/** 
+\defgroup IfxLld_Demo_VadcBackgroundScanDemo Vadc Background Scan demo 
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo show how to initialize background source and carry out conversion of particular channel:
+
+\par Hardware used
+Uses the VADC
+
+\par Tested on
+This demo application has been tested on the TC298 A step device (Triboard) with the iLLD version 0.1.0.7
+channel 5 and channel 6 of group 0 has been configured as AN5 and AN6 pin repectively.
+
+It has been tested by giving say X input voltage on respective channels and printed the result value with 5% tolerence.
+
+
+*/
+

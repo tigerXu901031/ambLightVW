@@ -1,0 +1,42 @@
+/** 
+\defgroup IfxLld_Demo_ErayDemo Eray Node demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+
+This application demo shows how to configure the Eray node as cold start node in a Eray cluster and the transactions after synchronization.
+It features the following:
+- Initialization of the Eray module
+- Initialization of the Eray node
+- Both channels Channel A and Channel B are used for communications
+- Starting the initialised node as cold start node
+- Data Transactions to and from synchronised Eray node -> other Synchronised node using the \ref IfxLld_Eray_Eray APIs 
+- The data transfer was verified by checking the ERAY0_NDAT1 register. Also, the data packets received are printed through the variables
+  g_Eray.receivedData[][].
+  
+\par Hardware used
+
+Uses Eray Controller 0
+Port Pins used:
+
+Pins used on channel A:
+ERAY0_RXDA0 - P14.8
+ERAY0_TXDA  - P14.10
+ERAY0_TXENA - P14.9
+
+Pins used on channel B:
+ERAY0_RXDB0 - P14.7
+ERAY0_TXDB  - P14.5
+ERAY0_TXENB - P14.6
+
+-Both node's channel A is connected with Flexray cable, and similarly for channel B.
+
+
+\par Tested on
+This demo application has been tested using two TC29xA devices with the iLLD version 0.1.0.7 using a triboard.
+
+\par Demo Author
+
+
+*/

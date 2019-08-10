@@ -1,0 +1,19 @@
+/** 
+\defgroup IfxLld_Demo_EbuSramDemo Ebu Sram demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo show how to use the Ebu Sram initialization
+It features the following:
+- Initialise Ebu for external Sram (connected to CS1) using the Ebu \ref IfxLld_Ebu_Sram API
+- Verify the Ebu Sram initialization by writing 1024 words to memory starting at CS1 address, read it back and compare them
+
+\par Hardware used
+Uses the Ebu and extrnal SRAM connected to CS1 
+
+\par Tested on
+This demo application has been tested on the TC298 A-step device with the iLLD version 1.0.0.0 using a triboard.
+
+
+*/

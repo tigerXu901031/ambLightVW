@@ -1,0 +1,17 @@
+/** 
+\defgroup IfxLld_Demo_DtsBasicDemo Dts Basic Demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo show how to use Die Tempreature Sensor
+
+\par Hardware used
+Uses the DTS
+
+\par Tested on
+This demo application has been tested on the TC298 A step device (Triboard) with the iLLD version 0.1.0.7
+
+
+*/
+

@@ -1,0 +1,17 @@
+/** 
+\defgroup IfxLld_Demo_Empty Empty demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo is an empty project and does nothing.
+
+\par Hardware used
+None
+
+\par Tested on
+This demo application has been tested on the TC27xB device with the iLLD version 0.1.0.5 using a triboard.
+
+
+
+*/

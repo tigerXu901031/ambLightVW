@@ -1,0 +1,23 @@
+/** 
+\defgroup IfxLld_Demo_Psi5SDemo Peripheral Serial Interface With Serial PHY Connection(PSI5-S) Demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo shows how to use the Psi5 S
+It features the following:
+- initialization and configuration of the Psi5S module
+- Payload length is 8
+- Channel used for communication is #4
+-Data transmission and configuration of the sensor can be done by modulation of the Sync Pulses
+
+
+\par Hardware used
+Uses the  PSI5S module and Psi5S Sensor
+
+\par Tested on
+The Demo can be tested by connecting a Psi5S sensor(external word) to the Psi5S module
+
+\par Demo Author
+
+*/

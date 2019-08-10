@@ -1,0 +1,17 @@
+/** 
+\defgroup IfxLld_Demo_FceBasicDemo Fce Basic Demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo show how to use the FCE.This demo has been design to configure and test all FCE Kernel. 
+
+\par Hardware used
+Uses the FCE
+
+\par Tested on
+This demo application has been tested on the TC298 A step device (Triboard) with the iLLD version 0.1.0.7
+
+
+*/
+

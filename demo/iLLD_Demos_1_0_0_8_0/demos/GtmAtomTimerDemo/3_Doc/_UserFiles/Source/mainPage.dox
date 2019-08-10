@@ -1,0 +1,21 @@
+/** 
+\defgroup IfxLld_Demo_GtmAtomTimer Gtm Atom Timer demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo is generation a 1ms interrupt using the GTM ATOM to increment the counter of the global variable g_GtmAtomTimer.isrCounter.slotOneMs.
+
+
+\par Hardware used
+None
+
+\par Tested on
+This demo application has been tested on the TC264 device with the iLLD version 0.1.0.5. The hardware used is Triboard.
+
+\par Demo Author
+ATV SYS SE: Alann Denais 
+
+
+
+*/

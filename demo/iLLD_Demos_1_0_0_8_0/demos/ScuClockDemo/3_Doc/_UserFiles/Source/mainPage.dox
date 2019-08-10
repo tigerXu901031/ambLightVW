@@ -1,0 +1,19 @@
+/** 
+\defgroup IfxLld_Demo_ScuClockDemo Scu Clock demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo show how to initialise the PLL and the clocks
+It features the following:
+- Initialization of the Scu PLL to 200Mhz & Clocks
+- view the frequencies using the \ref IfxLld_Scu API 
+
+\par Hardware used
+Uses the Scu
+
+\par Tested on
+This demo application has been tested on the TC27xB device with the iLLD version 1.0.0.0 using a triboard.
+
+
+*/

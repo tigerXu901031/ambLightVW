@@ -1,0 +1,45 @@
+/** 
+\defgroup IfxLld_Demo_IomDemo (Input Output Monitor) demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo shows how to use the Iom 
+
+It features the following:
+- Initialization of the Iom
+- IOM Channel #13 input(P20.13) as monitor and Channel #11(P00.5) input as reference are used
+- GTM TOM Timer and GTM TOM PWMHL are initialised to get the monitor and reference signals
+- GTM  generates reference signal at P00.5 for TC27x and pad input(internally conetced) to IOM
+- GTM generates monitoring signal at P23.0 for TC27x and it is connected to P20.13 through external wire
+- Uses GTM TOM1 channels: channel #4 and channel #5  
+- An alarm signal is generated if the monitor signal is not within the threshold and this is indicated by a non-zero value of SMU_AG2.U. 
+
+\par Hardware used
+Uses IOM
+
+-Port Pins used:
+ IOM MONITOR	    P20.13
+ IOM REFERENCE	    P00.5
+
+-Two T2LA boards to connect P23.0 to P20.13
+-Oscilloscope: Square wave signals were observed on the oscilloscope for monitor and reference signals by connecting P23.0 and P00.5 to the Oscilloscope.
+
+
+\par Tested on
+This demo application has been tested on the TC275 A step device with the iLLD version 0.1.0.8 using a triboard.
+
+\par Demo Author
+
+
+*/
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+/** 
+\defgroup IfxLld_Demo_MscBasicDemo MSC Basic Demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo how downstream function of MSC works
+
+\par Hardware used
+Uses the MSC
+
+\par Tested on
+This demo application has been tested on the TC298 A step device (Triboard) with the iLLD version 0.1.0.7
+ here configuration used is as follow
+ P13.1 ---> As FCL Output
+ P13.3 --->As SOP Output
+ P10.3 --->As EN0 
+ P11.10---> SDI0 Input
+This demo has been tested using SPI OSCILLOSCOPE.Configured SPI Bus on Oscilloscope and output from MSC had
+given to input of SPI.
+*/
+
+
+

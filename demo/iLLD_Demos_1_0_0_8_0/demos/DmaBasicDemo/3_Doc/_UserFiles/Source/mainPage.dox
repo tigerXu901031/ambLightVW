@@ -1,0 +1,20 @@
+/** 
+\defgroup IfxLld_Demo_DmaBasicDemo Dma basic Memory to memory transfer Demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo show how to use the Dma for basic memory to memory transfers
+It features the following:
+- Initialisation of Dma for Memory to Memory transfers
+- Trigger Dma to Transfer Data (16 words) from Source Buffer to Destination Buffer using the \ref IfxLld_Dma_Dma API 
+- Verify the data transfers by comparing source and destination buffers
+
+\par Hardware used
+Uses the Dma
+
+\par Tested on
+This demo application has been tested on the TC27xB device with the iLLD version 1.0.0.0 using a triboard.
+
+
+*/

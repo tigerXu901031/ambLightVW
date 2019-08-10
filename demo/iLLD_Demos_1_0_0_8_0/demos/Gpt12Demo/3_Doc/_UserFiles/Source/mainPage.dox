@@ -1,0 +1,36 @@
+/** 
+\defgroup IfxLld_Demo_Gpt12 GPT12 demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+Setup with T3 as core
+    - T3 as incremental mode
+    	- Multiplication factor:
+    		- twoFold: use both edges of TxIn
+    		- fourFold: use both edges of TxIn and TxEUD
+   		- Reverse of direction supported by GPT12
+   		- T3 value diff is used for speed calculation at high speed (speed > speedModeThreshold)
+    - T4 used for zero signal detection if  pinZ is not NULL
+    	- interrupt is generated to support turn calculation if zeroIsrPriority != 0
+    	- T4 clears T3 on zero signal event on TxIn input
+    - T5 used for low speed calculation (speed < speedModeThreshold)
+   		- Rising edge of TxIn or TxEUD captures the T5 timer in CAPREL
+  
+   Setup with T2 as core
+    - T2 as incremental mode
+    	- Multiplication factor:
+    		- twoFold: sample on both edges of TxIn
+    		- fourFold: sample on both edges of TxIn and TxEUD
+   		- Reverse of direction supported by GPT12
+   		- T2 value diff is used for speed calculation at high speed
+    - T4 used for zero signal detection if  pinZeroTxEUD is not NULL
+    - T4 clears T2 on zero signal event on TxEUD input
+
+\par Hardware used
+
+
+\par Tested on
+
+
+*/

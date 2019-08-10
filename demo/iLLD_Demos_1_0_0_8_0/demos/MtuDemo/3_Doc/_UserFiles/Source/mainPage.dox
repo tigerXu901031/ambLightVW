@@ -1,0 +1,18 @@
+/** 
+\defgroup IfxLld_Demo_MtuDemo Mtu demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo show how to use the Mtu MBist operations.
+It features the following:
+- Clear all the ERAY memories using the Mbist \ref IfxLld_Mtu_Std API
+
+\par Hardware used
+Uses the Mtu
+
+\par Tested on
+This demo application has been tested on the TC298 A-step device with the iLLD version 1.0.0.0 using a triboard.
+This demo can be verified by checking whether the Eray Output buffer, Input buffer, Message ram, Transient Buffer ram memories are cleared.
+
+*/

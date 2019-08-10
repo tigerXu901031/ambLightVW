@@ -1,0 +1,28 @@
+/** 
+\defgroup IfxLld_Demo_AsclinShellInterface ASCLIN shell interface demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo show how to initialise the ASCLIN to enable communication with a terminal.
+It features the following:
+- initialization of the ASCLIN
+	- baudrate: \ref CFG_ASC_BAUDRATE
+	- no parity
+- Print "Hello world" using the \ref IfxLld_Asclin_Asc API
+- Start the shell interface that enable passing command to the application
+
+\par Hardware used
+Uses the ASCLIN0
+
+\par Tested on
+This demo application has been tested on the TC277 B step device (Triboard) with the iLLD version 0.1.0.5
+
+\par Screen shot
+\image html "AsclinShellInterface.PNG" "ASCLIN shell interface"
+
+
+\par Demo Author
+ATV SYS SE: Alann Denais 
+
+*/

@@ -1,0 +1,20 @@
+/** 
+\defgroup IfxLld_Demo_Ccu6Tpwm CCU6 Tpwm demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo generates Pwm signal on the cout63 pin of the Ccu6
+- it uses timer block T13
+- It generates an interrupt on every compare match 
+- increments a counter at every interrupt
+- port pin used for Pwm output is P00_0
+
+\par Hardware used
+none
+
+\par Tested on
+This demo application is tested on TC29x device with the iLLD version 0.1.0.7 using triboard. 
+by connecting port pin P00_0 to an oscilloscope
+
+*/

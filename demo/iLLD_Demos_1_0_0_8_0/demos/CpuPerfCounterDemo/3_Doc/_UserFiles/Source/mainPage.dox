@@ -1,0 +1,18 @@
+/** 
+\defgroup IfxLld_Demo_CpuPerfCounterDemo Cpu Performance counter demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo show how to use the Cpu Performance counters
+It features the following:
+- Measure the Cpu code performance & print it on the console using the \ref IfxLld_Cpu_Std API 
+
+\par Hardware used
+Uses the Cpu0
+
+\par Tested on
+This demo application has been tested on the TC27xB device with the iLLD version 1.0.0.0 using a triboard.
+
+
+*/

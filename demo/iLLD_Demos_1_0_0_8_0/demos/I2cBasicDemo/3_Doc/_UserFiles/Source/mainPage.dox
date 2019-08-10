@@ -1,0 +1,17 @@
+/** 
+\defgroup IfxLld_Demo_I2cBasicDemo I2c Basic Demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo will read any data from EEPROM or any other slave device and will write data into the Slave device
+
+\par Hardware used
+Uses the I2C and EEPROM
+\par Tested on
+This demo application has been tested on the TC275 B step device (Triboard) with the iLLD version 0.1.0.7
+open drain port P15.4 and P15.5 had configured as SCL and SDA respectively, also input to EEPROM SCL and SDA pin.they should be pull-up externally
+
+*/
+
+

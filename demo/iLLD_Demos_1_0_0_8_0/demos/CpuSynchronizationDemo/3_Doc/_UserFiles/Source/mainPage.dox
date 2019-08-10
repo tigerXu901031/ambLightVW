@@ -1,0 +1,17 @@
+/** 
+\defgroup IfxLld_Demo_CpuSyncDemo Cpu Synchronization Demo.
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo show how to use the Mutex for synchronisation.
+It features the following:
+- Lock & unlock the resource using mutex using the \ref IfxLld_Cpu_Std_Synchronization  API 
+
+\par Hardware used
+Uses the Cpu
+
+\par Tested on
+This demo application has been tested on the TC27xB device with the iLLD version 1.0.0.0 using a triboard.
+
+*/

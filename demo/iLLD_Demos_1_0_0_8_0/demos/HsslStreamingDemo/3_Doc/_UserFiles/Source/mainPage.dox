@@ -1,0 +1,25 @@
+/** 
+\defgroup IfxLld_Demo_HsslStreaming HSSL Streaming demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo sends a block of data from master to slave through streaming mode, it does the following
+- writes a data block in slave device at memory location starting from 0x7000000 through streaming mode transfers
+- reads back the transmitted data from slave device and stores at memory location 0x70000010
+
+\par Hardware used
+Hssl cable
+
+\par Tested on
+This demo application is tested on TC27xC device with the iLLD version 0.1.0.7 using triboard. 
+
+testing process
+build the demo app for master and flash it on a device
+build the demo app for slave by selecting the interface mode option in configuration structure and flash it on another device
+
+connect both the devices with special hssl cable
+at slave, the data can be viewed at the address mentioned during transmission (0x70000000)
+
+
+*/

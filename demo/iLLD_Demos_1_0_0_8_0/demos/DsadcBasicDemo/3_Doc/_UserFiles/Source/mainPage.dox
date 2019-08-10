@@ -1,0 +1,20 @@
+/** 
+\defgroup IfxLld_Demo_DsadcBasicDemo Dsadc Basic demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo show how to initialise the DSADC to enable Conversion of the channels.
+
+\par Hardware used
+Uses the DSADC
+
+\par Tested on
+Not yet tested
+
+Port Connections:
+Modulator clock Channel0 input A              -->P00.11
+positive analog input channel of DSADC 0 pin A-->AN2
+Data bitstream channel 0 input A              -->P00.12  
+
+*/

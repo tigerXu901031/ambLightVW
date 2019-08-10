@@ -1,0 +1,25 @@
+/** 
+\defgroup IfxLld_Demo_HsslSingle HSSL Single demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo sends two words of data from master to slave through command mode, it does the following
+- writes two words in slave device at memory location starting from 0x7000000 through direct register access (command mode transfers)
+- reads back the transmitted data from slave device and stores at memory location 0x70000010
+
+\par Hardware used
+Hssl cable
+
+\par Tested on
+This demo application is tested on TC27xC device with the iLLD version 0.1.0.7 using triboard. 
+
+testing process
+build the demo app for master and flash it on a device
+build the demo app for slave by selecting the interface mode option in configuration structure and flash it on another device
+
+connect both the devices with special hssl cable
+at master the data that is read back from slave can be viewed at the specified address (0x7000010)
+at slave the data can be viewed at the address mentioned during transmission (0x70000000)
+
+*/

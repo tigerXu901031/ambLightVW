@@ -1,0 +1,28 @@
+/** 
+\defgroup IfxLld_Demo_Ccu6PwmBc CCU6 PwmBc demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo generates a pwm out put at 6 channels of timer block T12 to run a threee phase DC motor
+- generates an interupt at every CC61 falling edge, 
+- updates the hall pattern at every interrupt
+- port pins used are CC60Out pin - P02_0
+                     CC61Out pin - p02_2
+                     CC62Out pin - p02_4
+					 COUT60 pin - p02_1
+					 COUT61 pin - p02_3
+					 COUT62 pin - p02_5
+					 COUT63 pin - not used
+					 CCPOS0In pin - p02_6
+					 CCPOS1In pin - p02_7
+					 CCPOS2In pin - p02_8
+
+\par Hardware used
+Used 
+
+\par Tested on
+This demo application is yet to be tested
+
+
+*/

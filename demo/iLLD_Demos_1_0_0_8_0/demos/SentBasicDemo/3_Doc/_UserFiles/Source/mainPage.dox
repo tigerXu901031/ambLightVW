@@ -1,0 +1,23 @@
+/** 
+\defgroup IfxLld_Demo_SentBasicDemo Sent Basic Demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo show how to initialise the SENT to Communicate with SENT Sensor: TLE4998S.
+sent channel 0 is initialized for the communication.
+The data is recieved at 3us tick length.
+
+
+\par Hardware used
+Uses the SENT
+
+\par Tested on
+This demo application has been tested on the TC277 B step device (Triboard) with the iLLD version 0.1.0.5
+
+Port Connections:
+Channel 0 input
+SENT0C-->P02.8
+P02.8 pin is connected to output pin of SENT sensor.
+
+*/

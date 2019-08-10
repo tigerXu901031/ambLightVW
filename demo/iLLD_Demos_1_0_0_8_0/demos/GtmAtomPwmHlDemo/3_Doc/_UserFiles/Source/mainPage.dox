@@ -1,0 +1,31 @@
+/** 
+\defgroup IfxLld_Demo_GtmAtomPwmHl Gtm Atom PwmHl demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo is generating a center aligned PWM using the GTM ATOM. It does the following:
+- increment the counter of the global variable g_AppCpu0.isrCounter.slotTimer ever period interrupt
+- Complementary center aligned with dead time on port 0.1 (CCX) and 0.3 (COUTX), high active signals
+- Trigger signal on port 0.0
+- The PWM output is as follow:
+	- 1s: off CCX and COUTX inactive (LOW)
+	- 1s: 0% dutycycle
+	- 1s: 50% dutycycle
+	- 1s: 100% dutycycle
+
+
+
+
+\par Hardware used
+None
+
+\par Tested on
+This demo application has been tested on the TC264 device with the iLLD version 0.1.0.5. The hardware used is Triboard.
+
+\par Demo Author
+ATV SYS SE: Alann Denais 
+
+
+
+*/

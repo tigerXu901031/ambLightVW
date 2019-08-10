@@ -1,0 +1,23 @@
+/** 
+\defgroup IfxLld_Demo_VadcAutoScanDemo Vadc Auto Scan Demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo show how to use Auto Scan Source for conversion of particular channel
+This Demo has Carried out conversion for channel 0 to 5 of group0
+
+\par Hardware used
+Uses the VADC
+
+\par Tested on
+This demo application has been tested on the TC298 A step device (Triboard) with the iLLD version 0.1.0.7
+Connection for this are as follow
+VADCG0.0-->AN0(VADCG0.0--> Group0.Channel0)
+VADCG0.1-->AN1
+VADCG0.2-->AN2
+VADCG0.3-->AN3
+VADCG0.4-->AN4
+it has been tested by giving say X input voltage on respective channels and printed the result value with 5% tolerence.
+*/
+

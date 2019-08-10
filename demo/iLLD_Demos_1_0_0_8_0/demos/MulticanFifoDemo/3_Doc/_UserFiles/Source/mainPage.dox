@@ -1,0 +1,19 @@
+/** 
+\defgroup IfxLld_Demo_MulticanFifo MULTICAN Fifo demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo sends an array of data from node 0 to node 1 through fifo.
+- Port pins used are Node 0  - Rx pin P20_7 and Tx pin P20_8
+                     Node 1  - Rx pin P14_1 and Tx pin P14_0
+
+\par Hardware used
+none
+
+\par Tested on
+This demo application is tested on TC29x device with the iLLD version 0.1.0.7 using triboard. 
+by connecting node 0 tx and rx pins to node 1 tx and rx pins with wires externally.
+
+
+*/

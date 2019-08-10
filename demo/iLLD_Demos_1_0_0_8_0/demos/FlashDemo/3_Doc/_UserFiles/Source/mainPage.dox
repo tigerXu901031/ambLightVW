@@ -1,0 +1,24 @@
+/** 
+\defgroup IfxLld_Demo_FlashDemo Flash erase & program demo
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo show how to use the Flash erase and program
+It features the following:
+- Copy the Erase & program routines to PSPR memory (address: 0xC0000000,Length: 1024 bytes)
+- Erase and program the first 5 pages of P-Flash sector24 (executed from PSPR with interrupts disabled)
+- Verify the programmed data by reading and comparing it
+- Erase and program the first 16 pages of D-Flash using the \ref IfxLld_Flash_Std API 
+- Verify the programmed data by reading and comparing it
+Note:
+  This demo requires memory of size 1024 bytes to be reserved at 0xC0000000
+
+\par Hardware used
+Uses the PMU
+
+\par Tested on
+This demo application has been tested on the TC298 A-step device with the iLLD version 1.0.0.0 using a triboard.
+
+
+*/

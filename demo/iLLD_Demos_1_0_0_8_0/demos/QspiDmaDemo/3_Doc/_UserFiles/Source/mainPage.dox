@@ -1,0 +1,32 @@
+/** 
+\defgroup IfxLld_Demo_QspiDmaDemo Qspi Master & Slave demo using dma
+\ingroup IfxLld_Demo
+
+
+\par Introduction
+This application demo show how to use the QSPI in both Master and Slave Modes with Dma enabled
+It features the following:
+- Initialization of the QSPI (QSPI0 as Master & QSPI2 as Slave with Dma use enabled)
+- Transfer 10 bytes of Data from Master QSPI0 to Slave QSPI2 using the \ref IfxLld_Qspi_SpiMaster and \ref IfxLld_Qspi_SpiSlave API 
+- Verify the received data by comparing with the transmitted data
+
+\par Hardware used
+Uses the QSPI0 (MASTER) and QSPI2(SLAVE)
+
+Port Pins used:
+Master QSPI:                     Slave QSPI:       
+QSPI0 SCLK - P20.11              QSPI2 SCLK - P15.8
+QSPI0 MRST - P20.12              QSPI2 MRST - P15.7
+QSPI0 MTSR - P20.14              QSPI2 MTSR - P15.5
+QSPI0_SLSO - P33.5               QSPI2_SLSI - P15.1
+
+Pin Connections:
+P20.11 -> P15.8
+P20.12 -> P15.7
+P20.14 -> P15.5
+P33.5  -> P15.1
+
+\par Tested on
+This demo application has been tested on the TC27xB device with the iLLD version 1.0.0.0 using a triboard.
+
+*/
