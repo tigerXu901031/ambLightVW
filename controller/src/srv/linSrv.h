@@ -4,6 +4,16 @@
 #include "type.h"
 #include "../drv/linDrv.h"
 
+typedef enum{
+    linRxReq,
+    linTxReq,
+}linReq_enum;
+
+typedef struct{
+    linReq_enum     reqType;
+    uint8           reqMsgIdx;
+}lineReq_type;
+
 /*                                                                                       
    @enum:(DESIGN) LIN_IFC_CURR_STATE |                                                   
    Specify the current state of interface in specific frame transaction period.          
@@ -89,7 +99,17 @@ typedef union{
     msg_HMI_status_light_control_type   msg_HMI_status_light_control;
     msg_HMI_status_light_report_type    msg_HMI_status_light_report;
     uint8                               dataBuf[8];
-}LinMsgData_type
+}LinMsgData_type;
+
+typedef struct{
+    uint8           msgId;
+    LinMsgData_type msgData;
+}LinMsg_type;
+
+typedef struct{
+    LinMsg_type     rxMsg[LIN_RX_MSG_MAX];
+    LinMsg_type     txMsg[LIN_TX_MSG_IDX];
+}LinBus_type;
 
 extern void linComIsrHandler(uint8 rxData);
 
