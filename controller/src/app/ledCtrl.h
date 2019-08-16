@@ -74,6 +74,12 @@ typedef enum{
     ledMode_max,
 }ledMode_enum;
 
+typedef enum{
+    lightLevel_high,
+    lightLevel_medium,
+    lightLevel_low,
+}lightLevel_enum;
+
 /* temporary use */
 typedef struct
 {

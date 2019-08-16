@@ -113,14 +113,15 @@ void taskSlow()
 
     /* get the user input from can */
     // canUpdate(&canSigObj);
+    linUpdate();
 
     /* according to the user input then do the led mode transition */
     ledModeTransitionUpdate(&testCanSigObj);
 
     /* encode all the led strip */
     ledRgbEncodeUpdate(ledStripIdx_left);
-    // ledRgbEncodeUpdate(ledStripIdx_center);
-    // ledRgbEncodeUpdate(ledStripIdx_right);
+    ledRgbEncodeUpdate(ledStripIdx_center);
+    ledRgbEncodeUpdate(ledStripIdx_right);
 }
 
 /* task will be running in this 1.25us task cycle

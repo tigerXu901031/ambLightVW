@@ -127,7 +127,7 @@
           <Target>
             <UseTarget>1</UseTarget>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>0</RunToMain>
+            <RunToMain>1</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
             <RestoreWatchpoints>1</RestoreWatchpoints>
             <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
@@ -333,6 +333,16 @@
               <FileType>5</FileType>
               <FilePath>..\src\srv\type.h</FilePath>
             </File>
+            <File>
+              <FileName>linSrv.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\srv\linSrv.c</FilePath>
+            </File>
+            <File>
+              <FileName>linSrv.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\srv\linSrv.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -374,11 +384,6 @@
               <FilePath>..\src\drv\scs.h</FilePath>
             </File>
             <File>
-              <FileName>START_V3.A66</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\src\drv\START_V3.A66</FilePath>
-            </File>
-            <File>
               <FileName>linCfg.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\src\drv\linCfg.h</FilePath>
@@ -402,6 +407,11 @@
               <FileName>linLdf.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\src\drv\linLdf.h</FilePath>
+            </File>
+            <File>
+              <FileName>START_V3.A66</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\src\drv\START_V3.A66</FilePath>
             </File>
           </Files>
         </Group>
