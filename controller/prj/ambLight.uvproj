@@ -399,16 +399,6 @@
               <FilePath>..\src\drv\linDrv.h</FilePath>
             </File>
             <File>
-              <FileName>linLdf.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\drv\linLdf.c</FilePath>
-            </File>
-            <File>
-              <FileName>linLdf.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\drv\linLdf.h</FilePath>
-            </File>
-            <File>
               <FileName>START_V3.A66</FileName>
               <FileType>2</FileType>
               <FilePath>..\src\drv\START_V3.A66</FilePath>

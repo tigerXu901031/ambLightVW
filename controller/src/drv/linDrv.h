@@ -9,6 +9,8 @@
 #define U0C0_SRN1 0x51
 #define U0C0_SRN2 0x52
 
-extern void U2C0_LIN_Master_vInit(void);
+#define setTxBuf(val)   U0C0_TBUF00=##val  
+
+extern void linDrvInit(void);
 
 #endif

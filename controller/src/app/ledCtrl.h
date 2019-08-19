@@ -2,6 +2,7 @@
 #define __LEDCTRL_H__
 
 #include "../srv/led.h"
+#include "../srv/linSrv.h"
 
 typedef enum{
    color_green,
@@ -72,12 +73,14 @@ typedef enum{
     ledMode_17,
     ledMode_18,
     ledMode_max,
+    ledMode_FF = 0xff,
 }ledMode_enum;
 
 typedef enum{
-    lightLevel_high,
-    lightLevel_medium,
-    lightLevel_low,
+    lightLevel_default  = 0,
+    lightLevel_low      = 1,
+    lightLevel_medium   = 2,
+    lightLevel_high     = 3,
 }lightLevel_enum;
 
 /* temporary use */
@@ -93,6 +96,6 @@ typedef struct
     }output;
 }canSignalsType;
 
-extern void ledModeTransitionUpdate(canSignalsType *canSigObj);
+extern void ledModeUpdate();
 
 #endif

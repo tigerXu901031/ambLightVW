@@ -1,33 +1,33 @@
 #include "task.h"
 
-static void testFun()
-{
-    rgb_type rgbVal;
-    rgbVal.blue = 0x00, rgbVal.red = 0xff, rgbVal.green = 0x00;
-    setSingleLed(ledStripIdx_left, 0, rgbVal);
-    rgbVal.blue = 0x00, rgbVal.red = 0x00, rgbVal.green = 0xff;
-    setSingleLed(ledStripIdx_left, 1, rgbVal);
-    rgbVal.blue = 0xff, rgbVal.red = 0x00, rgbVal.green = 0x00;
-    setSingleLed(ledStripIdx_left, 2, rgbVal);
-    rgbVal.blue = 0, rgbVal.red = 200, rgbVal.green = 100;
-    setSingleLed(ledStripIdx_left, 3, rgbVal);
-    rgbVal.blue = 0, rgbVal.red = 255, rgbVal.green = 255;
-    setSingleLed(ledStripIdx_left, 4, rgbVal);
-    rgbVal.blue = 255, rgbVal.red = 255, rgbVal.green = 0;
-    setSingleLed(ledStripIdx_left, 5, rgbVal);
-    rgbVal.blue = 0x20, rgbVal.red = 0x20, rgbVal.green = 0x20;
-    setSingleLed(ledStripIdx_left, 6, rgbVal);
-    rgbVal.blue = 0xaa, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
-    setSingleLed(ledStripIdx_left, 7, rgbVal);
-    rgbVal.blue = 0xaa, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
-    setSingleLed(ledStripIdx_left, 8, rgbVal);
-    rgbVal.blue = 0xaa, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
-    setSingleLed(ledStripIdx_left, 9, rgbVal);
-    rgbVal.blue = 0xaa, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
-    setSingleLed(ledStripIdx_left, 10, rgbVal);
-    rgbVal.blue = 0xaa, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
-    setSingleLed(ledStripIdx_left, 11, rgbVal);
-}
+// static void testFun()
+// {
+//     rgb_type rgbVal;
+//     rgbVal.blue = 0x00, rgbVal.red = 0xff, rgbVal.green = 0x00;
+//     setSingleLed(ledStripIdx_left, 0, rgbVal);
+//     rgbVal.blue = 0x00, rgbVal.red = 0x00, rgbVal.green = 0xff;
+//     setSingleLed(ledStripIdx_left, 1, rgbVal);
+//     rgbVal.blue = 0xff, rgbVal.red = 0x00, rgbVal.green = 0x00;
+//     setSingleLed(ledStripIdx_left, 2, rgbVal);
+//     rgbVal.blue = 0, rgbVal.red = 200, rgbVal.green = 100;
+//     setSingleLed(ledStripIdx_left, 3, rgbVal);
+//     rgbVal.blue = 0, rgbVal.red = 255, rgbVal.green = 255;
+//     setSingleLed(ledStripIdx_left, 4, rgbVal);
+//     rgbVal.blue = 255, rgbVal.red = 255, rgbVal.green = 0;
+//     setSingleLed(ledStripIdx_left, 5, rgbVal);
+//     rgbVal.blue = 0x20, rgbVal.red = 0x20, rgbVal.green = 0x20;
+//     setSingleLed(ledStripIdx_left, 6, rgbVal);
+//     rgbVal.blue = 0xaa, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
+//     setSingleLed(ledStripIdx_left, 7, rgbVal);
+//     rgbVal.blue = 0xaa, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
+//     setSingleLed(ledStripIdx_left, 8, rgbVal);
+//     rgbVal.blue = 0xaa, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
+//     setSingleLed(ledStripIdx_left, 9, rgbVal);
+//     rgbVal.blue = 0xaa, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
+//     setSingleLed(ledStripIdx_left, 10, rgbVal);
+//     rgbVal.blue = 0xaa, rgbVal.red = 0xaa, rgbVal.green = 0xaa;
+//     setSingleLed(ledStripIdx_left, 11, rgbVal);
+// }
 
 void taskInit()
 {
@@ -68,7 +68,9 @@ void taskInit()
 #elif LED_OUTPUT_TYPE == GPIO_CTRL
     IO_vInit();
 #endif
-    U0C0_LIN_Master_vInit();
+    setGpio(P2_5, 1);
+    linDrvInit();
+    linComInit();
 
 /*  -----------------------------------------------------------------------
     SCU Interrupt Source Selection configuration:
@@ -102,7 +104,10 @@ void taskInit()
     2. CAN message Rx / Tx 
  */
 uint8 manualMode = 0xff;
-
+uint16 psrRegNormal = 0;
+uint16 baudrateGenReg = 0;
+uint16 baudrateGenRegL = 0;
+uint16 fracDivRegL = 0;
 canSignalsType testCanSigObj;
 void taskSlow()
 {
@@ -113,10 +118,14 @@ void taskSlow()
 
     /* get the user input from can */
     // canUpdate(&canSigObj);
-    linUpdate();
+    // linUpdate();
+    psrRegNormal = U0C0_PSR;
+    baudrateGenReg = U0C0_BRGH;
+    baudrateGenRegL = U0C0_BRGL;
+    fracDivRegL = U0C0_FDRL;
 
     /* according to the user input then do the led mode transition */
-    ledModeTransitionUpdate(&testCanSigObj);
+    ledModeUpdate();
 
     /* encode all the led strip */
     ledRgbEncodeUpdate(ledStripIdx_left);
@@ -130,7 +139,5 @@ void taskSlow()
  */
 void taskFast()
 {
-    // ledUpdate(ledStripIdx_left);
-    // ledUpdate(ledStripIdx_right);
-    // ledUpdate(ledStripIdx_center);
+
 }

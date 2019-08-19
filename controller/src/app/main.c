@@ -30,7 +30,15 @@ void main()
                 else
                 {
                     setGpio(P10_4, 1);
-                    delay300ns();
+                    // delay300ns();
+                    _nop_();
+                    _nop_();
+                    _nop_();
+                    _nop_();
+                    _nop_();
+                    _nop_();
+                    _nop_();
+                    _nop_();
                     setGpio(P10_4, 0);
                     delay300ns();
                     delay300ns();
@@ -69,7 +77,7 @@ void main()
                 }
                 break;
             case ledStripIdx_right:
-                if(ledDutyCycleArrary[ledStripIdx_center][i])
+                if(ledDutyCycleArrary[ledStripIdx_right][i])
                 {
                     setGpio(P10_7, 1);
                     delay300ns();

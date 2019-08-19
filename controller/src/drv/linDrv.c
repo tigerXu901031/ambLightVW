@@ -5,7 +5,7 @@
 
 #include "linDrv.h"
 
-void U0C0_LIN_Master_vInit(void)
+void linDrvInit(void)
 { 
     // Sys_Protection(0); 
     U0C0_KSCFG = 3; 
@@ -26,7 +26,7 @@ void U0C0_LIN_Master_vInit(void)
 /// -----------------------------------------------------------------------
 // CM SFSEL DPOL DSEN DFEN INSW DESL 
     U0C0_DX0CR = ((0<<10)|(0<<9)|(0<<8)|(0<<6)|(0<<5)|(0<<4)|(5<<0));   //RX - P2.4(DX0F)
-    U0C0_DX1CR = ((0<<10)|(0<<9)|(0<<8)|(0<<6)|(0<<5)|(0<<4)|(4<<0));   //Tx - P2.3 colliion (optional in half-duplex)
+    // U0C0_DX1CR = ((0<<10)|(0<<9)|(0<<8)|(0<<6)|(0<<5)|(0<<4)|(4<<0));   //Tx - P2.3 colliion (optional in half-duplex)
 
 /// ----------------------------------------------------------------------- 
 /// 3. Data format: shift control signal, word/frame length control
@@ -93,42 +93,16 @@ void U0C0_LIN_Master_vInit(void)
     P2_IOCR03 = 0x00D0;                                                 // P2.3=output(ALT1 open-drain)
 }
 
-//**************************************************************************** 
-// @Function void U0C0_ASC_Protocoll(void)
-// @Date 15.11.2007 
-//****************************************************************************
-void U0C0_ASC_Protocoll(void) interrupt U0C0_SRN0
+uint16 psrReg = 0;
+void U0C0_ASC_Protocol1(void) interrupt U0C0_SRN0
 {
-    uint8 rxData = 0;
     static uword uwTSIRCount = 0;
     static uword uwPDIV[5];
     uword uwTmp = 0;
-    if(U0C0_PSCR |= 0x0008)
-    {
-        U0C0_PSCR |= 0x0008;        // clear PSR_COL Collesion
-    }
-
-    /* lin slave state machine actions upon sync break detection */
-    else if(U0C0_PSR & 0x0004)
-    {
-        /* clear all flags */
-        U0C0_PSCR = 0xFFFF;
-
-        /* set bit timing measuring mode bit-3 TMEN = 1*/
-        U0C0_BRGL |= 0x0008;
-
-        /* CM = 2(combination mode) falling edge activates DXnt */
-        U0C0_DX0CR = (2 << 10) | (0 << 9) | (0 << 8) | (0 << 6) | (0 << 5) | (0 << 4) | (1 << 0);
-
-        /* TSIEN = 1(transmit shift interrupt enable) */
-        U0C0_CCR |= (1 << 12);
-    }
 
     /* lin slave sync field, baudrate measuring mode active */
-    else if((U0C0_BRGL & 0x0008) && (U0C0_PSR & 0x1000))
+    if((U0C0_BRGL & 0x0008) && (U0C0_PSR & 0x1000))
     {
-        /* clear all flags */
-        U0C0_PSCR = 0xffff;
         if(uwTSIRCount == 0)
         {
             uwTSIRCount +=1;
@@ -151,7 +125,7 @@ void U0C0_ASC_Protocoll(void) interrupt U0C0_SRN0
             U0C0_BRGH = U0C0_BRGH & (~(uword)0x003f);
             
             /* PFDIV */
-            U0C0_BRGH = (uwTmp - 1);
+            U0C0_BRGH |= (uwTmp - 1);
 
             /* deactivate the baudrate measuring mode(reset TMEN) */
             U0C0_BRGL &= ~((uword)0x0008);
@@ -159,25 +133,76 @@ void U0C0_ASC_Protocoll(void) interrupt U0C0_SRN0
             /* disable the transmit shift interrupt (reset TSIEN) */
             U0C0_CCR &= ~((uword) 1 << 12);
 
+            /* clear the synchronize bit counter */
+            uwTSIRCount = 0;
+            
+            /* once detect the baud rate then switch the state to recieve
+               the lin message id */
             Lin_StateMachine.Lin_CommState = LIN_PID;
         }
     }
-    /* recieve interrupt */
-    else if(U0C0_PSR & 0x0080)
-    {
-        rxData = U0C0_RBUF;
-        /* clear all flags */
-        U0C0_PSCR = 0xFFFF;
 
-        linComIsrHandler(rxData);
-    }
-    /* transmit interrupt */
-    else if(U0C0_PSR & 0x2000)
+    /* clear all flags */
+    U0C0_PSCR = 0xFFFF;
+}
+//**************************************************************************** 
+// @Function void U0C0_ASC_Protocoll(void)
+// @Date 15.11.2007 
+//****************************************************************************
+uint16 rxDataGlobal[20];
+uint8 dataByteCnt = 0;
+void U0C0_ASC_Protocol(void) interrupt U0C0_SRN1
+{
+    static uword uwTSIRCount = 0;
+    static uword uwPDIV[5];
+    uint8 rxData = 0;
+    uword uwTmp = 0;
+
+    psrReg = U0C0_PSR;
+
+    /* collesion interrupt */
+    if(U0C0_PSR & 0x0008)
     {
-        /* clear all flags */
-        U0C0_PSCR = 0xFFFF;
+        U0C0_PSCR |= 0x0008;        
     }
-    else{
+
+    /* lin slave state machine actions upon sync break detection */
+    else if(U0C0_PSR & 0x0004)
+    {
+        /* set bit timing measuring mode bit-3 TMEN = 1*/
+        U0C0_BRGL |= 0x0008;
+
+        /* CM = 2(combination mode) falling edge activates DXnt */
+        U0C0_DX0CR = (2 << 10) | (0 << 9) | (0 << 8) | (0 << 6) | (0 << 5) | (0 << 4) | (5 << 0);
+
+        /* TSIEN = 1(transmit shift interrupt enable) */
+        U0C0_CCR |= (1 << 12);
+    }
+    /* recieve or transmit interrupt */
+    else if((U0C0_PSR & 0x0080) || (U0C0_PSR & 0x1000))
+    {
+        if(U0C0_PSR & 0x0080)
+        {
+            rxDataGlobal[dataByteCnt] = U0C0_RBUF;
+            dataByteCnt ++;
+            rxData = (uint8)U0C0_RBUF;
+            if(dataByteCnt == 11)
+            {
+                dataByteCnt = 0;
+            }
+        }
+        else
+        {
+            
+        }
+        /* handle the service such as message id 
+           matching, tx, rx, checksum */
+        linProtocolHandler(rxData);
+    }
+    else
+    {
 
     }
+    /* clear all interrupt flags */
+    U0C0_PSCR = 0xFFFF;
 }

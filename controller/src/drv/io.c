@@ -184,6 +184,7 @@ void IO_vInit(void)
   P10_IOCR05     =  0x0080;      // load port control register 5
   P10_IOCR07     =  0x0080;      // load port control register 7
 
+  P2_IOCR05      =  0x0080;      // load port control register 7
 
   // USER CODE BEGIN (IO_Function,3)
 
