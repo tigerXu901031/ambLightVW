@@ -90,7 +90,7 @@ void linDrvInit(void)
 /// 8. input/output pins configuration
 /// ----------------------------------------------------------------------- 
     P2_IOCR04 = 0x0020;                                                 // P2.4=input(pull_up)
-    P2_IOCR03 = 0x00D0;                                                 // P2.3=output(ALT1 open-drain)
+    P2_IOCR03 = 0x0090;                                                 // P2.3=output(ALT1 open-drain)
 }
 
 uint16 psrReg = 0;

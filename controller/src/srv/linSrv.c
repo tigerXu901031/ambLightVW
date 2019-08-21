@@ -34,10 +34,13 @@ static void linTxDataHandler()
 {
     static uint8 txDataBytePtr = 0;
 
+    /* TSIEN = 1(transmit shift interrupt enable) */
+    // U0C0_CCR |= (1 << 12);
+
     if(txDataBytePtr < LIN_MSG_LENGTH)
     {
         setTxBuf(LinBus_Obj.txMsg[curLinReq.reqMsgIdx].msgData.dataBuf[txDataBytePtr]);
-        testTBUFdata[txDataBytePtr] = U0C0_TBUF00;
+        testTBUFdata[txDataBytePtr] = U0C0_TBUF07;
         testPSRdata[txDataBytePtr] = U0C0_PSR;
         txDataBytePtr ++;
         if(txDataBytePtr == LIN_MSG_LENGTH)

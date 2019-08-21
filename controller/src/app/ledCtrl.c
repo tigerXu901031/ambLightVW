@@ -79,6 +79,9 @@ static void ledMode3Ctrl()
     case 2:
     case 3:
     case 4:
+    case 5:
+    case 6:
+    case 7:
         for (j = 0; j < LED_NUM; j++)
         {
             setSingleLed(ledStripIdx_center, j, colorArr[color_green]);
@@ -88,11 +91,14 @@ static void ledMode3Ctrl()
         i++;
         break;
     /* all OFF next 500ms */
-    case 5:
-    case 6:
-    case 7:
     case 8:
     case 9:
+    case 10:
+    case 11:
+    case 12:
+    case 13:
+    case 14:
+    case 15:
         for (j = 0; j < LED_NUM; j++)
         {
             setSingleLed(ledStripIdx_center, j, colorArr[color_off]);
@@ -100,7 +106,7 @@ static void ledMode3Ctrl()
             setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
         }
         i++;
-        if (i == 10)
+        if (i == 15)
             i = 0;
         break;
     default:

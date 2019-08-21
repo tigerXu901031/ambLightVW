@@ -9,7 +9,7 @@
 #define U0C0_SRN1 0x51
 #define U0C0_SRN2 0x52
 
-#define setTxBuf(val)   U0C0_TBUF00=##val  
+#define setTxBuf(val)   U0C0_TBUF07=##val  
 
 extern void linDrvInit(void);
 
