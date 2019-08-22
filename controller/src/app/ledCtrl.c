@@ -82,6 +82,8 @@ static void ledMode3Ctrl()
     case 5:
     case 6:
     case 7:
+    case 8:
+    case 9:
         for (j = 0; j < LED_NUM; j++)
         {
             setSingleLed(ledStripIdx_center, j, colorArr[color_green]);
@@ -91,14 +93,16 @@ static void ledMode3Ctrl()
         i++;
         break;
     /* all OFF next 500ms */
-    case 8:
-    case 9:
     case 10:
     case 11:
     case 12:
     case 13:
     case 14:
     case 15:
+    case 16:
+    case 17:
+    case 18:
+    case 19:
         for (j = 0; j < LED_NUM; j++)
         {
             setSingleLed(ledStripIdx_center, j, colorArr[color_off]);
@@ -149,9 +153,9 @@ static void ledMode4Ctrl(ledMode_enum oldInpMode)
         case 4:
             for(j = 0; j < LED_NUM; j ++)
             {
-                setSingleLed(ledStripIdx_left, j, colorArr[color_green]);
+                setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
                 setSingleLed(ledStripIdx_center, j, colorArr[color_green]);
-                setSingleLed(ledStripIdx_right, j, colorArr[color_green]);
+                setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
             }
             break;
         case 5:
@@ -163,9 +167,9 @@ static void ledMode4Ctrl(ledMode_enum oldInpMode)
             {
                 if((j >= (5 - k)) && (j <= (6 + k)))
                 {
-                    setSingleLed(ledStripIdx_left, j, colorArr[color_green]);
+                    setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
                     setSingleLed(ledStripIdx_center, j, colorArr[color_green]);
-                    setSingleLed(ledStripIdx_right, j, colorArr[color_green]);
+                    setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
                 }
                 else
                 {
@@ -191,35 +195,35 @@ static void ledMode5Ctrl(ledMode_enum oldInpMode)
     if(oldInpMode != ledMode_5)
     {
         cycCnt = 0;
-        streamColorArr[0] = colorArr[color_red];
-        streamColorArr[1] = colorArr[color_red];
-        streamColorArr[2] = colorArr[color_red];
-        streamColorArr[3] = colorArr[color_red];
+        streamColorArr[0] = colorArr[color_green];
+        streamColorArr[1] = colorArr[color_green];
+        streamColorArr[2] = colorArr[color_green];
+        streamColorArr[3] = colorArr[color_green];
 
-        streamColorArr[4] = colorArr[color_orange];
-        streamColorArr[5] = colorArr[color_orange];
-        streamColorArr[6] = colorArr[color_orange];
-        streamColorArr[7] = colorArr[color_orange];
+        streamColorArr[4] = colorArr[color_off];
+        streamColorArr[5] = colorArr[color_off];
+        streamColorArr[6] = colorArr[color_off];
+        streamColorArr[7] = colorArr[color_off];
 
-        streamColorArr[8] = colorArr[color_yellow];
-        streamColorArr[9] = colorArr[color_yellow];
-        streamColorArr[10] = colorArr[color_yellow];
-        streamColorArr[11] = colorArr[color_yellow];
+        streamColorArr[8] = colorArr[color_off];
+        streamColorArr[9] = colorArr[color_off];
+        streamColorArr[10] = colorArr[color_off];
+        streamColorArr[11] = colorArr[color_off];
 
-        streamColorArr[12] = colorArr[color_green];
-        streamColorArr[13] = colorArr[color_green];
-        streamColorArr[14] = colorArr[color_green];
-        streamColorArr[15] = colorArr[color_green];
+        streamColorArr[12] = colorArr[color_off];
+        streamColorArr[13] = colorArr[color_off];
+        streamColorArr[14] = colorArr[color_off];
+        streamColorArr[15] = colorArr[color_off];
 
-        streamColorArr[16] = colorArr[color_blue];
-        streamColorArr[17] = colorArr[color_blue];
-        streamColorArr[18] = colorArr[color_blue];
-        streamColorArr[19] = colorArr[color_blue];
+        streamColorArr[16] = colorArr[color_off];
+        streamColorArr[17] = colorArr[color_off];
+        streamColorArr[18] = colorArr[color_off];
+        streamColorArr[19] = colorArr[color_off];
 
-        streamColorArr[20] = colorArr[color_purple];
-        streamColorArr[21] = colorArr[color_purple];
-        streamColorArr[22] = colorArr[color_purple];
-        streamColorArr[23] = colorArr[color_purple];
+        streamColorArr[20] = colorArr[color_off];
+        streamColorArr[21] = colorArr[color_off];
+        streamColorArr[22] = colorArr[color_off];
+        streamColorArr[23] = colorArr[color_off];
     }
     cycCnt ++;
     /* each 0.5s update the stream arrary */
@@ -296,9 +300,9 @@ static void ledMode7Ctrl()
             for (j = 0; j < LED_NUM; j++)
             {
                 /* in this mode locally use the highest brightness level */
-                setSingleLed(ledStripIdx_left, j, colorArrOrign[color_yellow]);
-                setSingleLed(ledStripIdx_center, j, colorArrOrign[color_yellow]);
-                setSingleLed(ledStripIdx_right, j, colorArrOrign[color_yellow]);
+                setSingleLed(ledStripIdx_left, j, colorArrOrign[color_off]);
+                setSingleLed(ledStripIdx_center, j, colorArrOrign[color_off]);
+                setSingleLed(ledStripIdx_right, j, colorArrOrign[color_off]);
             }
             i++;
             break;
@@ -879,14 +883,14 @@ static void ledMode18Ctrl(ledMode_enum oldInpMode)
         {
             if (j == (12 - ledIdxOn))
             {
-                setSingleLed(ledStripIdx_left, j, colorArr[color_yellow]);
+                setSingleLed(ledStripIdx_right, j, colorArr[color_yellow]);
             }
             else
             {
-                setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
+                setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
             }
             setSingleLed(ledStripIdx_center, j, colorArr[color_off]);
-            setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
+            setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
         }
         i++;
         break;
@@ -1002,6 +1006,13 @@ static void LedlightLevelCtrl(lightLevel_enum lightLevel)
                 colorArr[i].blue    = colorArrOrign[i].blue * 0.75;
                 colorArr[i].green   = colorArrOrign[i].green * 0.75;
                 colorArr[i].red     = colorArrOrign[i].red * 0.75;
+
+                if(i == color_green)
+                {
+                    colorArr[i].blue    = colorArrOrign[i].blue * 0.6;
+                    colorArr[i].green   = colorArrOrign[i].green * 0.6;
+                    colorArr[i].red     = colorArrOrign[i].red * 0.6;
+                }
             }
             break;
         case lightLevel_low:
@@ -1010,6 +1021,13 @@ static void LedlightLevelCtrl(lightLevel_enum lightLevel)
                 colorArr[i].blue    = colorArrOrign[i].blue * 0.5;
                 colorArr[i].green   = colorArrOrign[i].green * 0.5;
                 colorArr[i].red     = colorArrOrign[i].red * 0.5;
+
+                if(i == color_green)
+                {
+                    colorArr[i].blue    = colorArrOrign[i].blue * 0.2;
+                    colorArr[i].green   = colorArrOrign[i].green * 0.2;
+                    colorArr[i].red     = colorArrOrign[i].red * 0.2;
+                }
             }
             break;
         default:
