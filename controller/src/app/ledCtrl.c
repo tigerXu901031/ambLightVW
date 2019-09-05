@@ -1064,15 +1064,15 @@ void ledModeUpdate()
 
     if(manualLedMode || manualLedMode)
     {
+        ledMode = manualLedMode;
+        ledSwth = manualLedSwitch;
+    }
+    else
+    {
         /* signal update from lin communication */
         ledMode = (ledMode_enum)getLedMode();
         ledSwth = getLedSwitch();
         brightnessLevel = (lightLevel_enum)getLedBrightnessLevel();
-    }
-    else
-    {
-        ledMode = manualLedMode;
-        ledSwth = manualLedSwitch;
     }
     
 
