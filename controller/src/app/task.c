@@ -104,11 +104,6 @@ void taskInit()
     2. CAN message Rx / Tx 
  */
 uint8 manualMode = 0xff;
-uint16 psrRegNormal = 0;
-uint16 baudrateGenReg = 0;
-uint16 baudrateGenRegL = 0;
-uint16 fracDivRegL = 0;
-canSignalsType testCanSigObj;
 void taskSlow()
 {
     /* TODO: add entry time stamp record and some delay logic
@@ -119,10 +114,6 @@ void taskSlow()
     /* get the user input from can */
     // canUpdate(&canSigObj);
     // linUpdate();
-    psrRegNormal = U0C0_PSR;
-    baudrateGenReg = U0C0_BRGH;
-    baudrateGenRegL = U0C0_BRGL;
-    fracDivRegL = U0C0_FDRL;
 
     /* according to the user input then do the led mode transition */
     ledModeUpdate();

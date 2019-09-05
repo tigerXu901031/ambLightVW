@@ -364,20 +364,30 @@ static void ledMode8Ctrl(ledMode_enum oldInpMode)
         case 2:
         case 3:
         case 4:
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
             for (j = 0; j < LED_NUM; j++)
             {
-                setSingleLed(ledStripIdx_center, j, colorArr[color_green]);
+                setSingleLed(ledStripIdx_center, j, colorArr[color_off]);
                 setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
                 setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
             }
             i++;
             break;
         /* all blue next 500ms */
-        case 5:
-        case 6:
-        case 7:
-        case 8:
-        case 9:
+        case 10:
+        case 11:
+        case 12:
+        case 13:
+        case 14:
+        case 15:
+        case 16:
+        case 17:
+        case 18:
+        case 19:
             for (j = 0; j < LED_NUM; j++)
             {
                 setSingleLed(ledStripIdx_center, j, colorArr[color_blue]);
@@ -805,13 +815,13 @@ static void ledMode17Ctrl(ledMode_enum oldInpMode)
 
     switch (i)
     {
-        /* one of the 12 led light in yellow */
+        /* two of the 12 led light in yellow */
         case 0:
         case 1:
         case 2:
             for (j = 0; j < LED_NUM; j++)
             {
-                if (j == ledIdxOn)
+                if ((j == (2 * ledIdxOn)) || (j == (2 * ledIdxOn + 1)))
                 {
                     setSingleLed(ledStripIdx_left, j, colorArr[color_yellow]);
                 }
@@ -839,7 +849,7 @@ static void ledMode17Ctrl(ledMode_enum oldInpMode)
             if (i == 6)
             {
                 ledIdxOn++;
-                if (ledIdxOn == 12)
+                if (ledIdxOn == 6)
                 {
                     ledIdxOn = 0;
                 }
@@ -881,7 +891,7 @@ static void ledMode18Ctrl(ledMode_enum oldInpMode)
     case 2:
         for (j = 0; j < LED_NUM; j++)
         {
-            if (j == (12 - ledIdxOn))
+            if ((j == (11 - 2 * ledIdxOn)) || (j == (10 - 2 * ledIdxOn)))
             {
                 setSingleLed(ledStripIdx_right, j, colorArr[color_yellow]);
             }
@@ -909,7 +919,7 @@ static void ledMode18Ctrl(ledMode_enum oldInpMode)
         if (i == 6)
         {
             ledIdxOn++;
-            if (ledIdxOn == 12)
+            if (ledIdxOn == 6)
             {
                 ledIdxOn = 0;
             }
@@ -1041,6 +1051,9 @@ static void LedlightLevelCtrl(lightLevel_enum lightLevel)
     oldLightLevel = lightLevel;
 }
 
+volatile uint8 manualLedSwitch = 0;
+volatile uint8 manualLedMode = 0;
+
 void ledModeUpdate()
 {
     static ledMode_enum oldUserInpMode = 0;
@@ -1049,10 +1062,20 @@ void ledModeUpdate()
     lightLevel_enum brightnessLevel = 0;
     uint8 j = 0;
 
-    /* signal update from lin communication */
-    ledMode = (ledMode_enum)getLedMode();
-    ledSwth = getLedSwitch();
-    brightnessLevel = (lightLevel_enum)getLedBrightnessLevel();
+    if(manualLedMode || manualLedMode)
+    {
+        /* signal update from lin communication */
+        ledMode = (ledMode_enum)getLedMode();
+        ledSwth = getLedSwitch();
+        brightnessLevel = (lightLevel_enum)getLedBrightnessLevel();
+    }
+    else
+    {
+        ledMode = manualLedMode;
+        ledSwth = manualLedSwitch;
+    }
+    
+
 
     LedlightLevelCtrl(brightnessLevel);
 
