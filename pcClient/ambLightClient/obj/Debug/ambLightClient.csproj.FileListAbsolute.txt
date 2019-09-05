@@ -1,0 +1,11 @@
+\\Mac\Home\Documents\work\personal\Github\ambLightVW\pcClient\ambLightClient\bin\Debug\ambLightClient.exe.config
+\\Mac\Home\Documents\work\personal\Github\ambLightVW\pcClient\ambLightClient\bin\Debug\ambLightClient.exe
+\\Mac\Home\Documents\work\personal\Github\ambLightVW\pcClient\ambLightClient\bin\Debug\ambLightClient.pdb
+\\Mac\Home\Documents\work\personal\Github\ambLightVW\pcClient\ambLightClient\obj\Debug\ambLightClient.csprojAssemblyReference.cache
+\\Mac\Home\Documents\work\personal\Github\ambLightVW\pcClient\ambLightClient\obj\Debug\ambLightClient.Form1.resources
+\\Mac\Home\Documents\work\personal\Github\ambLightVW\pcClient\ambLightClient\obj\Debug\ambLightClient.Properties.Resources.resources
+\\Mac\Home\Documents\work\personal\Github\ambLightVW\pcClient\ambLightClient\obj\Debug\ambLightClient.csproj.GenerateResource.cache
+\\Mac\Home\Documents\work\personal\Github\ambLightVW\pcClient\ambLightClient\obj\Debug\ambLightClient.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\work\personal\Github\ambLightVW\pcClient\ambLightClient\obj\Debug\ambLightClient.exe
+\\Mac\Home\Documents\work\personal\Github\ambLightVW\pcClient\ambLightClient\obj\Debug\ambLightClient.pdb
+\\Mac\Home\Documents\work\personal\Github\ambLightVW\pcClient\ambLightClient\obj\Debug\ambLightClient.Form2.resources
