@@ -19,6 +19,7 @@ namespace ambLightClient
         Byte linIdx = 0;
         bool state;
         Int32 devNum, ret;
+        bool isDeviceOpen = false;
 
         Form2 f2 = new Form2();
         public Form1()
@@ -26,69 +27,135 @@ namespace ambLightClient
             InitializeComponent();
         }
 
+        private void finalizeAmbLightClient()
+        {
+            /* clear the switch status to all off */
+            USB2LIN_EX.LIN_EX_MSG[] msg = new USB2LIN_EX.LIN_EX_MSG[2];
+            USB2LIN_EX.LIN_EX_MSG[] echoMsg = new USB2LIN_EX.LIN_EX_MSG[4];
+            if (isDeviceOpen)
+            {
+                /* 1st message is break message */
+                msg[0] = new USB2LIN_EX.LIN_EX_MSG();
+                msg[0].MsgType = USB2LIN_EX.LIN_EX_MSG_TYPE_BK;
+                msg[0].Timestamp = 10;
+
+                /* 2nd message is the data message */
+                msg[0] = new USB2LIN_EX.LIN_EX_MSG();
+                msg[1].MsgType = USB2LIN_EX.LIN_EX_MSG_TYPE_MW;
+                msg[1].Data = new Byte[8];
+                msg[1].Timestamp = 10;
+                msg[1].PID = 0x17;
+                msg[1].DataLen = 8;
+                msg[1].CheckType = USB2LIN_EX.LIN_EX_CHECK_NONE;
+
+                msg[1].Data[0] = 0x00;
+                msg[1].Data[1] = 0x00;
+                msg[1].Data[2] = 0x00;
+                msg[1].Data[3] = 0x00;
+                msg[1].Data[4] = 0x00;
+                msg[1].Data[5] = 0x00;
+                msg[1].Data[6] = 0x00;
+                msg[1].Data[7] = 0x00;
+
+                // send out the message
+                IntPtr pt = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(USB2LIN_EX.LIN_EX_MSG)) * echoMsg.Length);
+
+                ret = USB2LIN_EX.LIN_EX_MasterSync(devHandle, linIdx, msg, pt, msg.Length);
+                if (ret < USB2LIN_EX.LIN_EX_SUCCESS)
+                {
+                    f2.richTextBox1.AppendText("Lin message send failed! \n");
+                    f2.richTextBox1.AppendText("Error code:" + ret.ToString());
+                    return;
+                }
+                else
+                {
+                    f2.richTextBox1.AppendText("Lin message send success! \n");
+                }
+
+                Marshal.FreeHGlobal(pt);
+            }
+            else
+            {
+
+            }
+            
+        }
+
         private void ConnectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-
-            // search and scan device
-            devNum = usb_device.USB_ScanDevice(devHandles);
-            if(devNum <= 0)
+            if(isDeviceOpen)
             {
-                f2.richTextBox1.AppendText("no device connected \n");
-                return;
+
             }
             else
             {
-                f2.richTextBox1.AppendText(string.Format("Have {0} device connected \n", devNum));
-            }
+                // search and scan device
+                devNum = usb_device.USB_ScanDevice(devHandles);
+                if (devNum <= 0)
+                {
+                    f2.richTextBox1.AppendText("no device connected \n");
+                    f2.ShowDialog(this);
+                    return;
+                }
+                else
+                {
+                    f2.richTextBox1.AppendText(string.Format("Have {0} device connected \n", devNum));
+                }
 
-            // open device
-            devHandle = devHandles[0];
-            state = usb_device.USB_OpenDevice(devHandle);
-            if(!state)
-            {
-                f2.richTextBox1.AppendText("Fail to open device \n");
-                return;
-            }
-            else
-            {
-                f2.richTextBox1.AppendText("Open device success \n");
-            }
+                // open device
+                devHandle = devHandles[0];
+                state = usb_device.USB_OpenDevice(devHandle);
+                if (!state)
+                {
+                    f2.richTextBox1.AppendText("Fail to open device \n");
+                    f2.ShowDialog(this);
+                    return;
+                }
+                else
+                {
+                    f2.richTextBox1.AppendText("Open device success \n");
+                }
 
-            // get firmware infomation
-            StringBuilder funcStr = new StringBuilder(256);
-            state = usb_device.DEV_GetDeviceInfo(devHandle, ref devInfo, funcStr);
+                // get firmware infomation
+                StringBuilder funcStr = new StringBuilder(256);
+                state = usb_device.DEV_GetDeviceInfo(devHandle, ref devInfo, funcStr);
 
-            if(!state)
-            {
-                f2.richTextBox1.AppendText("Get device information failed! \n");
-                return;
-            }
-            else
-            {
-                f2.richTextBox1.AppendText("-----------------------------------\n");
-                f2.richTextBox1.AppendText("Firmware Info \n");
-                f2.richTextBox1.AppendText(string.Format("    Name: " + Encoding.Default.GetString(devInfo.FirmwareName) + "\n"));
-                f2.richTextBox1.AppendText(String.Format("    Build Date: " + Encoding.Default.GetString(devInfo.BuildDate) + "\n"));
-                f2.richTextBox1.AppendText(string.Format("    Firmware version: v{0}.{1}.{2}", (((devInfo.FirmwareVersion) >> 24) & 0xff), (((devInfo.FirmwareVersion) >> 16) & 0xff), (devInfo.FirmwareVersion & 0xffff) + "\n"));
-                f2.richTextBox1.AppendText(string.Format("    Hardware version: v{0}.{1}.{2}", (((devInfo.HardwareVersion) >> 24) & 0xff), (((devInfo.HardwareVersion) >> 16) & 0xff), (devInfo.HardwareVersion & 0xffff) + "\n"));
-                f2.richTextBox1.AppendText(string.Format("    Functions: " + devInfo.Functions.ToString("X8") + "\n"));
-                f2.richTextBox1.AppendText(string.Format("    Functions String" + funcStr + '\n'));
-                f2.richTextBox1.AppendText("-----------------------------------\n");
-            }
+                if (!state)
+                {
+                    f2.richTextBox1.AppendText("Get device information failed! \n");
+                    f2.ShowDialog(this);
+                    return;
+                }
+                else
+                {
+                    f2.richTextBox1.AppendText("-----------------------------------\n");
+                    f2.richTextBox1.AppendText("Firmware Info \n");
+                    f2.richTextBox1.AppendText(string.Format("    Name: " + Encoding.Default.GetString(devInfo.FirmwareName) + "\n"));
+                    f2.richTextBox1.AppendText(String.Format("    Build Date: " + Encoding.Default.GetString(devInfo.BuildDate) + "\n"));
+                    f2.richTextBox1.AppendText(string.Format("    Firmware version: v{0}.{1}.{2}", (((devInfo.FirmwareVersion) >> 24) & 0xff), (((devInfo.FirmwareVersion) >> 16) & 0xff), (devInfo.FirmwareVersion & 0xffff) + "\n"));
+                    f2.richTextBox1.AppendText(string.Format("    Hardware version: v{0}.{1}.{2}", (((devInfo.HardwareVersion) >> 24) & 0xff), (((devInfo.HardwareVersion) >> 16) & 0xff), (devInfo.HardwareVersion & 0xffff) + "\n"));
+                    f2.richTextBox1.AppendText(string.Format("    Functions: " + devInfo.Functions.ToString("X8") + "\n"));
+                    f2.richTextBox1.AppendText(string.Format("    Functions String" + funcStr + '\n'));
+                    f2.richTextBox1.AppendText("-----------------------------------\n");
+                }
 
-            // initialize and configure LIN
-            ret = USB2LIN_EX.LIN_EX_Init(devHandle, linIdx, 19200, 1);
-            if(ret != USB2LIN_EX.LIN_EX_SUCCESS)
-            {
-                f2.richTextBox1.AppendText("Config LIN failed! \n");
-                f2.richTextBox1.AppendText("Error code: " + ret.ToString() + "\n");
-                return;
+                // initialize and configure LIN
+                ret = USB2LIN_EX.LIN_EX_Init(devHandle, linIdx, 19200, 1);
+                if (ret != USB2LIN_EX.LIN_EX_SUCCESS)
+                {
+                    f2.richTextBox1.AppendText("Config LIN failed! \n");
+                    f2.richTextBox1.AppendText("Error code: " + ret.ToString() + "\n");
+                    f2.ShowDialog(this);
+                    return;
+                }
+                else
+                {
+                    f2.richTextBox1.AppendText("Config LIN success ! \n");
+                }
+                f2.ShowDialog(this);
+                isDeviceOpen = true;
             }
-            else
-            {
-                f2.richTextBox1.AppendText("Config LIN success ! \n");
-            }
+            
         }
 
         private void OutputToolStripMenuItem_Click(object sender, EventArgs e)
@@ -108,77 +175,85 @@ namespace ambLightClient
             USB2LIN_EX.LIN_EX_MSG[] msg = new USB2LIN_EX.LIN_EX_MSG[2];
             USB2LIN_EX.LIN_EX_MSG[] echoMsg = new USB2LIN_EX.LIN_EX_MSG[4];
 
-            /* 1st message is break message */
-            msg[0] = new USB2LIN_EX.LIN_EX_MSG();
-            msg[0].MsgType = USB2LIN_EX.LIN_EX_MSG_TYPE_BK;
-            msg[0].Timestamp = 10;
-
-            /* 2nd message is the data message */
-            msg[0] = new USB2LIN_EX.LIN_EX_MSG();
-            msg[1].MsgType = USB2LIN_EX.LIN_EX_MSG_TYPE_MW;
-            msg[1].Data = new Byte[8];
-            msg[1].Timestamp = 10;
-            msg[1].PID = 0x17;
-            msg[1].DataLen = 8;
-            msg[1].CheckType = USB2LIN_EX.LIN_EX_CHECK_NONE;
-
-            // load and pack the data
-            lightMode = (Byte)comboBox1.SelectedIndex;
-            if(lightMode < 16)
+            if (isDeviceOpen)
             {
-                lightMode = (Byte)(lightMode + 2);
-            }
-            else if(lightMode == 16)
-            {
-                lightMode = (Byte)0xff;
+                /* 1st message is break message */
+                msg[0] = new USB2LIN_EX.LIN_EX_MSG();
+                msg[0].MsgType = USB2LIN_EX.LIN_EX_MSG_TYPE_BK;
+                msg[0].Timestamp = 10;
+
+                /* 2nd message is the data message */
+                msg[0] = new USB2LIN_EX.LIN_EX_MSG();
+                msg[1].MsgType = USB2LIN_EX.LIN_EX_MSG_TYPE_MW;
+                msg[1].Data = new Byte[8];
+                msg[1].Timestamp = 10;
+                msg[1].PID = 0x17;
+                msg[1].DataLen = 8;
+                msg[1].CheckType = USB2LIN_EX.LIN_EX_CHECK_NONE;
+
+                // load and pack the data
+                lightMode = (Byte)comboBox1.SelectedIndex;
+                if (lightMode < 16)
+                {
+                    lightMode = (Byte)(lightMode + 2);
+                }
+                else if (lightMode == 16)
+                {
+                    lightMode = (Byte)0xff;
+                }
+                else
+                {
+                    /* do nothing */
+                }
+                freeModeL = (byte)comboBox2.SelectedIndex;
+                freeModeT = (byte)comboBox3.SelectedIndex;
+                freeModeR = (byte)comboBox4.SelectedIndex;
+                if (radioButton1.Checked)
+                {
+                    brightnessLevel = 3;
+                }
+                else if (radioButton2.Checked)
+                {
+                    brightnessLevel = 2;
+                }
+                else if (radioButton3.Checked)
+                {
+                    brightnessLevel = 1;
+                }
+                else
+                {
+                    brightnessLevel = 0;
+                }
+
+                msg[1].Data[0] = ((Byte)(brightnessLevel << 4));
+                msg[1].Data[0] |= 0x01;
+                msg[1].Data[1] = lightMode;
+                msg[1].Data[2] = freeModeL;
+                msg[1].Data[2] |= (Byte)(freeModeT << 4);
+                msg[1].Data[3] = freeModeR;
+
+                // send out the message
+                IntPtr pt = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(USB2LIN_EX.LIN_EX_MSG)) * echoMsg.Length);
+
+                ret = USB2LIN_EX.LIN_EX_MasterSync(devHandle, linIdx, msg, pt, msg.Length);
+                if (ret < USB2LIN_EX.LIN_EX_SUCCESS)
+                {
+                    f2.richTextBox1.AppendText("Lin message send failed! \n");
+                    f2.richTextBox1.AppendText("Error code:" + ret.ToString());
+                    return;
+                }
+                else
+                {
+                    f2.richTextBox1.AppendText("Lin message send success! \n");
+                }
+
+                Marshal.FreeHGlobal(pt);
             }
             else
             {
-                /* do nothing */
-            }
-            freeModeL = (byte)comboBox2.SelectedIndex;
-            freeModeT = (byte)comboBox3.SelectedIndex;
-            freeModeR = (byte)comboBox4.SelectedIndex;
-            if(radioButton1.Checked)
-            {
-                brightnessLevel = 3;
-            }
-            else if(radioButton2.Checked)
-            {
-                brightnessLevel = 2;
-            }
-            else if(radioButton3.Checked)
-            {
-                brightnessLevel = 1;
-            }
-            else
-            {
-                brightnessLevel = 0;
-            }
 
-            msg[1].Data[0] = ((Byte)(brightnessLevel << 4));
-            msg[1].Data[0] |= 0x01;
-            msg[1].Data[1] = lightMode;
-            msg[1].Data[2] = freeModeL;
-            msg[1].Data[2] |= (Byte)(freeModeT << 4);
-            msg[1].Data[3] = freeModeR;
-
-            // send out the message
-            IntPtr pt = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(USB2LIN_EX.LIN_EX_MSG)) * echoMsg.Length);
-
-            ret = USB2LIN_EX.LIN_EX_MasterSync(devHandle, linIdx, msg, pt, msg.Length);
-            if (ret < USB2LIN_EX.LIN_EX_SUCCESS)
-            {
-                f2.richTextBox1.AppendText("Lin message send failed! \n");
-                f2.richTextBox1.AppendText("Error code:" + ret.ToString());
-                return;
             }
-            else
-            {
-                f2.richTextBox1.AppendText("Lin message send success! \n");
-            }
-
-            Marshal.FreeHGlobal(pt);
+                
         }
     }
     class usb_device
