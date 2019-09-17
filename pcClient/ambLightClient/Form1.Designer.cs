@@ -199,7 +199,7 @@
             "15 - Manual control in traffic jam, allow to overtake from left",
             "16 - Manual control in traffic jam, allow to overtake from right",
             "17 - Overtake from left(second desgin)",
-            "18 - Overtake from rigth(right design)",
+            "18 - Overtake from rigth(second design)",
             "FF - Free Mode"});
             this.comboBox1.Location = new System.Drawing.Point(9, 25);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);

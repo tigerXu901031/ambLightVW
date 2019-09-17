@@ -193,11 +193,11 @@ namespace ambLightClient
 
                 // load and pack the data
                 lightMode = (Byte)comboBox1.SelectedIndex;
-                if (lightMode < 16)
+                if (lightMode < 17)
                 {
                     lightMode = (Byte)(lightMode + 2);
                 }
-                else if (lightMode == 16)
+                else if (lightMode == 17)
                 {
                     lightMode = (Byte)0xff;
                 }
