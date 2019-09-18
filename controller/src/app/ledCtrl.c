@@ -188,7 +188,7 @@ static void ledMode4Ctrl(ledMode_enum oldInpMode)
 static void ledMode5Ctrl(ledMode_enum oldInpMode)
 {
     static uint8 cycCnt = 0;
-    static rgb_type streamColorArr[24];
+    static rgb_type streamColorArr[36];
     rgb_type colorTemp;
     uint8 i = 0, j = 0, k = 0;
     
@@ -224,6 +224,21 @@ static void ledMode5Ctrl(ledMode_enum oldInpMode)
         streamColorArr[21] = colorArr[color_off];
         streamColorArr[22] = colorArr[color_off];
         streamColorArr[23] = colorArr[color_off];
+
+        streamColorArr[24] = colorArr[color_off];
+        streamColorArr[25] = colorArr[color_off];
+        streamColorArr[26] = colorArr[color_off];
+        streamColorArr[27] = colorArr[color_off];
+
+        streamColorArr[28] = colorArr[color_off];
+        streamColorArr[29] = colorArr[color_off];
+        streamColorArr[30] = colorArr[color_off];
+        streamColorArr[31] = colorArr[color_off];
+
+        streamColorArr[32] = colorArr[color_off];
+        streamColorArr[33] = colorArr[color_off];
+        streamColorArr[34] = colorArr[color_off];
+        streamColorArr[35] = colorArr[color_off];
     }
     cycCnt ++;
     /* each 0.5s update the stream arrary */
@@ -231,10 +246,10 @@ static void ledMode5Ctrl(ledMode_enum oldInpMode)
     {
         cycCnt = 0;
         
-        colorTemp = streamColorArr[23];
-        for(i = 0; i < 23; i ++)
+        colorTemp = streamColorArr[35];
+        for(i = 0; i < 35; i ++)
         {
-            streamColorArr[23 - i] = streamColorArr[22 - i];
+            streamColorArr[35 - i] = streamColorArr[34 - i];
         }
         streamColorArr[0] = colorTemp;
     }
@@ -243,7 +258,7 @@ static void ledMode5Ctrl(ledMode_enum oldInpMode)
     for(j = 0; j < LED_NUM; j ++)
     {
         setSingleLed(ledStripIdx_left, j, streamColorArr[j]);
-        setSingleLed(ledStripIdx_right, j, streamColorArr[j]);
+        setSingleLed(ledStripIdx_right, j, streamColorArr[j + 24]);
         setSingleLed(ledStripIdx_center, j, streamColorArr[j + 12]);
     }
 }
@@ -346,7 +361,7 @@ static void ledMode8Ctrl(ledMode_enum oldInpMode)
     else
     {
     }
-    if (k == 6)
+    if (k == 3)
     {
         /* 3s passed ... */
         i = 0xff;
@@ -395,7 +410,7 @@ static void ledMode8Ctrl(ledMode_enum oldInpMode)
                 setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
             }
             i++;
-            if (i == 10)
+            if (i == 20)
             {
                 i = 0;
                 k++;
@@ -679,7 +694,7 @@ static void ledMode14Ctrl(ledMode_enum oldInpMode)
     static rgb_type streamColorArr[16];
     rgb_type colorTemp;
     uint8 i = 0, j = 0;
-    if((oldInpMode != ledMode_14) || (cycCnt == (12 * 5)))
+    if(oldInpMode != ledMode_14)
     {
         cycCnt = 0;
 
@@ -706,7 +721,9 @@ static void ledMode14Ctrl(ledMode_enum oldInpMode)
     cycCnt ++;
     /* each 0.5s update the stream arrary */
     if(((cycCnt + 1) % 5) == 0)
-    {        
+    {
+        cycCnt = 0;
+
         colorTemp = streamColorArr[15];
         for(i = 0; i < 15; i ++)
         {
@@ -718,7 +735,7 @@ static void ledMode14Ctrl(ledMode_enum oldInpMode)
     {
         if(j < 4)
         {
-            setSingleLed(ledStripIdx_center, j, streamColorArr[4 - j]);
+            setSingleLed(ledStripIdx_center, j, streamColorArr[3 - j]);
         }
         else
         {
@@ -748,7 +765,7 @@ static void ledMode16Ctrl(ledMode_enum oldInpMode)
     static rgb_type streamColorArr[16];
     rgb_type colorTemp;
     uint8 i = 0, j = 0;
-    if((oldInpMode != ledMode_16) || (cycCnt == (12 * 5)))
+    if(oldInpMode != ledMode_16)
     {
         cycCnt = 0;
 
@@ -775,7 +792,9 @@ static void ledMode16Ctrl(ledMode_enum oldInpMode)
     cycCnt ++;
     /* each 0.5s update the stream arrary */
     if(((cycCnt + 1) % 5) == 0)
-    {        
+    {      
+        cycCnt = 0;
+
         colorTemp = streamColorArr[15];
         for(i = 0; i < 15; i ++)
         {
@@ -783,6 +802,7 @@ static void ledMode16Ctrl(ledMode_enum oldInpMode)
         }
         streamColorArr[0] = colorTemp;
     }
+    
     for(j = 0; j < LED_NUM; j ++)
     {
         if(j >= (LED_NUM - 4))
@@ -800,142 +820,107 @@ static void ledMode16Ctrl(ledMode_enum oldInpMode)
 
 static void ledMode17Ctrl(ledMode_enum oldInpMode)
 {
-    static uint8 i = 0;
-    uint8 j = 0;
-    static uint8 ledIdxOn = 0;
+    static uint8 cycCnt = 0;
+    static rgb_type streamColorArr[12];
+    rgb_type colorTemp;
+    uint8 i = 0, j = 0;
 
     if (oldInpMode != ledMode_17)
     {
-        ledIdxOn = 0;
-        i = 0;
+        cycCnt = 0;
+
+        streamColorArr[0] = colorArr[color_yellow];
+        streamColorArr[1] = colorArr[color_yellow];
+        streamColorArr[2] = colorArr[color_off];
+        streamColorArr[3] = colorArr[color_off];
+
+        streamColorArr[4] = colorArr[color_off];
+        streamColorArr[5] = colorArr[color_off];
+        streamColorArr[6] = colorArr[color_off];
+        streamColorArr[7] = colorArr[color_off];
+
+        streamColorArr[8] = colorArr[color_off];
+        streamColorArr[9] = colorArr[color_off];
+        streamColorArr[10] = colorArr[color_off];
+        streamColorArr[11] = colorArr[color_off];
     }
     else
     {
     }
 
-    switch (i)
+    /* each 0.5s update the stream arrary */
+    if(((cycCnt + 1) % 5) == 0)
+    {      
+        cycCnt = 0;
+
+        colorTemp = streamColorArr[11];
+        for(i = 0; i < 11; i ++)
+        {
+            streamColorArr[11 - i] = streamColorArr[10 - i];
+        }
+        streamColorArr[0] = colorTemp;
+    }
+    cycCnt ++;
+
+    for(j = 0; j < LED_NUM; j ++)
     {
-        /* two of the 12 led light in yellow */
-        case 0:
-        case 1:
-        case 2:
-            for (j = 0; j < LED_NUM; j++)
-            {
-                if ((j == (2 * ledIdxOn)) || (j == (2 * ledIdxOn + 1)))
-                {
-                    setSingleLed(ledStripIdx_left, j, colorArr[color_yellow]);
-                }
-                else
-                {
-                    setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
-                }
-                setSingleLed(ledStripIdx_center, j, colorArr[color_off]);
-                setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
-            }
-            i++;
-            break;
-
-        /* all OFF next 300ms */
-        case 3:
-        case 4:
-        case 5:
-            for (j = 0; j < LED_NUM; j++)
-            {
-                setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
-                setSingleLed(ledStripIdx_center, j, colorArr[color_off]);
-                setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
-            }
-            i++;
-            if (i == 6)
-            {
-                ledIdxOn++;
-                if (ledIdxOn == 6)
-                {
-                    ledIdxOn = 0;
-                }
-                else
-                {
-                }
-                i = 0;
-            }
-            else
-            {
-            }
-            break;
-
-        default:
-            break;
+        setSingleLed(ledStripIdx_left, j, streamColorArr[j]);
+        setSingleLed(ledStripIdx_center, j, colorArr[color_off]);
+        setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
     }
 }
 
 static void ledMode18Ctrl(ledMode_enum oldInpMode)
 {
-    static uint8 i = 0;
-    uint8 j = 0;
-    static uint8 ledIdxOn = 0;
+    static uint8 cycCnt = 0;
+    static rgb_type streamColorArr[12];
+    rgb_type colorTemp;
+    uint8 i = 0, j = 0;
 
     if (oldInpMode != ledMode_18)
     {
-        ledIdxOn = 0;
-        i = 0;
+        cycCnt = 0;
+
+        streamColorArr[0] = colorArr[color_yellow];
+        streamColorArr[1] = colorArr[color_yellow];
+        streamColorArr[2] = colorArr[color_off];
+        streamColorArr[3] = colorArr[color_off];
+
+        streamColorArr[4] = colorArr[color_off];
+        streamColorArr[5] = colorArr[color_off];
+        streamColorArr[6] = colorArr[color_off];
+        streamColorArr[7] = colorArr[color_off];
+
+        streamColorArr[8] = colorArr[color_off];
+        streamColorArr[9] = colorArr[color_off];
+        streamColorArr[10] = colorArr[color_off];
+        streamColorArr[11] = colorArr[color_off];
     }
     else
     {
     }
 
-    switch (i)
-    {
-    /* one of the 12 led light in yellow */
-    case 0:
-    case 1:
-    case 2:
-        for (j = 0; j < LED_NUM; j++)
-        {
-            if ((j == (11 - 2 * ledIdxOn)) || (j == (10 - 2 * ledIdxOn)))
-            {
-                setSingleLed(ledStripIdx_right, j, colorArr[color_yellow]);
-            }
-            else
-            {
-                setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
-            }
-            setSingleLed(ledStripIdx_center, j, colorArr[color_off]);
-            setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
-        }
-        i++;
-        break;
+    /* each 0.5s update the stream arrary */
+    if(((cycCnt + 1) % 5) == 0)
+    {      
+        cycCnt = 0;
 
-    /* all OFF next 300ms */
-    case 3:
-    case 4:
-    case 5:
-        for (j = 0; j < LED_NUM; j++)
+        colorTemp = streamColorArr[11];
+        for(i = 0; i < 11; i ++)
         {
-            setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
-            setSingleLed(ledStripIdx_center, j, colorArr[color_off]);
-            setSingleLed(ledStripIdx_right, j, colorArr[color_off]);
+            streamColorArr[11 - i] = streamColorArr[10 - i];
         }
-        i++;
-        if (i == 6)
-        {
-            ledIdxOn++;
-            if (ledIdxOn == 6)
-            {
-                ledIdxOn = 0;
-            }
-            else
-            {
-            }
-            i = 0;
-        }
-        else
-        {
-        }
-        break;
-
-    default:
-        break;
+        streamColorArr[0] = colorTemp;
     }
+    cycCnt ++;
+
+        for(j = 0; j < LED_NUM; j ++)
+    {
+        setSingleLed(ledStripIdx_left, j, colorArr[color_off]);
+        setSingleLed(ledStripIdx_center, j, colorArr[color_off]);
+        setSingleLed(ledStripIdx_right, j, streamColorArr[LED_NUM - j - 1]);
+    }
+
 }
 
 static color_enum freeModeColor2InternalColor(uint8 freeModeColor)
