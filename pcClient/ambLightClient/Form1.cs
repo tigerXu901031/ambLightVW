@@ -205,9 +205,10 @@ namespace ambLightClient
                 {
                     /* do nothing */
                 }
-                freeModeL = (byte)comboBox2.SelectedIndex;
-                freeModeT = (byte)comboBox3.SelectedIndex;
-                freeModeR = (byte)comboBox4.SelectedIndex;
+                freeModeL = (byte)(comboBox2.SelectedIndex + 1);
+                freeModeT = (byte)(comboBox3.SelectedIndex + 1);
+                freeModeR = (byte)(comboBox4.SelectedIndex + 1);
+
                 if (radioButton1.Checked)
                 {
                     brightnessLevel = 3;
