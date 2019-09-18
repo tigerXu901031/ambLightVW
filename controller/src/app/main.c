@@ -40,7 +40,7 @@ void main()
                     _nop_();
                     _nop_();
                     setGpio(P10_4, 0);
-                    delay300ns();
+                    // delay300ns();
                     delay300ns();
                 }
                 i ++;
@@ -90,7 +90,7 @@ void main()
                     setGpio(P10_7, 1);
                     delay300ns();
                     setGpio(P10_7, 0);
-                    delay300ns();
+                    // delay300ns();
                     delay300ns();
                 }
                 i ++;
