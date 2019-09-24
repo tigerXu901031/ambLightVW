@@ -19,7 +19,7 @@ static void linUpdateChecksum(LIN_TX_MSG_IDX msgObjId)
         chkSumVal = chkSumVal + LinBus_Obj.txMsg[msgObjId].msgData.dataBuf[i];
     }
     chkSumVal = 255 - chkSumVal;
-    LinBus_Obj.txMsg[msgObjId].msgData.dataBuf[9] = chkSumVal;
+    LinBus_Obj.txMsg[msgObjId].msgData.dataBuf[8] = chkSumVal;
 
 }
 
