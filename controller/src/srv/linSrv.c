@@ -9,6 +9,20 @@ lineReq_type curLinReq;
 const uint8 linRxMsgIdArr[LIN_RX_MSG_MAX] = {0x17};
 const uint8 linTxMsgIdArr[LIN_TX_MSG_MAX] = {0x18};
 
+static void linUpdateChecksum(LIN_TX_MSG_IDX msgObjId)
+{
+    uint8 chkSumVal = 0;
+    uint8 i = 0;
+    chkSumVal = LinBus_Obj.txMsg[msgObjId].msgId;
+    for(i = 0; i < LIN_MSG_LENGTH ; i++)
+    {
+        chkSumVal = chkSumVal + LinBus_Obj.txMsg[msgObjId].msgData.dataBuf[i];
+    }
+    chkSumVal = 255 - chkSumVal;
+    LinBus_Obj.txMsg[msgObjId].msgData.dataBuf[9] = chkSumVal;
+
+}
+
 static void linRxDataHandler(uint8 rxData)
 {
     static uint8 rxDataBytePtr = 0;
@@ -37,13 +51,13 @@ static void linTxDataHandler()
     /* TSIEN = 1(transmit shift interrupt enable) */
     // U0C0_CCR |= (1 << 12);
 
-    if(txDataBytePtr < LIN_MSG_LENGTH)
+    if(txDataBytePtr < LIN_MSG_TX_LENGTH)
     {
         setTxBuf(LinBus_Obj.txMsg[curLinReq.reqMsgIdx].msgData.dataBuf[txDataBytePtr]);
         testTBUFdata[txDataBytePtr] = U0C0_TBUF07;
         testPSRdata[txDataBytePtr] = U0C0_PSR;
         txDataBytePtr ++;
-        if(txDataBytePtr == LIN_MSG_LENGTH)
+        if(txDataBytePtr == LIN_MSG_TX_LENGTH)
         {
             Lin_StateMachine.Lin_CommState = LIN_TX_CHKSUM;
             txDataBytePtr = 0;
@@ -200,6 +214,7 @@ uint8 getRightZoneFreeMode()
 void setLedSwitchFbk(uint8 ledSwth)
 {
     LinBus_Obj.txMsg[LIN_TX_MSG_HMI_status_light_report].msgData.msg_HMI_status_light_report.HMI_status_light_status = ledSwth;
+    linUpdateChecksum(LIN_TX_MSG_HMI_status_light_report);
 }
 
 void setLedModeFbk(uint8 ledMode)

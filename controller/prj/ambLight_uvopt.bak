@@ -318,8 +318,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>6</CurrentLine>
+      <TopLine>36</TopLine>
+      <CurrentLine>36</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\src\app\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -379,10 +379,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>56</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>1</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\src\srv\led.c</PathWithFileName>
       <FilenameWithoutPath>led.c</FilenameWithoutPath>
@@ -1947,7 +1947,7 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>5</ActiveTab>
+      <ActiveTab>3</ActiveTab>
       <Documents>
         <Doc>
           <Name>..\src\drv\linDrv.c</Name>
@@ -1969,15 +1969,15 @@
         </Doc>
         <Doc>
           <Name>..\src\drv\clk.c</Name>
-          <ColumnNumber>0</ColumnNumber>
+          <ColumnNumber>36</ColumnNumber>
           <TopLine>147</TopLine>
-          <CurrentLine>163</CurrentLine>
+          <CurrentLine>162</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\src\app\main.c</Name>
           <ColumnNumber>0</ColumnNumber>
-          <TopLine>36</TopLine>
-          <CurrentLine>36</CurrentLine>
+          <TopLine>1</TopLine>
+          <CurrentLine>6</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\src\srv\led.c</Name>

@@ -5,6 +5,7 @@
 #include "../drv/linDrv.h"
 
 #define LIN_MSG_LENGTH  8
+#define LIN_MSG_TX_LENGTH   9
 
 typedef enum{
     linRxReq,
@@ -94,7 +95,7 @@ typedef struct{
 typedef union{
     msg_HMI_status_light_control_type   msg_HMI_status_light_control;
     msg_HMI_status_light_report_type    msg_HMI_status_light_report;
-    uint8                               dataBuf[8];
+    uint8                               dataBuf[9];
 }LinMsgData_type;
 
 typedef struct{
