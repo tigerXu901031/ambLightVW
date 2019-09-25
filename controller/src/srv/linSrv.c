@@ -13,7 +13,7 @@ static void linUpdateChecksum(LIN_TX_MSG_IDX msgObjId)
 {
     uint8 chkSumVal = 0;
     uint8 i = 0;
-    chkSumVal = LinBus_Obj.txMsg[msgObjId].msgId;
+    chkSumVal = 0xD8;
     for(i = 0; i < LIN_MSG_LENGTH ; i++)
     {
         chkSumVal = chkSumVal + LinBus_Obj.txMsg[msgObjId].msgData.dataBuf[i];
