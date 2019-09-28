@@ -93,6 +93,19 @@ void linDrvInit(void)
     P2_IOCR03 = 0x0090;                                                 // P2.3=output(ALT1 open-drain)
 }
 
+void linDisable()
+{
+    /* globally disable interrupts */
+    PSW_IEN = 0;
+}
+
+void linEnable()
+{
+    linDrvInit();
+    /* globally enable interrupts */
+    PSW_IEN = 1;
+}
+
 uint16 psrReg = 0;
 void U0C0_ASC_Protocol1(void) interrupt U0C0_SRN0
 {

@@ -12,5 +12,7 @@
 #define setTxBuf(val)   U0C0_TBUF07=##val  
 
 extern void linDrvInit(void);
+extern void linDisable();
+extern void linEnable();
 
 #endif

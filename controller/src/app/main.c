@@ -14,9 +14,11 @@ void main()
         switch(ledZoneSwitch)
         {
             case 0xff:
+                linEnable();
                 taskSlow();
                 ledZoneSwitch = ledStripIdx_left;
                 longDelay(20);
+                linDisable();
                 break;
             case ledStripIdx_left:
                 if(ledDutyCycleArrary[ledStripIdx_left][i])
