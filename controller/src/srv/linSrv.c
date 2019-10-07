@@ -183,7 +183,33 @@ void linProtocolHandler(uint8 rxData)
 
 uint8 getLedMode()
 {
-    return (uint8)LinBus_Obj.rxMsg[LIN_RX_MSG_HMI_status_light_control].msgData.msg_HMI_status_light_control.HMI_status_light_mode;
+    uint8 newSig = 0;
+    static uint8 oldSig = 0;
+    static uint8 formalSignal = 0;
+    static uint8 cnt = 0;
+
+    /* signal debounce */
+    newSig = (uint8)LinBus_Obj.rxMsg[LIN_RX_MSG_HMI_status_light_control].msgData.msg_HMI_status_light_control.HMI_status_light_mode;
+    if(newSig == oldSig)
+    {
+        if(cnt >= 5)
+        {
+            formalSignal = newSig;
+            cnt = 0;
+        }
+        else
+        {
+            cnt ++;
+        }
+    }
+    else
+    {
+        cnt = 0;
+    }
+    
+    oldSig = newSig;
+
+    return formalSignal;
 }
 
 uint8 getLedSwitch()

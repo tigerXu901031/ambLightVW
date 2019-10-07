@@ -1047,19 +1047,23 @@ void ledModeUpdate()
     lightLevel_enum brightnessLevel = 0;
     uint8 j = 0;
 
-    if(manualLedMode || manualLedMode)
-    {
-        ledMode = manualLedMode;
-        ledSwth = manualLedSwitch;
-    }
-    else
-    {
-        /* signal update from lin communication */
-        ledMode = (ledMode_enum)getLedMode();
-        ledSwth = getLedSwitch();
-        brightnessLevel = (lightLevel_enum)getLedBrightnessLevel();
-    }
+    // if(manualLedMode || manualLedSwitch)
+    // {
+    //     ledMode = manualLedMode;
+    //     ledSwth = manualLedSwitch;
+    // }
+    // else
+    // {
+    //     /* signal update from lin communication */
+    //     ledMode = (ledMode_enum)getLedMode();
+    //     ledSwth = getLedSwitch();
+    //     brightnessLevel = (lightLevel_enum)getLedBrightnessLevel();
+    // }
     
+    /* signal update from lin communication */
+    ledMode = (ledMode_enum)getLedMode();
+    ledSwth = getLedSwitch();
+    brightnessLevel = (lightLevel_enum)getLedBrightnessLevel();
 
 
     LedlightLevelCtrl(brightnessLevel);
