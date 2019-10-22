@@ -5,6 +5,8 @@ LinBus_type             LinBus_Obj;
 
 lineReq_type curLinReq;
 
+uint8 rxDataBytePtr = 0;
+
 /*  */
 const uint8 linRxMsgIdArr[LIN_RX_MSG_MAX] = {0x17};
 const uint8 linTxMsgIdArr[LIN_TX_MSG_MAX] = {0x18};
@@ -23,11 +25,36 @@ static void linUpdateChecksum(LIN_TX_MSG_IDX msgObjId)
 
 }
 
+static void linChecksumVerify(LIN_TX_MSG_IDX msgObjId)
+{
+    uint8 checksumResult = 0;
+    uint8 checksumVal = 0;
+    uint8 i = 0;
+
+    checksumVal = 0x97;
+    for(i = 0; i < LIN_MSG_LENGTH; i++)
+    {
+        checksumVal = checksumVal + LinBus_Obj.rxMsg[msgObjId].msgData.dataBuf[i];
+    }
+    checksumVal = 255 - checksumVal;
+
+    if(checksumVal == LinBus_Obj.rxMsg[msgObjId].msgData.dataBuf[8])
+    {
+        LinBus_Obj.rxMsg[msgObjId].chkSumResult = 1;
+    }
+    else
+    {
+        LinBus_Obj.rxMsg[msgObjId].chkSumResult = 0;
+    }
+    
+}
+
 static void linRxDataHandler(uint8 rxData)
 {
-    static uint8 rxDataBytePtr = 0;
+
     if(rxDataBytePtr < LIN_MSG_LENGTH)
     {
+        LinBus_Obj.rxMsg[curLinReq.reqMsgIdx].chkSumResult = 0;
         LinBus_Obj.rxMsg[curLinReq.reqMsgIdx].msgData.dataBuf[rxDataBytePtr] = rxData;
         rxDataBytePtr ++;
         if(rxDataBytePtr == LIN_MSG_LENGTH)
@@ -46,6 +73,8 @@ uint16 testTBUFdata[10];
 uint16 testPSRdata[10];
 static void linTxDataHandler()
 {
+    ;
+    #if 0
     static uint8 txDataBytePtr = 0;
 
     /* TSIEN = 1(transmit shift interrupt enable) */
@@ -67,6 +96,7 @@ static void linTxDataHandler()
     {
 
     }
+    #endif
 }
 
 static void setMsgIDState(uint8 msgId)
@@ -80,6 +110,7 @@ static void setMsgIDState(uint8 msgId)
             curLinReq.reqType = linRxReq;
             curLinReq.reqMsgIdx = i;
             Lin_StateMachine.Lin_CommState = LIN_RX_DATA;
+            //rxDataBytePtr = 0;
             break;
         }
         else
@@ -99,7 +130,7 @@ static void setMsgIDState(uint8 msgId)
             /* trigger the first data byte send here
                then it will be triggered by the transmit
                finish interrupt one by one */
-            linTxDataHandler();
+            //linTxDataHandler();
             break;
         }
         else
@@ -161,19 +192,26 @@ void linProtocolHandler(uint8 rxData)
 
         case LIN_TX_DATA:
         {
-            linTxDataHandler();
+            //linTxDataHandler();
         }
             break;
 
         case LIN_RX_CHKSUM:
         {
+            /* get the checksum byte */
+            LinBus_Obj.rxMsg[curLinReq.reqMsgIdx].msgData.dataBuf[8] = rxData;
+
+            /* verify the checksum result */
+            linChecksumVerify(curLinReq.reqMsgIdx);
+
+            /* set the lin state to idle */
             Lin_StateMachine.Lin_CommState = LIN_IDLE;
         }
             break;
 
         case LIN_TX_CHKSUM:
         {
-            Lin_StateMachine.Lin_CommState = LIN_IDLE;
+            //Lin_StateMachine.Lin_CommState = LIN_IDLE;
         }
             break;   
         default:
@@ -195,6 +233,7 @@ uint8 getLedMode()
         if(cnt >= 5)
         {
             formalSignal = newSig;
+            //oldSig = newSig;
             cnt = 0;
         }
         else
@@ -214,7 +253,33 @@ uint8 getLedMode()
 
 uint8 getLedSwitch()
 {
-    return (uint8)LinBus_Obj.rxMsg[LIN_RX_MSG_HMI_status_light_control].msgData.msg_HMI_status_light_control.HMI_status_light_switch;
+    uint8 newSig = 0;
+    static uint8 oldSig = 0;
+    static uint8 formalSignal = 0;
+    static uint8 cnt = 0;
+
+    /* signal debounce */
+    newSig = (uint8)LinBus_Obj.rxMsg[LIN_RX_MSG_HMI_status_light_control].msgData.msg_HMI_status_light_control.HMI_status_light_switch;
+    if(newSig == oldSig)
+    {
+        if(cnt >= 5)
+        {
+            formalSignal = newSig;
+            cnt = 0;
+        }
+        else
+        {
+            cnt ++;
+        }
+    }
+    else
+    {
+        cnt = 0;
+    }
+    
+    oldSig = newSig;
+
+    return formalSignal;
 }
 
 uint8 getLedBrightnessLevel()

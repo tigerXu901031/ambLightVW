@@ -170,6 +170,7 @@ namespace ambLightClient
             Byte freeModeL = 0;
             Byte freeModeT = 0;
             Byte freeModeR = 0;
+            Byte chksumVal = 0;
             
             // initialize the message object
             USB2LIN_EX.LIN_EX_MSG[] msg = new USB2LIN_EX.LIN_EX_MSG[2];
@@ -187,9 +188,9 @@ namespace ambLightClient
                 msg[1].MsgType = USB2LIN_EX.LIN_EX_MSG_TYPE_MW;
                 msg[1].Data = new Byte[8];
                 msg[1].Timestamp = 10;
-                msg[1].PID = 0x17;
+                msg[1].PID = 0x97;
                 msg[1].DataLen = 8;
-                msg[1].CheckType = USB2LIN_EX.LIN_EX_CHECK_NONE;
+                msg[1].CheckType = USB2LIN_EX.LIN_EX_CHECK_EXT;
 
                 // load and pack the data
                 lightMode = (Byte)comboBox1.SelectedIndex;
@@ -232,6 +233,14 @@ namespace ambLightClient
                 msg[1].Data[2] = freeModeL;
                 msg[1].Data[2] |= (Byte)(freeModeT << 4);
                 msg[1].Data[3] = freeModeR;
+
+                // checksum calculation
+                for(Byte i = 0; i < 8; i++)
+                {
+                    chksumVal = (Byte)(chksumVal + msg[1].Data[i]);
+                }
+                chksumVal = (Byte)(255 - (chksumVal + 0x97));
+                msg[1].Check = chksumVal;
 
                 // send out the message
                 IntPtr pt = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(USB2LIN_EX.LIN_EX_MSG)) * echoMsg.Length);

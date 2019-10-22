@@ -101,6 +101,7 @@ typedef union{
 typedef struct{
     uint8           msgId;
     LinMsgData_type msgData;
+    uint8           chkSumResult;
 }LinMsg_type;
 
 typedef struct{
@@ -124,5 +125,6 @@ extern void setLedBrightnessLevelFbk(uint8 brightnessLevel);
 
 extern LIN_SLAVE_STATE_INFO     Lin_StateMachine;
 extern LinBus_type              LinBus_Obj;
+extern uint8 rxDataBytePtr;
 
 #endif

@@ -97,11 +97,14 @@ void linDisable()
 {
     /* globally disable interrupts */
     PSW_IEN = 0;
+
+    rxDataBytePtr = 0;
 }
 
 void linEnable()
 {
     linDrvInit();
+    //rxDataBytePtr = 0;
     /* globally enable interrupts */
     PSW_IEN = 1;
 }

@@ -1,5 +1,8 @@
 #include "ledCtrl.h"
 
+uint8 ledMode;
+uint8 ledSwth;
+
 const rgb_type colorArrOrign[color_max] = {
     /* color_green */
     {0, 255, 0},
@@ -951,9 +954,20 @@ static void ledModeFreeCtrl()
 {
     uint8 j = 0;
     color_enum selColor = color_off;
-    uint8 freeModeColor = 0;
+    static uint8 freeModeColor = 0;
+
+    if(LinBus_Obj.rxMsg[LIN_RX_MSG_HMI_status_light_control].chkSumResult)
+    {
+        freeModeColor = getCenterZoneFreeMode();
+        freeModeColor = getLeftZoneFreeMode();
+        freeModeColor = getRightZoneFreeMode();
+    }
+    else
+    {
+        /* checksum error not updating the value */
+    }
+    
     /* left zone */
-    freeModeColor = getLeftZoneFreeMode();
     selColor = freeModeColor2InternalColor(freeModeColor);
     for(j = 0; j < LED_NUM; j ++)
     {
@@ -961,7 +975,6 @@ static void ledModeFreeCtrl()
     }
 
     /* right zone */
-    freeModeColor = getRightZoneFreeMode();
     selColor = freeModeColor2InternalColor(freeModeColor);
     for(j = 0; j < LED_NUM; j ++)
     {
@@ -969,7 +982,6 @@ static void ledModeFreeCtrl()
     }
 
     /* center zone */
-    freeModeColor = getCenterZoneFreeMode();
     selColor = freeModeColor2InternalColor(freeModeColor);
     for(j = 0; j < LED_NUM; j ++)
     {
@@ -1042,8 +1054,6 @@ volatile uint8 manualLedMode = 0;
 void ledModeUpdate()
 {
     static ledMode_enum oldUserInpMode = 0;
-    ledMode_enum ledMode = 0;
-    uint8 ledSwth = 0;
     lightLevel_enum brightnessLevel = 0;
     uint8 j = 0;
 
@@ -1061,10 +1071,17 @@ void ledModeUpdate()
     // }
     
     /* signal update from lin communication */
-    ledMode = (ledMode_enum)getLedMode();
-    ledSwth = getLedSwitch();
-    brightnessLevel = (lightLevel_enum)getLedBrightnessLevel();
-
+    if(LinBus_Obj.rxMsg[LIN_RX_MSG_HMI_status_light_control].chkSumResult)
+    {
+        ledMode = (ledMode_enum)getLedMode();
+        ledSwth = getLedSwitch();
+        brightnessLevel = (lightLevel_enum)getLedBrightnessLevel();
+        //LinBus_Obj.rxMsg[LIN_RX_MSG_HMI_status_light_control].chkSumResult = 0;
+    }
+    else
+    {
+        /* checksum fail not require data */
+    }
 
     LedlightLevelCtrl(brightnessLevel);
 
