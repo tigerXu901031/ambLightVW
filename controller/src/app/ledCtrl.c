@@ -954,13 +954,13 @@ static void ledModeFreeCtrl()
 {
     uint8 j = 0;
     color_enum selColor = color_off;
-    static uint8 freeModeColor = 0;
+    static uint8 freeModeLftColor = 0, freeModeRhtColor = 0, freeModeCenColor = 0;
 
     if(LinBus_Obj.rxMsg[LIN_RX_MSG_HMI_status_light_control].chkSumResult)
     {
-        freeModeColor = getCenterZoneFreeMode();
-        freeModeColor = getLeftZoneFreeMode();
-        freeModeColor = getRightZoneFreeMode();
+        freeModeLftColor = getCenterZoneFreeMode();
+        freeModeRhtColor = getLeftZoneFreeMode();
+        freeModeCenColor = getRightZoneFreeMode();
     }
     else
     {
@@ -968,21 +968,21 @@ static void ledModeFreeCtrl()
     }
     
     /* left zone */
-    selColor = freeModeColor2InternalColor(freeModeColor);
+    selColor = freeModeColor2InternalColor(freeModeLftColor);
     for(j = 0; j < LED_NUM; j ++)
     {
         setSingleLed(ledStripIdx_left, j, colorArr[selColor]);
     }
 
     /* right zone */
-    selColor = freeModeColor2InternalColor(freeModeColor);
+    selColor = freeModeColor2InternalColor(freeModeRhtColor);
     for(j = 0; j < LED_NUM; j ++)
     {
         setSingleLed(ledStripIdx_right, j, colorArr[selColor]);
     }
 
     /* center zone */
-    selColor = freeModeColor2InternalColor(freeModeColor);
+    selColor = freeModeColor2InternalColor(freeModeCenColor);
     for(j = 0; j < LED_NUM; j ++)
     {
         setSingleLed(ledStripIdx_center, j, colorArr[selColor]);
@@ -1054,6 +1054,7 @@ volatile uint8 manualLedMode = 0;
 void ledModeUpdate()
 {
     static ledMode_enum oldUserInpMode = 0;
+    static ledMode_enum oldFullMode = 0;
     lightLevel_enum brightnessLevel = 0;
     uint8 j = 0;
 
@@ -1087,6 +1088,16 @@ void ledModeUpdate()
 
     if(ledSwth)
     {
+        if(ledMode == ledMode_19)
+        {
+            oldFullMode = ledMode;
+        }
+        else
+        {
+            oldFullMode = 0;
+        }
+        
+
         switch (ledMode)
         {
             case ledMode_1:

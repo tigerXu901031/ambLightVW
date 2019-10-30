@@ -71,6 +71,7 @@ typedef enum{
     ledMode_16,
     ledMode_17,
     ledMode_18,
+    ledMode_19,
     ledMode_max,
     ledMode_FF = 0xff,
 }ledMode_enum;
