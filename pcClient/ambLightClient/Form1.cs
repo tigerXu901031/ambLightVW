@@ -32,6 +32,9 @@ namespace ambLightClient
             /* clear the switch status to all off */
             USB2LIN_EX.LIN_EX_MSG[] msg = new USB2LIN_EX.LIN_EX_MSG[2];
             USB2LIN_EX.LIN_EX_MSG[] echoMsg = new USB2LIN_EX.LIN_EX_MSG[4];
+
+            Byte chksumVal = 0;
+
             if (isDeviceOpen)
             {
                 /* 1st message is break message */
@@ -46,7 +49,7 @@ namespace ambLightClient
                 msg[1].Timestamp = 10;
                 msg[1].PID = 0x17;
                 msg[1].DataLen = 8;
-                msg[1].CheckType = USB2LIN_EX.LIN_EX_CHECK_NONE;
+                msg[1].CheckType = USB2LIN_EX.LIN_EX_CHECK_EXT;
 
                 msg[1].Data[0] = 0x00;
                 msg[1].Data[1] = 0x00;
@@ -56,6 +59,14 @@ namespace ambLightClient
                 msg[1].Data[5] = 0x00;
                 msg[1].Data[6] = 0x00;
                 msg[1].Data[7] = 0x00;
+
+                // checksum calculation
+                for (Byte i = 0; i < 8; i++)
+                {
+                    chksumVal = (Byte)(chksumVal + msg[1].Data[i]);
+                }
+                chksumVal = (Byte)(255 - (chksumVal + 0x97));
+                msg[1].Check = chksumVal;
 
                 // send out the message
                 IntPtr pt = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(USB2LIN_EX.LIN_EX_MSG)) * echoMsg.Length);
@@ -163,6 +174,11 @@ namespace ambLightClient
             f2.ShowDialog(this);
         }
 
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            finalizeAmbLightClient();
+        }
+
         private void Button1_Click(object sender, EventArgs e)
         {
             Byte brightnessLevel = 0;
@@ -230,9 +246,9 @@ namespace ambLightClient
                 msg[1].Data[0] = ((Byte)(brightnessLevel << 4));
                 msg[1].Data[0] |= 0x01;
                 msg[1].Data[1] = lightMode;
-                msg[1].Data[2] = freeModeL;
-                msg[1].Data[2] |= (Byte)(freeModeT << 4);
-                msg[1].Data[3] = freeModeR;
+                msg[1].Data[2] = freeModeT;
+                msg[1].Data[2] |= (Byte)(freeModeR << 4);
+                msg[1].Data[3] = freeModeL;
 
                 // checksum calculation
                 for(Byte i = 0; i < 8; i++)

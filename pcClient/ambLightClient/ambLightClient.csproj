@@ -117,5 +117,8 @@
   <ItemGroup>
     <None Include="zfIcon2.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="WechatIMG56.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
