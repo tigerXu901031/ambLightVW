@@ -246,9 +246,9 @@ namespace ambLightClient
                 msg[1].Data[0] = ((Byte)(brightnessLevel << 4));
                 msg[1].Data[0] |= 0x01;
                 msg[1].Data[1] = lightMode;
-                msg[1].Data[2] = freeModeT;
-                msg[1].Data[2] |= (Byte)(freeModeR << 4);
-                msg[1].Data[3] = freeModeL;
+                msg[1].Data[2] = freeModeR;
+                msg[1].Data[2] |= (Byte)(freeModeL << 4); 
+                msg[1].Data[3] = freeModeT;
 
                 // checksum calculation
                 for(Byte i = 0; i < 8; i++)
