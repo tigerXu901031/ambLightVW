@@ -38,7 +38,7 @@ static void linChecksumVerify(LIN_TX_MSG_IDX msgObjId)
     }
     checksumVal = 255 - checksumVal;
 
-    if(checksumVal == LinBus_Obj.rxMsg[msgObjId].msgData.dataBuf[8] || (checksumVal == LinBus_Obj.rxMsg[msgObjId].msgData.dataBuf[8] + 1))
+    if(checksumVal == LinBus_Obj.rxMsg[msgObjId].msgData.dataBuf[8] || (checksumVal == LinBus_Obj.rxMsg[msgObjId].msgData.dataBuf[8] + 1) || ((checksumVal == LinBus_Obj.rxMsg[msgObjId].msgData.dataBuf[8] + 2)))
     {
         LinBus_Obj.rxMsg[msgObjId].chkSumResult = 1;
     }
