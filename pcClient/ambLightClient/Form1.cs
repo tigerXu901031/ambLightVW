@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Timers;
 
 namespace ambLightClient
 {
@@ -15,16 +16,23 @@ namespace ambLightClient
     {
         usb_device.DEVICE_INFO devInfo = new usb_device.DEVICE_INFO();
         Int32[] devHandles = new Int32[20];
-        Int32 devHandle = 0;
-        Byte linIdx = 0;
+        static Int32 devHandle = 0;
+        static Byte linIdx = 0;
         bool state;
-        Int32 devNum, ret;
+        static Int32 devNum, ret;
         bool isDeviceOpen = false;
+        bool isAutoRun = false;
+        static Byte autoMode = 2;
+        private static System.Timers.Timer aTimer;
 
-        Form2 f2 = new Form2();
+
+
+        static Form2 f2 = new Form2();
         public Form1()
         {
             InitializeComponent();
+            backgroundWorker1.WorkerSupportsCancellation = true;
+            InitTimer();
         }
 
         private void finalizeAmbLightClient()
@@ -74,13 +82,13 @@ namespace ambLightClient
                 ret = USB2LIN_EX.LIN_EX_MasterSync(devHandle, linIdx, msg, pt, msg.Length);
                 if (ret < USB2LIN_EX.LIN_EX_SUCCESS)
                 {
-                    f2.richTextBox1.AppendText("Lin message send failed! \n");
-                    f2.richTextBox1.AppendText("Error code:" + ret.ToString());
+                    //f2.richTextBox1.AppendText("Lin message send failed! \n");
+                    //f2.richTextBox1.AppendText("Error code:" + ret.ToString());
                     return;
                 }
                 else
                 {
-                    f2.richTextBox1.AppendText("Lin message send success! \n");
+                    //f2.richTextBox1.AppendText("Lin message send success! \n");
                 }
 
                 Marshal.FreeHGlobal(pt);
@@ -179,6 +187,136 @@ namespace ambLightClient
             finalizeAmbLightClient();
         }
 
+        private void BackgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            while (isAutoRun)
+            {
+            }
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            USB2LIN_EX.LIN_EX_MSG[] msg = new USB2LIN_EX.LIN_EX_MSG[2];
+            USB2LIN_EX.LIN_EX_MSG[] echoMsg = new USB2LIN_EX.LIN_EX_MSG[4];
+
+            // Start the asynchronous operation: auto led mode
+            if (backgroundWorker1.IsBusy == false)
+            {
+                backgroundWorker1.RunWorkerAsync();
+            }
+
+            if (isAutoRun == false)
+            {
+                isAutoRun = true;
+                aTimer.Start();
+
+                /* 1st message is break message */
+                msg[0] = new USB2LIN_EX.LIN_EX_MSG();
+                msg[0].MsgType = USB2LIN_EX.LIN_EX_MSG_TYPE_BK;
+                msg[0].Timestamp = 10;
+
+                /* 2nd message is the data message */
+                msg[0] = new USB2LIN_EX.LIN_EX_MSG();
+                msg[1].MsgType = USB2LIN_EX.LIN_EX_MSG_TYPE_MW;
+                msg[1].Data = new Byte[8];
+                msg[1].Timestamp = 10;
+                msg[1].PID = 0x97;
+                msg[1].DataLen = 8;
+                msg[1].CheckType = USB2LIN_EX.LIN_EX_CHECK_EXT;
+
+                /* load into the data */
+                msg[1].Data[0] = 0x01;
+                msg[1].Data[1] = autoMode;
+                msg[1].Data[2] = 0x00;
+                msg[1].Data[3] = 0x00;
+
+                autoMode++;
+
+                // send out the message
+                IntPtr pt = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(USB2LIN_EX.LIN_EX_MSG)) * echoMsg.Length);
+
+                ret = USB2LIN_EX.LIN_EX_MasterSync(devHandle, linIdx, msg, pt, msg.Length);
+                //if (ret < USB2LIN_EX.LIN_EX_SUCCESS)
+                //{
+                //    f2.richTextBox1.AppendText("Lin message send failed! \n");
+                //    f2.richTextBox1.AppendText("Error code:" + ret.ToString());
+                //    return;
+                //}
+                //else
+                //{
+                //    f2.richTextBox1.AppendText("Lin message send success! \n");
+                //}
+
+                Marshal.FreeHGlobal(pt);
+            }
+            else
+            {
+                isAutoRun = false;
+                autoMode = 2;
+                aTimer.Stop();
+                finalizeAmbLightClient();
+            }
+        }
+
+        private static void InitTimer()
+        {
+            aTimer = new System.Timers.Timer(10000);
+            aTimer.Elapsed += OnTimedEvent;
+            aTimer.AutoReset = true;
+        }
+
+        private static void OnTimedEvent(Object source, ElapsedEventArgs e)
+        {
+            USB2LIN_EX.LIN_EX_MSG[] msg = new USB2LIN_EX.LIN_EX_MSG[2];
+            USB2LIN_EX.LIN_EX_MSG[] echoMsg = new USB2LIN_EX.LIN_EX_MSG[4];
+
+            /* 1st message is break message */
+            msg[0] = new USB2LIN_EX.LIN_EX_MSG();
+            msg[0].MsgType = USB2LIN_EX.LIN_EX_MSG_TYPE_BK;
+            msg[0].Timestamp = 10;
+
+            /* 2nd message is the data message */
+            msg[0] = new USB2LIN_EX.LIN_EX_MSG();
+            msg[1].MsgType = USB2LIN_EX.LIN_EX_MSG_TYPE_MW;
+            msg[1].Data = new Byte[8];
+            msg[1].Timestamp = 10;
+            msg[1].PID = 0x97;
+            msg[1].DataLen = 8;
+            msg[1].CheckType = USB2LIN_EX.LIN_EX_CHECK_EXT;
+
+            /* load into the data */
+            msg[1].Data[0] = 0x01;
+            msg[1].Data[1] = autoMode;
+            msg[1].Data[2] = 0x00;
+            msg[1].Data[3] = 0x00;
+
+            if (autoMode < 18)
+            {
+                autoMode++;
+            }
+            else
+            {
+                autoMode = 2;
+            }
+
+            // send out the message
+            IntPtr pt = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(USB2LIN_EX.LIN_EX_MSG)) * echoMsg.Length);
+
+            ret = USB2LIN_EX.LIN_EX_MasterSync(devHandle, linIdx, msg, pt, msg.Length);
+            if (ret < USB2LIN_EX.LIN_EX_SUCCESS)
+            {
+                //f2.richTextBox1.AppendText("Lin message send failed! \n");
+                //f2.richTextBox1.AppendText("Error code:" + ret.ToString());
+                return;
+            }
+            else
+            {
+                //f2.richTextBox1.AppendText("Lin message send success! \n");
+            }
+
+            Marshal.FreeHGlobal(pt);
+        }
+
         private void Button1_Click(object sender, EventArgs e)
         {
             Byte brightnessLevel = 0;
@@ -251,12 +389,12 @@ namespace ambLightClient
                 msg[1].Data[3] = freeModeT;
 
                 // checksum calculation
-                for(Byte i = 0; i < 8; i++)
-                {
-                    chksumVal = (Byte)(chksumVal + msg[1].Data[i]);
-                }
-                chksumVal = (Byte)(255 - (chksumVal + 0x97));
-                msg[1].Check = chksumVal;
+                //for(Byte i = 0; i < 8; i++)
+                //{
+                //    chksumVal = (Byte)(chksumVal + msg[1].Data[i]);
+                //}
+                //chksumVal = (Byte)(255 - (chksumVal + 0x97));
+                //msg[1].Check = chksumVal;
 
                 // send out the message
                 IntPtr pt = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(USB2LIN_EX.LIN_EX_MSG)) * echoMsg.Length);

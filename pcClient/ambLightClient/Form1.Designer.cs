@@ -53,6 +53,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.button3 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -65,15 +67,13 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deviceToolStripMenuItem,
             this.debugToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1818, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(2974, 39);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -82,13 +82,13 @@
             this.deviceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.connectToolStripMenuItem});
             this.deviceToolStripMenuItem.Name = "deviceToolStripMenuItem";
-            this.deviceToolStripMenuItem.Size = new System.Drawing.Size(83, 28);
+            this.deviceToolStripMenuItem.Size = new System.Drawing.Size(111, 35);
             this.deviceToolStripMenuItem.Text = "Device";
             // 
             // connectToolStripMenuItem
             // 
             this.connectToolStripMenuItem.Name = "connectToolStripMenuItem";
-            this.connectToolStripMenuItem.Size = new System.Drawing.Size(181, 34);
+            this.connectToolStripMenuItem.Size = new System.Drawing.Size(243, 44);
             this.connectToolStripMenuItem.Text = "Connect";
             this.connectToolStripMenuItem.Click += new System.EventHandler(this.ConnectToolStripMenuItem_Click);
             // 
@@ -97,23 +97,24 @@
             this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.outputToolStripMenuItem});
             this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
-            this.debugToolStripMenuItem.Size = new System.Drawing.Size(67, 28);
+            this.debugToolStripMenuItem.Size = new System.Drawing.Size(89, 35);
             this.debugToolStripMenuItem.Text = "View";
             // 
             // outputToolStripMenuItem
             // 
             this.outputToolStripMenuItem.Name = "outputToolStripMenuItem";
-            this.outputToolStripMenuItem.Size = new System.Drawing.Size(207, 34);
+            this.outputToolStripMenuItem.Size = new System.Drawing.Size(276, 44);
             this.outputToolStripMenuItem.Text = "Debug Info";
             this.outputToolStripMenuItem.Click += new System.EventHandler(this.OutputToolStripMenuItem_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 24F);
-            this.label1.Location = new System.Drawing.Point(956, 62);
+            this.label1.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1498, 104);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(555, 59);
+            this.label1.Size = new System.Drawing.Size(1109, 117);
             this.label1.TabIndex = 4;
             this.label1.Text = "Illuminated Steering Wheel";
             // 
@@ -124,9 +125,11 @@
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(952, 189);
+            this.groupBox1.Location = new System.Drawing.Point(1537, 403);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(511, 90);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(1349, 120);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Global Luminance";
@@ -134,9 +137,10 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(362, 46);
+            this.radioButton3.Location = new System.Drawing.Point(1128, 61);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(78, 33);
+            this.radioButton3.Size = new System.Drawing.Size(101, 43);
             this.radioButton3.TabIndex = 1;
             this.radioButton3.Text = "Low";
             this.radioButton3.UseVisualStyleBackColor = true;
@@ -144,9 +148,10 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(192, 46);
+            this.radioButton2.Location = new System.Drawing.Point(540, 61);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(122, 33);
+            this.radioButton2.Size = new System.Drawing.Size(158, 43);
             this.radioButton2.TabIndex = 1;
             this.radioButton2.Text = "Medium";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -154,9 +159,10 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(30, 46);
+            this.radioButton1.Location = new System.Drawing.Point(40, 61);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(83, 33);
+            this.radioButton1.Size = new System.Drawing.Size(107, 43);
             this.radioButton1.TabIndex = 0;
             this.radioButton1.Text = "High";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -165,9 +171,11 @@
             // 
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(952, 354);
+            this.groupBox2.Location = new System.Drawing.Point(1537, 599);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(840, 118);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(1349, 158);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Vehicle State";
@@ -195,9 +203,10 @@
             "17 - Overtake from left(second desgin)",
             "18 - Overtake from rigth(second design)",
             "FF - Free Mode"});
-            this.comboBox1.Location = new System.Drawing.Point(14, 50);
+            this.comboBox1.Location = new System.Drawing.Point(18, 66);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(786, 37);
+            this.comboBox1.Size = new System.Drawing.Size(1292, 47);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.Text = "--- Select State ---";
             // 
@@ -210,9 +219,11 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.comboBox2);
             this.groupBox3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(952, 531);
+            this.groupBox3.Location = new System.Drawing.Point(1537, 783);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(840, 177);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Size = new System.Drawing.Size(1349, 236);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Free Mode";
@@ -226,9 +237,10 @@
             "Green",
             "Blue",
             "Off"});
-            this.comboBox4.Location = new System.Drawing.Point(585, 100);
+            this.comboBox4.Location = new System.Drawing.Point(780, 133);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(199, 37);
+            this.comboBox4.Size = new System.Drawing.Size(264, 47);
             this.comboBox4.TabIndex = 16;
             this.comboBox4.Text = "--- Select Color ---";
             // 
@@ -241,36 +253,40 @@
             "Green",
             "Blue",
             "Off"});
-            this.comboBox3.Location = new System.Drawing.Point(312, 100);
+            this.comboBox3.Location = new System.Drawing.Point(416, 133);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(199, 37);
+            this.comboBox3.Size = new System.Drawing.Size(264, 47);
             this.comboBox3.TabIndex = 15;
             this.comboBox3.Text = "--- Select Color ---";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(579, 50);
+            this.label4.Location = new System.Drawing.Point(772, 66);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 29);
+            this.label4.Size = new System.Drawing.Size(109, 39);
             this.label4.TabIndex = 14;
             this.label4.Text = "R-Zone";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(306, 50);
+            this.label3.Location = new System.Drawing.Point(408, 66);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 29);
+            this.label3.Size = new System.Drawing.Size(106, 39);
             this.label3.TabIndex = 13;
             this.label3.Text = "T-Zone";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 50);
+            this.label2.Location = new System.Drawing.Point(32, 66);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 29);
+            this.label2.Size = new System.Drawing.Size(105, 39);
             this.label2.TabIndex = 12;
             this.label2.Text = "L-Zone";
             // 
@@ -283,9 +299,10 @@
             "Green",
             "Blue",
             "Off"});
-            this.comboBox2.Location = new System.Drawing.Point(30, 100);
+            this.comboBox2.Location = new System.Drawing.Point(40, 133);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(199, 37);
+            this.comboBox2.Size = new System.Drawing.Size(264, 47);
             this.comboBox2.TabIndex = 1;
             this.comboBox2.Text = "--- Select Color ---";
             // 
@@ -293,9 +310,10 @@
             // 
             this.button1.BackColor = System.Drawing.Color.LimeGreen;
             this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1434, 893);
+            this.button1.Location = new System.Drawing.Point(2530, 1096);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(302, 141);
+            this.button1.Size = new System.Drawing.Size(402, 188);
             this.button1.TabIndex = 9;
             this.button1.Text = "Send Command";
             this.button1.UseVisualStyleBackColor = false;
@@ -313,9 +331,10 @@
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.Cursor = System.Windows.Forms.Cursors.Default;
             this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1075, 893);
+            this.button2.Location = new System.Drawing.Point(2026, 1096);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(317, 141);
+            this.button2.Size = new System.Drawing.Size(423, 188);
             this.button2.TabIndex = 10;
             this.button2.Text = "Stop Led";
             this.button2.UseVisualStyleBackColor = false;
@@ -324,9 +343,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ambLightClient.Properties.Resources.zfIcon2;
-            this.pictureBox2.Location = new System.Drawing.Point(1536, 9);
+            this.pictureBox2.Location = new System.Drawing.Point(2615, 13);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(260, 236);
+            this.pictureBox2.Size = new System.Drawing.Size(346, 314);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
@@ -334,21 +354,41 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ambLightClient.Properties.Resources.WechatIMG56;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 32);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 42);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(927, 957);
+            this.pictureBox1.Size = new System.Drawing.Size(1487, 1369);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker1_DoWork);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Orange;
+            this.button3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(1555, 1096);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(402, 188);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "ON/OFF auto-mode";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1818, 1170);
+            this.ClientSize = new System.Drawing.Size(2974, 1929);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -359,7 +399,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "Form1";            
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LED control panel";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -404,6 +445,8 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button button3;
     }
 }
 
